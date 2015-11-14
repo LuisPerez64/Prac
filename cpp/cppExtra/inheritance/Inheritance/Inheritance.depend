@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1425258188 source:/home/luis/Desktop/Prog/Prac/cppExtra/inheritance/Inheritance/inher.cpp
+	<iostream>
+	<string>
+	"inher.hpp"
+
+1425258146 /home/luis/Desktop/Prog/Prac/cppExtra/inheritance/Inheritance/inher.hpp
+

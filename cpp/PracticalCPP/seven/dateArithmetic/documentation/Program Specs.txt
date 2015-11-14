@@ -1,0 +1,23 @@
+Date Arithmetic Calculator
+Basic point: Takes in two dates from the user, and outputs the number of days
+      	     that seperates those dates.
+Algorithms Used:
+	   Year Calculations:
+		 Leap Year ~~ 364 Days ~ Formula for that below
+	   	    (var%4 == 0 and (var%100 != 0) || var%400 == 0)    
+	   	 Non Leap Year ~~ 365 Days
+
+	   Month Calculations: 	 
+		 Months with 30 Days (April(4) | June(6) | September(9) |
+		 	     	      November(11) )
+	         Months with 31 Days (Jan(1) | May(3) | Mar(5) | July(7) |
+		 	     	      Aug(8) | Oct(10) | Dec(12) )
+	         Months with Var Days (Leap Year 29 | Normal Year 28)
+
+          Total Calculation:
+	  	Go from first year to last year.
+		If begin month is less than end month then not full year, else
+		   do basic arithmetic for the year. Adding leap years if
+		   needed.
+		Then begin by subtracting days passed from the given month, and
+		add the days afterwards. 	   

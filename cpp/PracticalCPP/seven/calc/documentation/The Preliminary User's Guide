@@ -1,0 +1,23 @@
+Calc
+A four function calculator
+Preliminary Users' Specification
+July 20, 2015 Luis Perez
+
+The program will do the basic mathematical functions (+. -, *, /)
+The program begins with the result register as 0, and updates it as the 
+ user inputs needed points into it ie:
+
+Result: 0
+Enter Operator and Number: + 123
+Result: 123
+Enter Operator and Number: - 23
+Result: 100
+Enter Operator and Number: - 101
+Result: -1
+
+******************************** Update ******************************
+Need a way to exit the program:
+  Added operator 'q' to quit
+What happens if you divide by 0:
+  Program does not allow this division to happen. Produc error await user input
+  again. Does not change result.

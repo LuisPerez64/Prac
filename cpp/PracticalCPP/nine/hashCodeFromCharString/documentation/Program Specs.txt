@@ -1,0 +1,27 @@
+Program Specification:
+  User inputs a string, and the string is turned into a basic hash code.
+  This is done by taking every one of the characters and making them into their
+  integer values, and adding up all the integer values to a running total.
+
+Interface:
+  Output: Welcome to the basic hash map maker.
+  Output: Please input the string to be converted:
+  Input: _inputString_
+  /** Do hash code operations.
+  Output: The value of the input string in baic hash code manner is: "
+  Output: _hashCodeValue_
+  
+Under The Hood:
+  Pseudocode:
+   Take in an input string from the user. Take that string, and iterate through
+   it, taking the integer value of each character, and add it to a running 
+   total. Print out the total value of all the strings that were put in.
+   Extra: Find out what the possible values that were input were, by taking
+          the hash code value, and printing out all possible combinations that
+	  were possible to have made that given hash code value.
+
+  Algorithms: N/A
+
+  Functions Used:
+    void runHashCodeProg(void);
+    int hashCodeValueOfInputString(std::string)

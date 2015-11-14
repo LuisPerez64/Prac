@@ -1,0 +1,33 @@
+Write a prorgram that will convert English Units to Metric. 
+
+Basic conversion program:
+  If the user were to give miles Convert them to kilometers
+  If the user gives pounds convert them to pounds.
+  If the user gives in gallons, convert to liters
+ 
+User interface:
+
+Output: Welcome to the conversion factor program
+Output: What would you like to convert today?:
+	Give the user choice of different convertable material, list expands as
+	 is needed.
+Input: User makes the choice from the given possibilities.
+Output: Thank you. How much of 'Var choice' would you like to convert
+
+Internal operation: COnvert the given point for the user.
+Output: Converted 'Var Type' is equal to 'COnverted point' in 
+	'COnverted Var Type'.
+
+Possible inputs: Quit, Distances, Weights, Volume // More added when needed
+
+Differnt dialogue based on the given choices by the user.
+ 
+Conversion constants: Can all be worked in, but not needed as of yet
+Can be expanded upon when need comes as well, should not be difficult.
+
+  1 Mile = 1.609344 KiloMeters
+  1 Kilometer = 0.621371 Miles
+  1 Pound = 0.453592 Kilograms
+  1 Kilogram = 2.20462 Pounds
+  1 Gallon = 3.78541 Liters
+  1 Liter = 0.264172 Gallons

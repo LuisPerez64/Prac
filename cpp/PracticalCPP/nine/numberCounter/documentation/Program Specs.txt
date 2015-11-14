@@ -1,0 +1,27 @@
+Program Speficitation:
+  Write a function count(number, array, length) which counts the amount of 
+  times number appearsin array. he array has length elements. The function 
+  should be recursive. Write a test program to test it out.
+
+Interface:
+  Output: Welcome to the number counter program.
+  Output: Begin inputting numbers into the array, runs until array's finished: 
+  Input: for(array length || sentinel){} _inputNum_
+  Output: Which number would you like to count instances for: 
+  Input:  _numberToCheckFor_ /** Number to check for instances of.
+  Output: The number _numberToCheckFor_ appears _totalNumberOfTimes_ in the
+          array.
+  
+Under The Hood:
+  Pseudocode:
+   Take in the numbers that are being put into the array. Go into the point 
+   where it either fills the array, or the sentinel value is met. Go through
+   the array, and find the instances of the times that the number has appeared
+   in the array, and return that to the user.
+
+  Algorithm:
+   Array traversal, array manipulation. No real algorithms.
+
+  Functions Used:
+   void runNumberCounter(void);
+   int numberOfTimesNumberAppears(int number, int array[], int length);  

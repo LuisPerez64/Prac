@@ -1,0 +1,28 @@
+Program Specification:
+  Write a program to print out the multiplication table.
+
+Interface:
+  Output: What range would you like to show the table for.
+  Output: Lower Bound: 
+  Input: _lowerBound_
+  Output: Upper Bound:
+  Input: _upperBound_
+  Output: /** Table within that range of digits. 
+
+
+Classes/Objects Used: N/A
+
+Under The Hood:
+  Pseudocode: Pseudo code is harder to write for this than the actual code...
+    Take the lower bound, and increment it by as a basic multiplication table 
+    would. At each incrementation, multiply it by the needed number. Print out
+    a new line. Increment the multiplier by one. Do the cycle until the 
+    _lowerBound_ equals _upperBound_
+
+  Algortihms: 
+    Multiplication table algorithm. Simple in and of itself.
+
+  Functions Used: 
+   runMultiplicationTablePrinter()
+   printOutMultiplicationLine(int start, int end, u=int multiplier)      
+   

@@ -1,0 +1,25 @@
+Program Specification for the function Average 'N' Numbers:
+ 
+User supplies a list of numbers, and program averages out the numbers based on amount of numbers input. Program is to take an arbitrary amount of numbers.
+
+Interface:
+  Output: Welcome to the average calculator.
+  Output: Begin input of numbers, when done input sentinel value '~' to exit 
+          input operations.
+  Input:  numberToBeAdded // Within a while loop break cond, sentinel value.
+  Output: 'At every value input, average so far, if user wishes it to be so'
+  Output: Average for _n_ values is _averageOfNValues_;
+  Output: Run it all again?
+  Input:  Yes or no?
+
+
+Under The Hood:
+  Algorithms:  
+    Averaging operation: _total_ / _amountOfInputsSoFar_
+    No real algorithms past this are used in the process of making this work.
+  
+  
+Added Functionality:
+  Toggle for printing out the average on every time the user inputs a number.
+   if yes then print out the average at every milestone, and the end of the 
+   calculation.

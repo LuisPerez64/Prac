@@ -1,0 +1,178 @@
+Alduos Huxley: # of Books 1
+Brave New World
+Alfred Hitchcock: # of Books 1
+The Best of Mystery
+Alice Sebold: # of Books 1
+The Lovely Bones
+Allan Folsom: # of Books 1
+The Day After Tomorrow
+Anna Sewell: # of Books 1
+Black Beauty
+Arthur Golden: # of Books 1
+Memoirs of A Geisha
+Betty Smith: # of Books 1
+A Tree Grows in Brooklyn
+Bill Bryson : # of Books 1
+A Short History of Nearly Everything
+Bill James: # of Books 1
+Wolves of Memory
+Boris Pasternak: # of Books 1
+Doctor Zhivago
+Brad Meltze: # of Books 1
+Dead Even
+Brad Thor: # of Books 1
+Full Black
+Butterworth: # of Books 1
+Discover The Power Within You
+Catherine Coulter: # of Books 1
+Split Second
+Chinua Achebe: # of Books 1
+Things Fall Apart
+Chris Ryan: # of Books 1
+Greed
+Christopher Priest: # of Books 1
+The Prestige
+Claudia Rankine : # of Books 1
+Citizen
+Dan Brown: # of Books 1
+Angels and DemonsDeception PointThe DaVinci CodeThe Lost Symbol
+Dave Pelzer : # of Books 1
+A Child Called It
+David Baldacci: # of Books 1
+Simple GeniusThe Winner
+Dennis Lehane: # of Books 1
+Mystic River
+E.B. White: # of Books 1
+Charlotte's Web
+Edgar Allen Poe: # of Books 1
+Edgar Allan Poe Reader (Go Into This One)
+Elizabeth Acevedo: # of Books 1
+Birth Marked
+Evelyn McFarlane & James Saywell: # of Books 1
+If...
+F.W. Dixon: # of Books 1
+While the Clock Ticked
+Fernand Hayward: # of Books 1
+The Inquisition
+Harper Lee: # of Books 1
+To Kill A Mockingbird
+Homer: # of Books 1
+The Iliad Of Homer
+Ian Flemming: # of Books 1
+From Russia With Love
+Iris Johansen: # of Books 1
+Body of LiesDark Summer
+J. Robert King: # of Books 1
+Lancelot Du Lethe
+Jack Higgins: # of Books 1
+Flight of EaglesThe Wolf at The Door
+James Dashner: # of Books 1
+The Maze Runner
+James Patterson: # of Books 1
+1st To DieDouble CrossFour Blind MiceHoneymoonMerry Christmas, Alex CrossStep on a CrackThe Big Bad WolfThe Quickie
+Jamie Ford: # of Books 1
+Hotel on The Corner of Bitter and Sweet
+John Grisham: # of Books 1
+A Painted HouseA Time to KillBleachersThe AppealThe AssociateThe ChamberThe ClientThe Innocent ManThe RainmakerThe Street LawyerThe SummonsTheodore Boone: The Accused
+John Sandford: # of Books 1
+Hidden Prey
+John Steinbeck: # of Books 1
+Grapes of WrathOf Mice and Men
+John Twelve Hawkes: # of Books 1
+The Traveller
+Jonathan Kellerman: # of Books 1
+Bones
+Jules Verne: # of Books 1
+A Journey To The Center of The EarthFrom The Earth to The MoonTwenty Thousand Leagues Under The Sea
+Katherin Howe : # of Books 1
+The Physick Book of Deliverance Dane
+Knorr Schell: # of Books 1
+Mooring Against the Tide
+L.J. Smith: # of Books 1
+The Vampire Diaries
+LaVyrie Spencer: # of Books 1
+Then Came Heaven
+Lee Child: # of Books 1
+Echo BurningPersuaderThe AffairThe Enemy
+Lemony Snicket: # of Books 1
+The Bad Beginning
+Leo Tolstoy: # of Books 1
+A Happy Married LifeAfter The BallThe Death of Ivan IlyichThe Kreutzer SonataTwo HussarsYardstick
+Lisa Jackson: # of Books 1
+Malice
+Liv Spector: # of Books 1
+The Rich and The Dead
+Lorraine Hansberry: # of Books 1
+A Raisin in The SunTo Be Young, Gifted and Black
+Malcolm Gladwell: # of Books 1
+The Tipping Point
+Marcus Luttrell: # of Books 1
+Lone Survivor
+Mark Twain: # of Books 1
+The Adventures of Tom Sawyer
+Michael Connelly: # of Books 1
+The Drop
+Michael Crichton: # of Books 1
+Congo
+Michael Palmer: # of Books 1
+The Last Surgeon
+Muriel Barberry: # of Books 1
+The Elegance of The Hedgehog
+National Federation of The Blind: # of Books 1
+Recipes That Touch Your Heart & Soul
+Neal Stephenson: # of Books 1
+Snow Crash
+Nicholas Sparks: # of Books 1
+The Guardian
+Noel Botham: # of Books 1
+The Book of Useless Information
+Nora Roberts: # of Books 1
+Blue SmokeHomeportInnocent in Death
+Oreilly: # of Books 1
+Algorithms in A NutshellC# in a NutshellC++ Pocket ReferenceGDB Pocket ReferenceLINUX Pocket GuideLINUX in a NutshellPractical C++ Programming
+Oscar Wilde: # of Books 1
+The Picture Of Dorian Grey
+Patricia Cornwell: # of Books 1
+Isle of DogsPort MortuaryPredator
+Phillip Pullman: # of Books 1
+The Golden Compass
+Phillip Roth: # of Books 1
+The Human Stain
+R.L. Stine: # of Books 1
+30 Tales to Give You GoosebumpsBad Hare Day
+Reginald McKnight: # of Books 1
+I Get On The Bus
+Robert James Waller: # of Books 1
+The Bridges of Madison County
+Robert K. Tanenbaum: # of Books 1
+Counterplay
+Robert Ludlum: # of Books 1
+The Ambler WarningThe Arctic EventThe Bourne DeceptionThe Bourne ObjectiveThe Cassandra Compact
+Seth Grahame Smith: # of Books 1
+Abraham Lincoln: Vampire Hunter
+Shirley Tallman: # of Books 1
+The Cliff House
+Stephen Crane: # of Books 1
+The Red Badge of Courage
+Stephen Horn: # of Books 1
+In Her Defense
+Stephen King: # of Books 1
+Danse MacabreDifferent SeasonsThe Green Mile
+Stieg Larson: # of Books 1
+The Girl Who Kicked the Hornet's NestThe Girl Who Played With FireThe Girl With The Dragon Tattoo
+Sue Monk Kidd: # of Books 1
+The Secret Life of Bees
+Suzanne Collins: # of Books 1
+Catcing FireMockingjayThe Hunger Games
+Thomas Hardy: # of Books 1
+The Mayor Of Casterbridge
+Tom Brokaw: # of Books 1
+The Greatest Generation Speaks, Letters and Reflections
+Tom Clancy: # of Books 1
+The Hunt For Red October
+Vacca / Gove: # of Books 1
+Reading and Learing to Read
+W.M. Pauly Young: # of Books 2
+The Shack
+
+Total Number of Books: 89

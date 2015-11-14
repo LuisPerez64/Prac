@@ -1,0 +1,23 @@
+Porgram Specification:
+  Write a function that finds the largest value in a given array. and returns 
+  that to the caller.
+
+Interface:
+  Output: Welcome to the array largest value finder...
+  Ouptut: Please begin inputting numbers into the array.
+  Input: for(Array not full){} _inputNumber_
+  Output: The largest number in that array is: 
+  Output: _resultOfFunctionCall_
+
+Under The Hood:
+  Pseudocode: 
+   Fill the array. Iteratively look thorugh the array, and find the largest 
+   value. If the value is ever surpassed by another indexed value, make that 
+   the largest, and continue that motion going forward.
+  
+  Algorithm: Array traversal. Find max.
+
+  Functions Used: 
+    void runMaximumValueInArray(void);
+    int& findMaximumValue(int array[], int arrayLenght);
+  	      

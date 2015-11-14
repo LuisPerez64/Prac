@@ -1,0 +1,89 @@
+This chapter goes more in depth in regards to the other control statements
+ that are a bit more advanced than the basic if, while, do-while statements.
+
+The for loop:
+  for(initialize-statements;
+      while-this-condition-holds;
+      modify-what-needs-to-be-modified)
+      /*Note*/
+        Any of these sections can be left blank ie:
+	for(initialize-statements;
+	    /* Blank on Purpose */; // This would loop until break is reached.
+	    modify-what-needs-to-be-modified)	  
+	    
+  This is, so far the most used of the given control statements. It allows for
+   a compound statement to be met, specifies what needs to be done to finish it
+   , and states what is modified everytime the fragment of code below it is 
+   run. It takes the place of multiple statements such as: 
+      int index(0);
+      while(index <= 10) {
+       ... // Whatever needs to be done.
+       ++index;
+      }   
+  
+The switch Statement:
+  switch(expression) {
+    case constant1:
+      statement ...
+      break;
+    case constant2:
+      statement ...;
+      /* Note */ // Lack of a break in a switch causes it to do its body, and 
+                 // the bodies that follow until it reaches a break, or end of
+ 		 // the switch 
+    default:
+      statement ...;
+      break; // In this case, case 2 and the default are executed;
+
+    This is in its core, a massive chained if-else if-else if-...-else
+     each if/else-if is one of the case, the else statement is the default that
+     runs if nothing else is met that satisfies the needed conditions.
+
+continue / break statements:
+  These two statements are used to control the flow of the program, but not so 
+   much in the same manner that the other control statements do. The 
+   differences are that these statements are used to control the flow of the 
+   program, from within a given loop.
+  The break statement, is used to break directly out of the loop that is 
+   encapsulating it. ie:
+    while(true) {
+     if(condition-is-met)
+       break;
+     ... // else do whatever comes next.
+    }
+  This can be sort of tricky to keep track of, when working with multiple loop 
+   statements though, i've had issues with it before, and probably will again. 
+   Have to keep track of these statements whenever they are used, so as not to 
+   break out of a loop prematurely, or cause an infinitely, unbreakable loop to
+   to take place.
+
+  The continue statement:
+    This is somewhat of the counterpositive to the break statement that is 
+     formulated above. It is telling the program to do something that at first
+     seems to be the same as the break statement, but instead of exiting the 
+     given loop, the program is going to be going back to the top of the loop
+     that it is within, and restart it. ie:
+      while(true) {
+        ...
+	if(condition-met)
+	 continue; // go back to the top of the loop statement.
+	... // else do whatever is needed to be done here
+	if(condition-met)
+	 break; // Not needed but illustrates the point that while(true) needs		       // a break statement. 
+       }
+     This is again somewhat counterintuative since the continue statement is 
+      in common english telling the user to continue on, but for this language
+      it is more telling the user continue doing what you were doing, but start
+      over, from the beginning.
+     The continue statement only works for a loop, it does not work within a 
+      switch, if it is used within a switch that is within a loop then the 
+      loop statement, encapsulating the switch, is what is called forth ie:
+       while(condition) { // TOP
+        switch(control-statement) {
+	 case 1:
+	  ...;
+	  break; // Breaks out of the switch statement.
+	 case 2:
+ 	  continue; // Breaks out of the switch statement, goes back to TOP
+	 } 
+	}   

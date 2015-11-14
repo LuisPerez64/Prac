@@ -1,0 +1,34 @@
+Program Specification:
+  Prints out a checkerboard like patter to the user. ie. if dimensions are 2x2
+    +-----+-----+
+    |     |     |
+    |     |     |
+    |     |     |
+    +-----+-----+
+    |     |     |
+    |     |     |
+    |     |     |
+    +-----+-----+
+
+Interface:
+  Output: Welcome to the checkerboard patter printer.
+  Output: Please input the dimensions which you would like to have the 
+  	  checkerboard be.
+  Input: _xDimension_ , _yDimension_
+  Output: Checkerboard of the given patter is:
+  Output: /** Outputs the checkerboard pattern to the user in itself.
+
+Classes/Objects Used: N/A
+
+Under The Hood: 
+  Pseudocode:
+    
+  
+  Algorithms: N/A. Just nested for loops.
+    
+  
+  Special Cases: N/A
+
+  
+  Functions Used: 
+

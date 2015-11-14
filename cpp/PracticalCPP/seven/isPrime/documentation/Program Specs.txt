@@ -1,0 +1,40 @@
+Program Specs for the isPrime function
+   Takes a number input from the user, and then validates whether
+   said number is prime or if it's not.
+
+Interface:
+   Output: Welcome to the is it Prime program.
+   Output: What number would you like to validate?:
+   Input: Number from the user
+   Output:
+      if(prime): Yes __ is Prime.
+      else     : No __ is not Prime.
+  Cycle through again until they enter a negative number
+
+
+  Under The Hood:
+    First implementation: BAsic Prime check
+      Check if Number is divisible by 2, or 3
+       then add two to the checking number until you get to the given
+       number.
+      If at any point the number is divisible by one of the checking numbers
+       then the number is not prime
+      If it reaches to itself - 1 and isn't divisible then isPrime
+
+    Correct Implementation: Algorithmic Approach
+      Implement an array of integers, using pointers for practice
+      Every time a prime number is found add it to the array.
+      If the given number is divisible by any of the numbers in the array
+       then it is not prime
+      Only checks while the number in the array is less than the square root
+       of the number to be checked. If it reaches this point then the number
+       is prime, and this cuts time by an exponential amount.
+      Internal check, if the number has already been added to the isPrimes
+       list then leave, but this technically can never happen since it checks
+       up to and including its square root...
+
+    Test inputs:
+     Primes(2, 3, 5, 7, 11, 13, 17, 104729)
+     Not Prime (104713, 12, 9)
+
+IsPrimeAlg function can be streamlined more with an update to populateSet function that runs up to the number that is being called, if it exceeds the threshold limit of the functions prior to it. It's current manner of working is not so much along the ways of fully functional as a prime way too far above it would be able to slip through the cracks...

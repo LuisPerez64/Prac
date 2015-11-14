@@ -1,0 +1,34 @@
+Program Specs:
+  The program is given a number, and takes that number and prints out what the 
+  number will be if you would want it to be printed out in conventional means
+  ie. 99 = ninety-nine, and so forth instead of nine nine.
+
+Interface:
+  Output: Welcome to the number printing program.
+  Output: Please input a number to make it come out as it is written...
+  Input: __numberToBeConverted__
+  Output: The number __numberToBeConverted__ is __convertedNumberString__
+
+Classes/Objects Used: N/A
+
+Under The Hood:
+  Pseudocode: 
+    Take the number that is input. Get the range it is in. 0-10, 11-99, 
+    100- 1000, 1000-10000, 10000-100000, 100000-10000000. Just getting 1-1000
+    working for now.
+    Take the number, find its range. modulo the number by the range construct,
+    after the range is found find the manner to put in the needed point into a
+    string. 
+    Divide it by 10 to get into the range that is below the given range at the 
+    time,and recursively, iteratively however I decide to do it, go until the 
+    number input dvided by 10 is 0, as an int will not hold 0.xxx.
+    Print out the constructed string.
+    
+  Algorithms Used: 
+    _inputVar_ % range / range /** to find the exact number.
+    _inputVar_ / range /** to get into the range that will follow.
+    It;s not so much to the point of being algorithmical, but more or less 
+    sensical in nature. Returning to write this in better after the code is 
+    constructed.
+
+  Special Cases: N/A, no division by 0, no exception handling. 

@@ -1,0 +1,21 @@
+/*Copyright 2015 Luis Perez*/
+// Purpose: Excercising the break and continue statements and exploitiing them
+#include <iostream>
+
+int main() {
+    int numberTest;
+    while (true) {
+        std::cout << "Number Tested: ";
+        std::cin >> numberTest;
+
+        if (numberTest > 10)
+            continue;
+        else
+            break;
+        // The break and continue combination limits the program and does not
+        // allow it to get to this point.
+        std::cout << "I should not be able to get her";
+    }
+
+    return 0;
+}

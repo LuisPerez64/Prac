@@ -1,0 +1,27 @@
+Program Specification:
+  The program is fed a character or string?, and returns to the user whether 
+  the input string at specified markers is a vowel or a consonant.
+
+Interface:
+  Output: Welcome to the is it a vowel or consonant simulator...
+  Output: Yes this seems pointless to write but who knows...
+  Output: Please begin input of the string of letters that you would like to 
+  	  check.
+  Input: getline(std::string, std::cin)
+  while {}
+  Output: __Letter at index__ is/isn't a vowel.
+  
+
+Classes/Objects Used: N/A
+
+Under The Hood:
+ PseudoCode: N/A
+ 
+ Algorithms: If char == {a, e, i, o, u, y?} print out is vowel else isn't
+ 
+ Special Cases: N/A (May Change with syntax)
+
+ Functions Used: 
+ void runIsVowel(void)
+ bool isVowel(char)
+  	  

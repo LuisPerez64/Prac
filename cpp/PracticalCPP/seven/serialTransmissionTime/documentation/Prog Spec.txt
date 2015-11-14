@@ -1,0 +1,35 @@
+Overhead Specification:
+  A series transmission line cna transmit 960 bytes per second. Write a program
+  that will calculate how long it will take to send a file, given the file's
+  size, input from the user.
+
+Interface:
+   Output: Input the speed of the transmission, in bytes per second:
+   Input: bytesPerSecond
+   Output: How big is the file that will be getting sent, in MB
+   Input: sizeOfFile
+   Output: Given the file size of __ MB it would take 
+   Output: Print out Years/Months/Weeks/Days/Hours/Minutes/Seconds
+
+Under The Hood:
+   Convert the MB file into bytes, unsigned long int should be enough.
+   Divide that value by bytesPerSecond to attain the amount of time it'd take
+     in seconds to transmit that
+   Run through a basic conversion point, outlining this change by max numbers
+   If it's past a year bring in the value of the year->months->weeks->days
+     ->hours->minutes->seconds
+   Output only the values that are past 0 to the user.
+
+   Wrap this around a while loop, hold a function that makes everything work as
+     they ned to. 
+   Values to be used in the conversions.
+     Year 365 Days
+     Month 30 Days ~~ Baseline point it 30.4 Days evenly split
+     Week 7 Days
+     Day 24 Hours
+     Hours 60 Minutes
+     Minutes 60 Seconds
+     
+    
+     
+

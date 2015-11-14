@@ -1,0 +1,28 @@
+Program Specification: 
+  Write a procedure that counts the number of words in a string. Documentation
+  should reflect what the coder considers to be a word. Write a wraparound
+  program for this to test the function.
+
+Interface: 
+ Output: Welcome to the string words counter.
+ Output: Please input the string to check for words.
+ Input: _stringOfChars_ /**User inputs a string of characters.
+ Output: The strings has _numberOfWords_ words, they are:
+ Output: while{} Output the strings that are words. /** May not do this. 
+
+Under The Hood:
+ Pseudocode:
+  Take in input from the user. Go through the input, and if met with a space,
+  dash, or underscore, then what follows is a new word. Print out the new word.
+
+ Algorithms: N/A
+ 
+ Special Cases: 
+  Possibility for out of bounds errors, have to structure it to make this not 
+  happen.
+
+ Functions Used: 
+  void runProgram();
+  int wordCount(std::string);
+
+ 

@@ -1,0 +1,154 @@
+Directry for the Practical C++ Book 
+
+
+Part One: The Basics
+
+One ~ What is C++ 
+    Introduced in 1980 by Bjarne Stroustrop, initially known as C with Classes
+    Allowed the programmer to group neded statements, and procedures that 
+    worked with a certain data set within the points known as clases.
+    Computer programs consist of tow main parts, data and instructions.
+    The chapter mainly goes on to speak about the way that the computer stores
+    data and how it is then manipulated.
+    Introduces the concept of control statements, and what their uses are.
+    
+    No programs written for this section.
+
+	
+Two ~ The Basics of Programming Writing
+    This section went over the points of focuse that are employd in the process
+    of wrting code.
+    Goes over the roles of all the different cogs that go into making a program
+    readable and executable for the command line, and also shows basic 
+    program, helloWorld, and how to start its definition, and use.
+
+    One ~ hello World
+	Two ~ Bring in Source Code from other locations and hten run the source 
+    	  code on the machine.
+
+
+Three ~ Style
+	This section goes in your code, and what could be done with regards 
+	to streamlining this information for future use of the code, and 
+	a lot of the basic formats that one could employ directly with the moving
+	forward of some of these concepts. Revision history, and so on, and 
+	somewhat as importantly what your code does and how it goes about doing
+	that.
+	
+	No programs for this section, did hold some discussions to be addressed.
+
+	Websites given:
+		for further open Source Code www.gnu.org
+    	Elements of Style www.oualline.com
+
+		      
+Four ~ Basic Declarations and Expressions 
+	Introduction  to functions and basic modularity, and its purposes, with 
+	regard sto the writing of the given code samples.
+	
+	Introduces the way to represent and express special characters:
+	Octal : \nnn // Where n is a number from 0-7
+	Hex: \xNN  //Where N is a value from the given standard definition 0->F	
+	Return: \r  // Returns to the beginning of the current line.
+	Form Feed: \f // Moves the cursor to the top of a new page.
+Note::Need to use form feed and return in a program itself to see how they work.
+	
+	One: Print out name, social, and the such
+	Two: Print out the letter E in big Block Letters, built with *
+	Three: Area and perimeter calculator, must work for both floats and ints.
+	Four: Big Block Letters Hello
+
+
+Five ~ Arrays, Qualifiers, and Reading Numbers
+	Within the context of indexed locations, such as within strings, arrays,
+	data structures, it is better to use .at() tha the [] index manner
+	This is due mainly to the point of the [] allowing one to go out of range 
+	while at, will throw an exception, and shut down the program, if thats
+	what we want it to do...
+
+	One: Celsius to farenheit conversion
+	Two: Calculation of the volume of a sphere
+	Three:Perimeter calculation for a rectangle
+	Four: Conversion of kilometers per hour to miles p/h
+	Five: Take hours and minutes and convert them to just minutes
+	Six: Take minutes and convert them to the needed hours and minutes
+
+
+Six ~ Decision and Control Statements
+    Introduces the branch statements, and exemplifies a lot of their uses 
+    Also delved shortly into the point of how to use those statements to 
+    solve some basic mathematical functions.
+
+    One: Letter Grade calculator, no safety nets
+    Two: Letter Grade calculator, added the (+, ,-) functionality
+    Three: Dollars to Cents Calculator
+    Four: Leap Year Calculator
+    Five: Groos Pay Calculator, does not in any way include taxes...
+
+      
+Seven ~ The Programming Process
+
+
+
+Part Two: Simple Programming
+
+Eight ~ More Control Statements
+
+Nine ~ Variable Scope and Functions
+
+Ten ~ The C++ Preprocessor 
+
+Eleven ~ Bit Operations
+
+
+
+Part Three: Advanced Types and Classes
+
+Twelve~ Advanced Types
+
+Thirteen ~ Simple Classes
+
+Fourteen ~ More on Classes
+
+Fifteen ~ Simple Pointers
+
+
+
+Part Four: Advanced programming Concepts 
+
+Sixteen ~ File Input/Output
+
+Seventeen ~ Debuging and Optimization 
+
+Eighteen ~ Operator Overloading 
+
+Nineteen ~ Floating Point 
+
+Twenty ~ Advanced Pointers 
+
+Twenty One ~ Advanced Classes
+
+
+
+Part Five: Other Language Features
+
+Twenty Two ~ Exceptions 
+
+Twenty Three ~ Modular Programming
+
+Twenty Four ~ Templates
+
+Twenty Five ~ Standard Templates Library
+
+Twenty Six ~ Program Design
+
+Twenty Seven ~ Putting it All Together
+
+Twenty Eight ~ From C to C++
+
+Twenty Nine ~ C++'s Dustier Corners
+
+Thirty ~ Programming Adages
+
+Extra ~ Rules enacted by self, and possible bonus codes
+

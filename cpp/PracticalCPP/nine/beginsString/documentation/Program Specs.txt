@@ -1,0 +1,28 @@
+Program Specification: 
+ Write a function that takes in two strings. Takes those two strings and if the
+ second string is a compound function, with the first string being a part of it
+ and produces a boolean based on the result of that to the caller.
+
+Interface:
+ Output: Welcome to the string comparison poin function. 
+ Output: Input the first string:
+ Input: _stringOne_
+ Output: Input the second string:
+ Input: _stringTwo_
+ Output: if{} /* True: _stringTwo_ Is a compound string of the first string.
+ 	      /* False: _stringTwo_ Is not "^^"
+ 
+Under The Hood:
+  Pseudocode: 
+   If the second string is shorter than the first then skip straight through, 
+   return false. Run through the strings, comparing each character, if they at
+   any point deviate, based on the length of the first string, then return 
+   false, else return true.
+
+  Algorithm:
+   String comparison through iteration.
+ 
+  Functions Used:
+   void runStringComparison(void);
+   bool stringBeginsFunction(std::string stringOne, std::string stringTwo);
+

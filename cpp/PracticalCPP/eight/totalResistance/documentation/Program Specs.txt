@@ -1,0 +1,44 @@
+Program Specification:
+  The program will take in a variable length amount of resistors values, and 
+   output to the user the total resistance of these resistors in parallel.
+
+Interface:
+  Output: Begin input of the resistor values. When finished input 0.
+  Input: resistorValue // Calculate total resistance on each input, past first.
+  Input: 0 // Exits
+  Output: Total resistance value of __n__ resistors is __totalResistance__.
+  
+Classes/Objects Used: 
+  Struct resistor {
+   int numerator;	
+   int divisor;
+   };  
+
+Under The Hood:
+  Algorithms:
+   Parallel Resistance Formula:
+     1/R = 1/R(1) + 1/R(2) + ... + 1/R(n)
+     R = (Inverted Right Hand Side values after normalization)
+       eg.:
+         1/R = 1/400 + 1/200 == 1/400 + 2/400 == 3/400
+	 R  = 400/3
+    Simple math formula: Adding fractions.
+      Find the least common denominator. Try and do algorithmically
+     	 
+  Functions Used:
+    main() // No arguments
+    runResistanceCalculator() // Runs the actual calculator;
+    // Amasses the resistance so far. Returns the resistor to be used in next
+    // calculation.
+    resistor getTotalParallelResistance
+      (float firstResistance, float secondResistance)
+    // Finds the least common denom for the functions to be used. Returns it. 
+    void findLeastCommonDenominator
+      (resistor &firstResistor, resistor &secondResistor)   
+    // Brute force manner of attaining the divisor.  
+    int bruteForceLCD 		
+      (int firstResistor.divisor, int secondResistor.divisor)     
+    // Brute Force manner of attaining the number to make the fraction as small
+    // as possible.
+    int bruteForceGCM
+      (int denominator, int numerator);  

@@ -1,0 +1,88 @@
+These are the points that should be within the program specs, will grow as
+ needed. Everything past the specs may be best to do on paper then transferred
+ at a later date. A bit less cumbersome, but may be better in the long run.
+ If flow charts and things of the sort are needed, then they can be hand drawn,
+ and incorporated through pictures. Need to get better at all this.
+
+Nomenclature: 
+  Some of the points that have become a bit off on the end of consistently
+  being used, so going to keep them, if they work out, and make them the norm,
+  They proceed::
+    _varName_ : depicts an operation involving a given variable
+    loopConstruct{} : The action will take place within a loop
+    /** : A comment within the text file.
+
+
+Program Specification: 
+ General overview of what the program is to do, specifics added as needed.
+
+
+Interface:
+ Output / Input operations that will go on, modified as the program needs 
+  them. This does not go too deep into details, can outline if the operation is
+  within a loop, and if statements. This can go into the control flow of the
+  program but nothing too indepth, no algorithms, no overtly specific points.
+
+
+Classes/Objects Used:
+ Goes in and defines the classes that will be getting used, and the functions
+  that are going to be getting used within the class as well. Goes in depth 
+  with regards to the inheritance points, and what functions are wanted to be 
+  inherited into the fall throuh funcitons, and what will be added to it as 
+  well. Adapts as the program grows.
+
+
+Under The Hood:
+ Sections: Expand as is needed.
+   Pseudocode: Always try and make this section exist, even if it seems  
+     pointless. If you can write it in plain english then you are halfway to 
+     being able to tell the computer how to do it. Yes the interface is sort of
+     telling y9ou what the user interacts with, but knowing what you will 
+     actually be trying to do will help you in more ways than not.  	   
+
+   Algorithms: Mathematical/non-Mathematical functionalities for the program.
+     This can go in depth with the formulas that will be used to make the code 
+     work as is needed. Even if it's just (n = oldValue + newValue) state them
+     here in pseudo-code, or code if possible.
+   
+   Special Cases: exceptions, assertions, possible outcomes that may come about
+     due to misuse of the given program. Things of this matter. Mainly used in
+     code that will not just be tested by me, but good to make it a habitual 
+     thing, as it will help with things that are needed. What happens if user 
+     attempts to do something that is outside of the given means.
+
+   Functions Used: Outlines the functions that will need to be made to make the
+     given program work, and be done in a manner that is somewhat efficient.
+     Try and keep this updated as the program runs forward to not create too 
+     many un-needed functions. 'inline' when possible, less than 3 lines.
+   
+   Function Linking: Outlines what functions will be calling which of the
+     functions that are outlined in the section above. ie:
+       main - Calls runProgram. // Main is never more than 3 function calls.
+
+   Variables Used: Outlines the variables that are in use within specific 
+     functions. This is not needed at the moment. Comments are good enough, 
+     but would not hurt in keeping track of what things do. No need to place 
+     indexes or things of the sort, but key variables would be helpful.
+  
+
+Test Suite: 
+  User Input Tests: This is more or less the points that will be used by the 
+    user to test if the functions are working. Some of them within the realm of
+    mathematical based functions are values that are found for the functions 
+    that are found online. ie. if the program is checking for primes, attain 
+    primes, and test the program against that itself.    
+ 
+ Function Tests: The manners in which some of the harder functions are to be 
+    tested, or are tested. This is something that seems pointless, but is done
+    best with hard feeding the functions values that I believe at the time will
+    work with them, and doing this within the imp.cpp side source code.
+
+
+Changes to The Original Specification:
+  Note the changes to the specs, even if they are outlined above, state the 
+   changes here, and make a habit of doing so everytime, even if it's changing 
+   the formula for the program, or if it's adding in an internal statement. Put
+   it here. Try and date it as well to keep things in line. May only need to
+   be done if the changes are made to the program in the future, but make it a 
+   habit irregardless.

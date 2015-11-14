@@ -1,0 +1,319 @@
+Alduos Huxley: # of Books 1
+Brave New World
+
+Alfred Hitchcock: # of Books 1
+The Best of Mystery
+
+Alice Sebold: # of Books 1
+The Lovely Bones
+
+Allan Folsom: # of Books 1
+The Day After Tomorrow
+
+Anna Sewell: # of Books 1
+Black Beauty
+
+Arthur Golden: # of Books 1
+Memoirs of A Geisha
+
+Betty Smith: # of Books 1
+A Tree Grows in Brooklyn
+
+Bill Bryson : # of Books 1
+A Short History of Nearly Everything
+
+Bill James: # of Books 1
+Wolves of Memory
+
+Boris Pasternak: # of Books 1
+Doctor Zhivago
+
+Brad Meltze: # of Books 1
+Dead Even
+
+Brad Thor: # of Books 1
+Full Black
+
+Butterworth: # of Books 1
+Discover The Power Within You
+
+Catherine Coulter: # of Books 1
+Split Second
+
+Chinua Achebe: # of Books 1
+Things Fall Apart
+
+Chris Ryan: # of Books 1
+Greed
+
+Christopher Priest: # of Books 1
+The Prestige
+
+Claudia Rankine : # of Books 1
+Citizen
+
+Dan Brown: # of Books 5
+Angels and Demons
+Deception Point
+The DaVinci Code
+The Lost Symbol
+
+Dave Pelzer : # of Books 1
+A Child Called It
+
+David Baldacci: # of Books 2
+Simple Genius
+The Winner
+
+Dennis Lehane: # of Books 1
+Mystic River
+
+E.B. White: # of Books 1
+Charlotte's Web
+
+Edgar Allen Poe: # of Books 1
+Edgar Allan Poe Reader (Go Into This One)
+
+Elizabeth Acevedo: # of Books 1
+Birth Marked
+
+Evelyn McFarlane & James Saywell: # of Books 1
+If...
+
+F.W. Dixon: # of Books 1
+While the Clock Ticked
+
+Fernand Hayward: # of Books 1
+The Inquisition
+
+Harper Lee: # of Books 1
+To Kill A Mockingbird
+
+Homer: # of Books 1
+The Iliad Of Homer
+
+Ian Flemming: # of Books 1
+From Russia With Love
+
+Iris Johansen: # of Books 2
+Body of Lies
+Dark Summer
+
+J. Robert King: # of Books 1
+Lancelot Du Lethe
+
+Jack Higgins: # of Books 2
+Flight of Eagles
+The Wolf at The Door
+
+James Dashner: # of Books 1
+The Maze Runner
+
+James Patterson: # of Books 8
+1st To Die
+Double Cross
+Four Blind Mice
+Honeymoon
+Merry Christmas, Alex Cross
+Step on a Crack
+The Big Bad Wolf
+The Quickie
+
+Jamie Ford: # of Books 1
+Hotel on The Corner of Bitter and Sweet
+
+John Grisham: # of Books 12
+A Painted House
+A Time to Kill
+Bleachers
+The Appeal
+The Associate
+The Chamber
+The Client
+The Innocent Man
+The Rainmaker
+The Street Lawyer
+The Summons
+Theodore Boone: The Accused
+
+John Steinbeck: # of Books 2
+Grapes of Wrath
+Of Mice and Men
+
+John Twelve Hawkes: # of Books 1
+The Traveller
+
+Jonathan Kellerman: # of Books 1
+Bones
+
+Jules Verne: # of Books 3
+A Journey To The Center of The Earth
+From The Earth to The Moon
+Twenty Thousand Leagues Under The Sea
+
+Katherin Howe : # of Books 1
+The Physick Book of Deliverance Dane
+
+Knorr Schell: # of Books 1
+Mooring Against the Tide
+
+L.J. Smith: # of Books 1
+The Vampire Diaries
+
+LaVyrie Spencer: # of Books 1
+Then Came Heaven
+
+Lee Child: # of Books 4
+Echo Burning
+Persuader
+The Affair
+The Enemy
+
+Lemony Snicket: # of Books 1
+The Bad Beginning
+
+Leo Tolstoy: # of Books 6
+A Happy Married Life
+After The Ball
+The Death of Ivan Ilyich
+The Kreutzer Sonata
+Two Hussars
+Yardstick
+
+Lisa Jackson: # of Books 1
+Malice
+
+Liv Spector: # of Books 1
+The Rich and The Dead
+
+Lorraine Hansberry: # of Books 2
+A Raisin in The Sun
+To Be Young, Gifted and Black
+
+Malcolm Gladwell: # of Books 1
+The Tipping Point
+
+Marcus Luttrell: # of Books 1
+Lone Survivor
+
+Mark Twain: # of Books 1
+The Adventures of Tom Sawyer
+
+Michael Connelly: # of Books 1
+The Drop
+
+Michael Crichton: # of Books 1
+Congo
+
+Michael Palmer: # of Books 1
+The Last Surgeon
+
+Muriel Barberry: # of Books 1
+The Elegance of The Hedgehog
+
+National Federation of The Blind: # of Books 1
+Recipes That Touch Your Heart & Soul
+
+Neal Stephenson: # of Books 1
+Snow Crash
+
+Nicholas Sparks: # of Books 1
+The Guardian
+
+Noel Botham: # of Books 1
+The Book of Useless Information
+
+Nora Roberts: # of Books 3
+Blue Smoke
+Homeport
+Innocent in Death
+
+Oreilly: # of Books 7
+Algorithms in A Nutshell
+C# in a Nutshell
+C++ Pocket Reference
+GDB Pocket Reference
+LINUX Pocket Guide
+LINUX in a Nutshell
+Practical C++ Programming
+
+Oscar Wilde: # of Books 1
+The Picture Of Dorian Grey
+
+Patricia Cornwell: # of Books 3
+Isle of Dogs
+Port Mortuary
+Predator
+
+Phillip Pullman: # of Books 1
+The Golden Compass
+
+Phillip Roth: # of Books 1
+The Human Stain
+
+R.L. Stine: # of Books 2
+30 Tales to Give You Goosebumps
+Bad Hare Day
+
+Reginald McKnight: # of Books 1
+I Get On The Bus
+
+Robert James Waller: # of Books 1
+The Bridges of Madison County
+
+Robert Ludlum: # of Books 5
+The Ambler Warning
+The Arctic Event
+The Bourne Deception
+The Bourne Objective
+The Cassandra Compact
+
+Robert K. Tanenbaum: # of Books 1
+Counterplay
+
+Seth Grahame Smith: # of Books 1
+Abraham Lincoln: Vampire Hunter
+
+Shirley Tallman: # of Books 1
+The Cliff House
+
+Stephen Crane: # of Books 1
+The Red Badge of Courage
+
+Stephen Horn: # of Books 1
+In Her Defense
+
+Stephen King: # of Books 3
+Danse Macabre
+Different Seasons
+The Green Mile
+
+Stieg Larson: # of Books 4
+The Girl Who Kicked the Hornet's Nest
+The Girl Who Played With Fire
+The Girl With The Dragon Tattoo
+
+Sue Monk Kidd: # of Books 1
+The Secret Life of Bees
+
+Suzanne Collins: # of Books 3
+Catcing Fire
+Mockingjay
+The Hunger Games
+
+Thomas Hardy: # of Books 1
+The Mayor Of Casterbridge
+
+Tom Brokaw: # of Books 1
+The Greatest Generation Speaks, Letters and Reflections
+
+Tom Clancy: # of Books 1
+The Hunt For Red October
+
+Vacca / Gove: # of Books 1
+Reading and Learing to Read
+
+W.M. Pauly Young: # of Books 1
+The Shack
+
+Total Number of Books: 146

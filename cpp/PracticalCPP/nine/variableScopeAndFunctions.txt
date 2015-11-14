@@ -1,0 +1,342 @@
+This will be dealing more in depth with the locality of a variable once it has
+ been declared. The differences between global and local scope objects, and the
+ manners in which said objects affect each other. Before nything else is said. 
+ It is extremely bad practice to have a variable declared within the scope of 
+ another variable with the same name, even if placing said variable within the 
+ local scope of it's own.
+
+ Scope and Storage Class.
+  Variables have two attributes. Scope and storage class.
+   
+   Scope: The area of the program where the variable is valid.
+     Generally branches off into the realm of (global,local) variables.
+      The scope of a variable, that has not been declard globally is usually
+      limited to the ({...}) that encapsulates them, known as blocks.
+
+      Gloabal Variables: Can be accessed anywhere within the given source code.
+        Should in my opinion be saved for the use of macros/const's, but
+	anything can be declared within the gloab scope of a program.
+      
+      Local Variables: Can be accessed only within functions, that declare them
+        , or within the blocks that encapsulate them, conditional statements
+	ie: while(true) { int sauce(0); } /** When out the while, sauce dies.
+     
+     If the first advice is not met, in the form of not declaring a variable 
+       with the same name as one declared globally, then the local scope in 
+       which it is declared takes precedence over the variables global scope,
+       and does not in any way affect it. Again this is bad practice. 
+       The scope of that same variable can be nested, and within that scope 
+       again takes precedence over the variable at the level above it. This can
+       be, but should not be, repeated as many times as is needed.
+    
+    Storage Class: /** See program programExamples/permanance.cpp
+      The storage class of a variable can be either temporary or permanent.
+      	Temporary: Exists only within the scope of the function that has 
+	 created it. Once out of the scope of that function that variable 
+	 ceases to exist.
+	Permament: Exists from the point that they are initialized, until the
+	 program stops working. Gloabl variables are always permanent. 
+	 Variables prefixed with the keyword STATIC are also permanent. These
+	 can be initialized from within whatever point the user would like to
+	 , but they still stay within the scope of the function that has 
+	 called them, they are just not reinitialized should that function call
+	 upon them again.
+
+    For Loop(Special Case): Any variable that is declared, or initialized 
+      within a for loop, is within the scope of that for loop. It is the same
+      as placing the variable declaration within the curly brackets that could
+      encapsulate a while loop. As soon as the scope of the for loop is exited
+      that initialized variable is out the window. ie:
+      for(int count(0);count <3; ++count) 
+        sum+=count
+	/** Past this. count does not exist, in the same manner.
+
+	     
+ Namespaces.
+  C++ allows us to declare varibales within a namespace ie. std::cout
+   tells the preprocessor to look for the definition of cout within the
+   namespace std. This is a powerful tool for organizing functions, and values
+   into what they need to be organized into. It helps us shorten variable names
+   by allowing us to instead of placing istream cin, everytime we want to input
+   a variable, we can just use std::cin, as cin & cout are members of the 
+   std family/namespace.     
+
+/** Don't understand vvv Too Much.
+/** Update. Thank God for StackOverflow. -- See namespace.cpp 
+  Global Namespace: If the coder does not state a given namespace to the
+   variable that they are using then the processor assigns the variable a blank
+   namespace. Looks like ::global = 45; Assigns the value 45 to that variable
+   which is declared outside any namespace declaration. This ::var is used if
+   the variable that is wanted to be used was deigned global, but is within 
+   the scope of another function, that has created a local variable with the 
+   same name.
+  
+  
+  File Specific Namespaces: C++ Has safeguards for conflicting namespace types,
+    and while working within a file, that a programmer may want to group into 
+    it's own namespace, the blank namespace can be used, and the preprocessor 
+    will deal with the namespace conflicts that may arise on its own. ie.
+    the coder makes the namespace myFileVars {...} under which they create 
+    functions, and variables of their own namespace. The namespace {...}
+    tag allows the compiler to handle these things for the user itself. Taking
+    the possibility of duplicate namespaces, and conflicts away.
+
+  Nested Namespaces: It is not in any way against the standards in place to
+    go ahead, and nest namespaces. They are accessed in the same manner that 
+    they would be accessed. Lets say we create this: 
+      namespace foo {
+        namespace man {
+	  namespace chu {
+	   void bar(int)
+	    } } }
+      The variables/functons within the lowest level namespace can be accessed
+      with foo::man::chu::bar(), and so on for the functions above/below it.
+  
+  The using Statement: The all inclusive manner to get some shorthand into 
+    the given code. There are many manners to get this shorthand into the code
+    within the bounds of normalizing it's use. This is useful within a small 
+    program as the modules that are being used will very likely not conflict, 
+    but within a larger code, this could cause problems, and confusion. There
+    could be multiple functions that share the same name, but would within 
+    different namespaces react differently. In short, avoid using *using* as 
+    much as possible as it could in itself lead to hard to read code.	
+    The two seperate manners that are the main differentiators are:
+      
+      using std::function/variable: This manner imports, and allows the user to
+       without the given fully qualified name, access that function within the
+       program. ie.
+         using std::cout; 
+	 cout << "This will work."; /**This shortens the amount of code that 
+	      	       	    	    needs to be written by the user in itself.
+	 cin >> _varName_; /** This will not work. The compiler does not know
+	                        where this module in itself is.
+	
+      using namespace _namespace_: which imports all the names, and validates
+       the functions/varibales that are being used, without the need for the
+       standard namespace abbreviation that is being given directly. ie.
+         using namespace std; // import all functions/vars within this module.
+      	 cout << "This will work."; /** same as above.
+	 cin >> _varName_; /** Unlike above this will also work, as the whole 
+	                      module has been imported.
+
+ Functions: The bread and butter of most programs. Yes they are the functions.
+   Will you be using the same thing more than once, and don't feel like
+   rewriting it twenty times. Stick it in a function. There are many different 
+   types of functions, the main one,... Yes I know that was bad..., is main.
+   It is called after the preprocessor has done all the things that need to be 
+   done, and is the first function that is called when a program is run. 
+   Without a main, the compiler does not know where to start, and will not
+   compile. 
+   
+  
+  A function is made up of some, at its core, basic points. The points are
+   returnType functionName(functionParameters) { 
+     /** Function Body
+     ...
+     return(/**empty if void, else the value being returned.);
+    } 
+
+  returnType: Thisis what the function hands back once it is finished doing 
+   its job. It can hand back nothing with the function being declared void, 
+   an int, as string, a coder created construct. It can return a pointer if 
+   so needed, but this will be addressed at a later point.
+  functionName: This is what the coder inputs to invoke the function. It is
+   a marker of sorts to the compiler that tells it when it sees this label, it
+   should jump to the given symbol, and continue from there.
+  functionParameters: A function can be handed as many parameters as is needed.
+   Be it 0 or 100, there are limitations, but the chances of meeting them are 
+   beyon slim, unless the program that you are writing is to become extremely
+   convoluted.
+  Function Body: This is where all that is done is done. Processes the given
+   information that is handed to it, and then comes the return statement.
+  return(...);: This is where the coder sends back to the program what is 
+   asked of it initially. If the function returns void, then the coder can
+   omit this statement, or omit the arguments that it is sending back out.
+   It's a good practice to always have the return statement, and also to try 
+   and keep the returns to as minimal as possible, personal caveat.  
+
+  Before writing out the function itself, it would be beneficial to outline
+   the functions purpose, and what each of the parameters will be used for to
+   the user. Yes this is tedious, but it will help with duplicating functions
+   in larger programs, and will also keep the coder from being confused when 
+   they look at the code in the future, even if the comments should flow, and
+   make what the functions do be simple enough to assess. It will also help
+   with writing the function out, if you already know what the function itself
+   will be doing, and how it will be doing it.
+
+  There is one small caveat. If a function is to be used, before it is written
+   out in itself, the user needs to provide the compiler with a function 
+   prototype. As in tell the compiler what the function will need to work, 
+   prior to actively using it. This is done in the manner of:
+    returnType functionName(varType varName, varType varNameTwo);
+   The semicolon at the end tells the compiler that should it meet with any
+   functions with the same name as the one that was outlined, that they will
+   be declared later on, and to look for the functions body within the code 
+   that is given to it. 
+  
+  The point that is somewhat escapish in the world of function declarations, 
+   and definitions are the points of making sure that the parameters that are 
+   being passed to the function, if there are any are validated, before they 
+   are used. Not only thorugh the use of assertions,but also exception handling
+   as well. These things will keep the code flowing, and keep weird glitches 
+   from popping up, yes it seems tedious, and may add a quarter of a nanosecond
+   in testing, but they can be removed if the problem that they pose cannot 
+   happen under normal operations.
+
+  There are multiple ways to control the manners in which a function handles
+   it's parameters. Two of the most used manners are pass by value, and pass
+   by reference. These two points are a lot alike yet, extremely different.
+   Both allow you to manipulate the variables while within the function, but 
+   one of them comes with the added bonus of altering the variable that has  
+   been passed in itself. This is pass by reference, which allows the function
+   to work on the actual variable, and not a copy as pass by value does, and
+   work on the value that is in the given address of the variable within the 
+   stack. This could be extremely useful, when the coder needs to pass back to
+   the caller multiple altered variables.
+
+  Namespaces and Function: Functions written within a namespace hold the same 
+   points of focus as those written outside of them. The main difference that 
+   they hold is that they have to be accessed in the manner of
+    namespace::function(), from anywhere outside the namespace itself.
+
+  Special Cases Within Functions:
+   const Parameters and Return Values: The keyword const, when used within the
+     confines of the function parameters. If passing in a parameter by refernce
+     this becomes a good manner of making sure that the data within it is not 
+     changed in some manner. This may seem pointless, but imagine passing in 
+     a vector of 1M strings. Copying the vector over would be a waste of time,
+     if there are no operations to be done on the vector itself, such as 
+     altering it, maybe just printing out its contents, then passing by 
+     reference is preffered, as it always is, but adding const to this passing
+     flag would help alleviate some of the strain on time, or memory usage that
+     may arise. Parameters that are passed const cannot be changed within the
+     function that is workig on them. An attempt to do so would lead to an 
+     error within the compilation stage of the program. Copying their contents
+     and working from there could be done though with no problem.
+     Return values can also be passed as const/**-ants */, but under most cases
+     this is seen more as a decoration than an actual thing that is needed. 
+     Will go into detail on some of the cases in which it is actually 
+     functionally preferred.  
+
+   Reference Parameters and Return Values: 
+    Passing in the address of the value as the parameters for a function
+     and having the program work on the value itself, is again called passing a
+     value by reference. This is as explained above an efficient manner of 
+     handling large objects. This is essentially giving the same variable 
+     address location, another name temporarily, and working on it from another
+     point. 
+     See programExamples/functionMaker.cpp/** Holds function examples above.
+
+    I have never used a reference as a return value before. Note heavy section.
+    Reference values as the returns from functions seems to be useful when
+     working with arrays/vectors/(things that manage memory points).
+     These reference pointers can be passed back bare, or they can be assigned
+     const value points. If these values are passed back bare, then the value
+     in that address can be changed with simple assignment operations.
+     If the function: 
+      int& biggest(int arr[], int nElements); is called then
+      biggest(...) = newValue; can be done and alter the points in the 
+      indexed memory address. 
+     If the coder however calls forth the function: 
+      const int& min(int arr[], int nElts); There can be no left hand 
+      assignment operations done on the address. This, min(...) = newValue;
+      would yield a compilation error.
+  
+   Dangling References: Sometime when working wiht references we may mistakenly
+    send back a reference to something that no longer exists, such as a 
+    temporary variable that is created when calling a function without an 
+    assigned value. The processor may just go ahead, and trash that referenced
+    value as soon as the function call has been made, and executed. Leaving
+    a reference to an address that has been handed back to the system.
+
+   Array Parameters: C++ Treats arrays a little differently when passing them 
+    into a function.IT uses the point called, *call by address* to pass the 
+    arrays. This is turning every indexed point in the array into a reference 
+    and works on the addresses themselves within the function. As long as the 
+    array that is being passed is not multidimensional then the user can
+    pass the array in without any parameter points for the size of the array.
+    If however a multidimensional array is passed, all points sans the last 
+    have to be given a direct value ie. array[2][2][]; is a legal syntax.
+    array[][] However is not, when passing it into a function.
+
+   Function Overloading: C++ Allows a feature that was non-existant in its 
+    older brother in the form of function overloading. Allowing the same 
+    name to be given to a function, but doing something different depending on
+    the function calls. /**Depicted in programExamples/functionOverloading.cpp
+    In the porgram that is referenced in the above sentence the compiler,
+    processor knows what is being passed into it, and matches it with the 
+    function that would yield the appropriate result. It is good practice to 
+    have these types of functions do roughly the same operations, so as not to
+    again cause confusion when reading through the given code. As long as the
+    compiler can differentiate between the function calls, it will not argue
+    but sticking to the above principle eases readability.
+
+   Default Arguments: When it comes to the C++ language a lot of the things 
+    that it can do, are meant to facilitate things for the user, but this often
+    times comes at the cose of readability, and accountability in the code that
+    is written. Lets say a function is declared:
+     void draw(const int width, const int height, double scale);
+     It can be called with draw(2 , 3, 1.0);
+     If there is a parameter that is oftentimes yielding the same input, lets 
+     say scaleis almost always 1, we can hardwire it into the definition. 
+     void draw(const int width, const int height, double scale = 1.0);
+     This would make the function calls: draw(2, 3, 1); and draw(2, 3); yield
+     the same internal points. If that last parameter is omitted then the 
+     default parameter is used. This seems simple, but makes it hard to 
+     distinguish if the user meant to make it 1.0 for scale, or if they forgot
+     to bring it in. 
+
+   Unused Parameters: If something is wihtin a function, and is not used
+    it yields a warning from the compiler stating that there is an unused 
+    variable within the function. This is the smae point that happens when a 
+    parameteer is passed into a function, and while within that function the
+    parameter is not used. The manners to circumvent the warning, if the 
+    variable is not being used at the moment is to omit the name of the 
+    variable in the function declaration/definition. The clean way to do this
+    is to comment out the variable name within the functions definition.
+    The reason for unused variables, instead of just leaving things void, is
+    that there are some functions that even if you do not use the variable
+    will give it to you, as a just in case situation. These are called callback
+    functions and they play a big role in the overall programming scheme when
+    handling certain events/things of the sort.
+
+   Inline Functions: If a function is written, and when written out produces a 
+    somewhat small ampount of code it may be better to declare it an inline 
+    function. This lessens the strain of the processor putting the program on
+    the stack, and doing the normal function operations in that manner. The 
+    keyword *inline* is used to hard code the function where it is called, 
+    instead of doing the above operations, causing less overhead to be employed
+    and easing some of the strain overall of the program. This is just a 
+    suggestion to the compiler, if it feels that this is not worth it, it will
+    ignore that keyword, and produce the normal function calling code to the 
+    user.
+
+   Summary of Parameter Types: Outlined in the book, chapter 9-2.
+
+   Recursion: When a program calls itself, within any context, even if buried
+    within another function that is called by the program initially.
+    Most things that can be done iteratively can be done recursively. There
+     just has to be some type of reason for it, it is more elegant looking the
+     solution, but it does not mean that it is the better manner of doing 
+     everything.
+    Recursive functions must follow two basic rules:
+     They must have an end point.
+     It must reduce the amount of work done each time it's called.
+    We as coders have to be wary of infinite recursion errors. In which the 
+    break point within the function is effectively never reached. 
+  
+  Structured Programming Basics:
+   There are a few schools of thought on the process that should be taken
+    when it comes to approaching the writing of a program. Some of them are:
+     Top Down Design: Outlining what you want things to do, then going from
+      the highest order function, and trickling down into the functions that 
+      it uses to work on things.
+     Bottom Up Design: Starts from the lowest order functions, the end game
+      makes sure that it works independently, and build up on that function.
+      Until main is the function that is being written.
+     There is no real right or wrong manner to code, it depends on the current
+      job at hand. Sometimes one is better than the other, but you will, 
+      ultimately, reach the same end points on both these manners, it will just
+      be reached differently.
+ 
+        

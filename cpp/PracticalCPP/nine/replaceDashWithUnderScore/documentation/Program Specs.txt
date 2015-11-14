@@ -1,0 +1,23 @@
+Program Specification:
+  Take a given string, and whenever a '-' is met replace with '_'
+
+Interface:
+  Output: Welocme to the dash replacement program.
+  Output: Please input the string to be evaluated/changed.
+  Input: _inputString_ /* String to be manipulated.
+  Output: if(){ /** String contained dashes: Produce changed string
+  	        /** produce, no dashes in string. No change.
+		
+
+Under The Hood:
+  Pseudocode:
+   Take in the string that user wants to evaluate. If the string contains 
+   dashes at any indexed location, replace that dash with an underscore.
+   If no dashes are met then state that the string remains unchanged.
+
+  Algortihms: String traversal.
+
+  Functions Used:
+   void runDashToUnderscore(void);
+   bool isChanged(std::string &); 
+ 

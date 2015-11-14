@@ -1,0 +1,15 @@
+#Ignore all files that have the format ending with .o, or .a
+*.[oa]
+
+#Ignore emacs little temp backup files, if all fails 
+*\~
+
+#Ignore the cahced changes file from updating, no autosave data
+*\#
+
+#Ignore pythons compiled flag files, compile anew everytime damnint
+*.pyc
+
+#Ignore directories themselves:
+__pycache__
+ProjectEuler

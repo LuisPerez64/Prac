@@ -1,0 +1,49 @@
+These are the sections that may or may not be needed within the header of a 
+  source file. This is used to keep some sort inert documentation, just in case
+  the actual specs are in some way lost. Also serves as a legal documentation
+  of the points that the user feels that he has put work into.
+
+Heading: The name of the program. With a short description of what it does.
+
+Author: This is you. The programmer. Put your name on it. Let it be known that
+  it is yours, and stops flagrant stealing at a corporate level.
+
+Purpose: The reason that you are writing the given program. Outlines again what
+  it will do. But this is more conceptually what you want it to do, or why you 
+  did it. To learn a concept? To apply a concept? Whatever it is give it 
+  purpose.
+
+Usage: How will the user interact with the program. On at least a basic level.
+  This is equivalent to the interface point that is outlined in the program
+  specs document. Theres no need to do a break down by break down here, but it 
+  will help in testing in the future if the people that are using your source
+  code know how to set up test suites for it, and also helps in isolating 
+  unwanted behaviors in your program.
+
+References: If any of the code that is used is copied in some way. Give credit.
+  There is a lot of open source codeon the net. There is nothing wrong with 
+  using it, as long as you test it first. This could also be someone giving you
+  a bit of help. Even in this. Give credit it goes a long way.
+
+File Formats: Does your program do any type of file manipulation? Is it 
+  branched off into multiple source/header files. Put all these files here.
+  Yes it should come with a Makefile, yes the Makefile will tell you what is 
+  supposed to be needed, but that doesn't mean that you shouldn't take the time
+  out to write these things in. IF it gets to the point where it's too many 
+  files being brought in then make a file that holds this information 
+  standalone, and place its name/location in this slot instead.
+
+Revision History: Keep track of the changes that have been made inteh given
+  file. It seems like it is cumbersome, and the IDE keeps track of most of that
+  for you, but so what. If it's there it will help, and theres nothing to be
+  lost in its existence. Also keeps things short and neat, and fully readable.
+
+Error Handling: How do I handle errors in this specific point. List possible
+  exceptions/assertions and how they are handled. If they cannot be fully 
+  safeguarded against.
+
+Copyright and License: "Copyright __year__, __Licensing info__"
+  Usually wanted at a corporate level. It isn't bad to place your own name for
+  projects that you are working on that are for your eyes, or for your own 
+  pleasure, but this is somewhat needed at all points. Other people could steal
+  your stuff, even if it's easy enough to prove why not add it.

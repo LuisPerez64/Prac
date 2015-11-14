@@ -1,0 +1,194 @@
+This will outline the points that are being done in each of the programs
+that are being pushed forward.
+{} Usually means a code snippet, will try nad keep it within proper context.
+Resource Sites:
+	 www.famitsu.com //Sprite Generator.
+
+One   ~ Hello
+      Introduced the game Window header syntax, and basic inclusions.
+      Outlines the format for sf::RenderWindow constructor
+      Takes the parameters, as known now:
+      Name (WindowType(x_size , y_size) , "Title in a string");
+      
+      Introduced the game window display loop.
+{
+      while(window.isOpen()){
+	sf::Event Event // Creates an event to monitor interactions.
+
+	while(window.pollEvent (Event)) //Activates if somethings happened
+          if(Event.type == sf::Event::Closed)
+	     window.close(); //Closes the window if any close event is met.
+        
+	window.display(); Displays whatever is needed to the window object
+      }
+}     
+
+Two   ~ RenderWindow Intro
+      Went into a few modifications to the RenderWindow Parameters
+      Added param sf::Style::(Given Types) // Indepth in the folder, but ie.
+       Name (WindowType(x_size , y_size) , "Title in a string",
+       	     sf::Style::Titlebar | sf::Style::Close);
+
+      added window.create( ~ Takes the same params as constructor ~ );
+      added window.setSize(sf::Vector2u (400, 400)) // Internal Resize.
+      added window.setPosition(sf::Vector2i (100, 100)) //Moves the window.
+      added window.getSize()//Relays the size of the window in vector form.
+        sf::Vector2u size = window.getSize();      	     
+Three ~ Time && Clock Intro
+      Manipulation of time, and implementations within basic bounds.
+      
+      sf::Time time // Introduces a controllable variable
+      Can hold time stored as sf::(seconds(), milliseconds(), microseconds())
+      Displays Time with var.asSeconds(), .asMilliseconds(), .asMicroseconds()
+      Best to do algebraic ops with eg: {
+      	      	 	       	          time += sf::seconds( value );
+				        }
+      Can accept arguments returned from clock class as value.
+
+      sf::Clock Clock //Introduces a clock	
+      Starts a clock within the program, may be able to set to sysTime?
+      Brings in the functions:
+      	     .getElapsedTime() //returns time since clock started running
+	     .clockRestart()   //returns elapsed time, and resets clock to 0.
+{
+	time = Clock.clockRestart(); 
+}
+
+
+Four  ~ Events Intro Overview
+      Short intro into what the sf::Event Event portion of the game window does
+      	    
+      Event.type //Checks the type of event that is being processed.
+
+      Introduced .waitEvent(Event). Instead of polling through in case an event
+      happens, will just wait until an event happens to continue runthrough?
+      
+
+Five  ~ Keyboard Events Intro Overview
+      Attaining and using the input that is brought in from the keyboard.
+      
+      Introduced .setKeyRepeatEnabled(bool)//Deals with key repeats...
+      
+      New Event types being handled:
+      	  sf::Event::KeyPressed  //Evaluates soon as key is pressed.
+	  sf::Event::KeyReleased //Evaluates when key is released, voids repeat
+	  
+	  Event.key.code ~ Returns the identity of the key that was pressed.
+	    sf::Keyboard::(KeyIdentity) //Brings in the sf identity to check.
+ 	  
+{ //Checks if the return key has been hit, and is in the event handle.
+	  Event.key.code == sf::Keyboard::Return 
+}	  
+
+
+Six   ~ Mouse Events Intro Overview
+      Mouse interactions with the game window in the form of events.
+      First Implementation of switch() with Event.type
+
+      Introduced the mouse class? Events
+      sf::Event::MouseEntered //Mouse came into game window
+      sf::Event::MouseLeft    //Mouse left the game window
+      sf::Event::MouseMoved   //Mouse has moved within game window
+        Event.mouseMove.(x || y) //Returns the position of mouse within window
+      
+      sf::Event::MouseButtonPressed //A button has been pressed on the mouse
+        Event.mouseButton.button == sf::Mouse::(Button Identity)
+	Event.mouseButton.(x | y) //Relays the location where button's pressed
+      
+      sf::Event::MouseWheelMoved // checks if the user has scrolled 
+        Event.mouseWheel.delta // Returns the change that was caused by scroll
+
+	
+Seven ~ Window Events Intro Overview
+      Brought in some window specific events.
+
+      Relayed control Events
+      sf::Event::GainedFocus // True if user clicks outside the window
+      sf::Event::LostFocus   // True if user clicks inside the window
+
+      sf::Event::Resized // True if a resize operation has been done on window
+        Event.size.( width || height) //Return the new width and/or height of 
+		     	      	      //The given window
+ 
+
+Eight ~ Text Events Intro Overview
+      Reintroduction to the keyboard relational events
+      Didnt really go too indepth on this point but sample code is good.
+
+      sf::Event::TextEntered // Evaluates as true if key is pressed.
+         Event.text.unicode //  returns the ascii code value of the pressed key
+     	      cast as a char to output (char)Event.text.unicode
+	        
+
+Nine  ~ Joystick Events Intro Overview
+      Can use the BT PS3 Controller to implement these points.
+      
+      Introduced Joystick Events:
+        sf::Event::JoystickConnected && sf::Event::JoystickDisconnected:
+	  Event.joystickConnect.joystickId //Relays which joystick has been
+	    plugged into the device. Look into other points of object.
+	sf::Event::JoystickButtonPressed && sf::Event::JoystickButtonReleased
+	  Event.joystickButton.button //Relays the value of button pressed, 
+            dependent on different controllers, and hardware implemented on.
+
+{//The above can be implemented as:
+       int attack; //Set a point to hold the returned value.
+       ...
+      case sf::Event::JosytickButtonPressed://Joystick button was pressed
+	  attack = Event.joystickButton.button;//If relayed button attack
+      break;
+      ...
+      switch(Event.joystickButton.button){
+	case attack:
+	     ...//Write in code for attacking
+	break;
+      ...
+}//This could be used to circumvent the different hardware points that arise.
+  	     
+        sf::Event::JoystickMoved:
+	//.axis relays the same point as button pressed, where its pointing.
+	  Event.joystickMove.axis //Checks for movement of the joystick itself
+	    sf::Joystick::(X|Y|...)//Relays which point the axis is moving on.
+	  Event.joystickMove.position //Relays change in joystick location 
+        
+
+Ten   ~ Displaying Images Intro 
+      Video indepth on sf::Sprite, and sf::Texture, not sf::Image
+      Texture objects are the pointers to the given images to be manipulated
+      Images need to be loaded into the pointer to be properly used as sprites.
+      Sprites are the images that are actively displayed to the window/user.
+      Sprites allow movement, resizing, and other operations on the opened img.
+      If the texture is at any time altered the sprite will be pointing to a 
+        pointer that is for all purposes null. They are handles to the img.
+      Implemeneted a jumping sprite in displayingImages.cpp
+	
+      sf::Texture nameVar;//creates an empty pointer.
+        //Should always do file checking to make sure that image is loaded in.
+        nameVar.loadFromFile("fileName.ext")//Can hold sf::IntRect() as param.
+	sf::IntRect(startX, startY, pixelWidth, pixelHeight);
+	  //Cuts a portion of the given texture and relays that to the sprite.
+	  //Implementation in displayingImages.cpp
+	  //right(x + width) and bottom(y + height) edges are excluded
+	  //from the created rectangles area.
+     
+      sf::Sprite spriteNameVar;//Creates an empty pointer as well.
+        //takes its value from the previously made sf::Texture object.
+	spriteNameVar.setTexture(nameVar);//Makes it a handle to the Texture.
+	spriteNameVar.setPosition(newXPosition, newYPosition);
+     		  
+
+Eleven ~ Sprite Sheet Animation
+       Went into animating the sprite based on the sprite sheet obtained.
+       Pretty striaght forward. Need to look more into the movement loop.
+
+       Introduced:
+         .setTextureRect(sf::IntRect(x,y, width, height))//Resize op.
+	 .getSize().(x|y)//attains the given variable from img.
+
+       Implemented movement through the use of KeyPressed event.  	 
+
+Twelve ~ Keyboard Input 
+
+Thirteen ~ Mouse Input
+Fourteen ~ Joystick Input
+Fifteen ~ Simple Shapes

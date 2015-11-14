@@ -1,0 +1,31 @@
+C-Style Strings
+  The normal manner or storing strings in C is inherited
+  with the cstring library in C++, this is used, as evidenced by
+  the file manipulation problem that I had with another program
+  to keep things moving forward when they need to. They must hold
+  an allocatable byte for the null character, that is somewhat
+  added automatically for us, with the use of std::strings::c_str()
+  function which converts a string into a c_string, adding the null
+  character for us in the process.
+
+  To write a c-string into another c-string, we have to use the
+  function strcpy(emptyString, stringToCopyIntoIt);
+  cannot do the basic string copy of C++'s String class so
+  emptyString = stringToCopyIntoIt; will not work.
+
+  I overall know this stuff on an over this point level, but the
+  underneaths are still rather interesting to me. Read up on it
+
+Functions at a base level:
+  std::strcpy(string1, string2); Copies string2 into string1
+  std::strcat(string1, string2); Appends string2 onto string1
+  std::strlen(string);           Returns the length of the string
+  std::strcmp(string1, string2); Returns 0 if they are equal
+                                 Returns (-)var if string1 < string2
+                                 Returns (+)var if string1 > string2
+
+C++ Strings tend to be way more convenient, and to work around them
+ and treat them as C-Style Strings is not too big of a forward leap
+ overall just use C++ Strings, convert when needed, and keep things
+ flowing smoothly with internal resizing, bounds checking, a plethora
+ of built in functions, and the list goes on and on.

@@ -1,0 +1,26 @@
+Program Specification for the Tax Calculation Progblem
+   User will input a specificed price, and a set value for the amount of tax
+    to apply to that specified price.
+   User will be able to applu a specified percentage to use as the tax.
+
+Interface:
+   Output: Welcome to the after taxes price calculator
+   Output: what is the taxation rate for this session?:
+   Input: Tax rate(float)
+   ****
+   What is the price of the item you wouldl like to apply this tax to?:
+   Input: Item price Pre tax
+   Output: Item with tax applied comes out to: 
+   Output: Would you like to check anoher item at this tax rate?:	
+   Input: y/n 
+      If yes run this function again, if no return to main, ask if they
+      would like to bring in another tax value
+
+Under The Hood:
+  basic while loop
+  Tax value is 1.00 + (percentage / 100) * untaxed value.
+  return that to the user, while loop in main runs again if needed 
+
+Algorithms: 
+  N/A basic mathematical formula
+

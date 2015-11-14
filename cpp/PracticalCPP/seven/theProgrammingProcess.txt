@@ -1,0 +1,85 @@
+Goes in-depth into the process that is taken in order to make a program and
+ it's maintenance cycle.
+
+ The major steps in making a program:
+   Assignment: The idea is born, now to find the people to make it real.
+   Requirements: The idea is already in place, so now comes part where
+     the theory itself is refined, and made actually practical with what the
+     initial thinker wants the program/app/script/etc. to do. This is a part
+     of the assignment process as well, as in this is where the idea thinker
+     finds the people that are capable of making his idea real.
+   Specification: Now we get into the realm of what the program is actually
+     meant to do. Starts with a bare-bone specification, that grows with the
+     program, through the cycle, to be more refined, complex, and fitting more
+     in line with what the designer wants from the program. As the spec grows,
+     it holds within itself most everything that the program itself is capable
+     of doing, and is basically a front end users guide to using the program.
+   Code Design: (Aka my worst habit of ignoring)
+     This is the part that comes before the actual coding, the use of
+     pseudo-code, flow charts, and overall planning as to how the code will
+     be structured, the algorithms that will be getting used to make the code
+     efficient, who will do what on a multi person project, discussions of
+     what languages will be used, and things of the sort take place here. This
+     is in some ways one of the most important points of the programming process
+     taking the helm over even the next stage which is the coding itself, due to
+     the fact that good planning will stop you from making unneeded redundancies
+     within the code, and will help with the streamlining of many points that
+     the user will then be able to benefit from. Even if you are speeding things
+     up by a half a second, over the course of a year, and multiple uses of a
+     program that half a second comes out to be, somewhat, substantial.
+   Coding: The heart of the process itself. This is where the program is written
+     The first time this is done, there will, and I repeat, there will be bugs,
+     unless you are a savant in this programming thing, and even then, it's hard
+     to find all the things that are wrong on the first run through. The next
+     step will help in this, but structuring things properly from here will help
+     eliminate unneeded programming in the long run, and make things better.
+   Testing: The first point of the programming process, after the code has
+     been written is the testing phase. Never submit something to QA without
+     first testing it yourself, especially if this is not the first revision
+     stage. After having tested the program out yourself you should have someone
+     else test it for you as well, be it a QA person, or a friend/coder, if the
+     purpose of the program is a general one then you can have anyone else test
+     it, and overview to identify bugs or anything else that may be needed in
+     the program itself. This can also help to make sure that the coder is going
+     in line with the specifications that were given to him, since sometimes
+     what the specifier wants, and what the programmer believes they want don't
+     exactly align the first, or hundredth, time. This helps with keeping the
+     initial vision alive and well. The book states that to code without any
+     bugs is optimal, but not realistic, and I tend to agree, which is why the
+     next step is essential as well.
+   Debugging: The identifying what I did wrong when I though that I did
+     everything correctly phase. Oh God how I love this phase... Said no
+     programmer ever. This is humbling honestly, since most programmers tend to
+     think that they are capable of writing perfect code the first time, and
+     they tend to run through, the simpler functions, with the thought that
+     making a simple mistake is above them, me included, and then we notice that
+     there is a comma missing... Yes, a freaking comma is missing. That is all
+     it takes...
+   Release: Once there have been sufficiently run debugging sessions, and
+     the program meets the general specifications outlined to the coder(s), then
+     the program is released to the masses, with as little bugs as possible.
+   Maintenance: Remember the as little bugs as possible point... There could
+     have been less, so back to it, essentially this is upkeep of the initial
+     code, which is more or less the main thing that is done industrially.
+     Upkeep of older code is more along the lines of what most new coders will
+     have to do, which is why documentation is key, comments are queen, and
+     consistency in your coding structure/planning will keep you from looking
+     like a fool.
+   Revising and Updating: After all things have been put to rest, bugs - so many
+     bugs..., we are finally able to make the program better, in the long run,
+     through new specifications, and/or features that are wanted by the initial
+     assigner. This is along the lines of a complete reboot, but still using
+     old code, no need to rewrite 100 million lines of code, just to add
+     two million more to it...
+
+  The synopsis of the above notes is this.
+    Plan things out before you start them, don't just go in programming
+    wily-nily, that leads to bad code, and crappy products.
+    The main thing that you will be doing as a programmer is rewriting old
+    code. There's not much new under the sun, but if you think it up, then
+    good luck to ya.
+    Documentation is King. Comments are Queen. Consistency in your code will
+    keep you from looking like a Pawn your whole life, and will maybe get you
+    to be a Rook.
+
+Example of this process will be held in the calc directory.

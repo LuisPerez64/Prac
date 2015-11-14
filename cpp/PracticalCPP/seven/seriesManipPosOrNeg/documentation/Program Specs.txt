@@ -1,0 +1,23 @@
+Program Specs for Series Manipulation Positive Negative Counter.
+ The program is given a list of numbers, and then subsequently counts how many 
+ of the numbers are positive and how many of the numbers that are input are
+ negative.
+
+Interface:
+   Output: How many numbers would you like to validate?: 
+   Input: numberOfVariables;
+   Output: Random numbers generated.
+   Output: From _numberOfVariables_ Numbers, there are __ positive __ negatives
+            
+Under the Hood:
+   Simple counter objects for positive and negative numbers.
+   Birng in a vector, push_back as much as is specified by the user, and then
+   count out the needed points by iterating through the vector, and counting 
+   the negative and positive numbers that have occured within it.
+
+Algorithms:
+   None really. Bringing in the needed vector container, bringing in the stdlib
+   for the random function, or may integrate the random library that is new to 
+   the C++11 Library past. Haven't really used it as of yet though so maybe
+   this is the perfect manner to do it forward.
+
