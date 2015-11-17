@@ -67,7 +67,7 @@ fi
 if [ $goToDir == 'y' ] || [ $goToDir == 'Y' ]; then
  #Here to make it so that the user can choose which dir to go to. If wanted,
  #and there are more than one matching sequences within the search.
- if [ $amountOfOccurences > 1 ]; then   
+ if [ $amountOfOccurences != 1 ]; then   
   echo "Are you feeling lucky? Selecting yes will go to the first found dir: "
  feelingLucky='\0'
  while [ $feelingLucky != 'y' ] && [ $feelingLucky != 'Y' ] &&
@@ -99,5 +99,3 @@ if [ $choice == 2 ]; then
 	done
     fi
 fi
-
-return 0
