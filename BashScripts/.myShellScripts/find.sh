@@ -31,15 +31,15 @@ done
 #Will do with files later. Branching on input from above. Search block.
 if [ $searchCurrentDir == 'n' ] || [ $searchCurrentDir == 'N' ]; then
     if [ $choice == 1 ]; then
-	find ~ -type f -name $inputVar 2> /dev/null > /tmp/findMe
+	find ~ -type f -iname $inputVar 2> /dev/null > /tmp/findMe
     else
-	find ~ -type d -name $inputVar 2> /dev/null > /tmp/findMe
+	find ~ -type d -iname $inputVar 2> /dev/null > /tmp/findMe
     fi 
 else 
     if [ $choice == 1 ]; then
-	find . -type f -name $inputVar 2> /dev/null > /tmp/findMe
+	find . -type f -iname $inputVar 2> /dev/null > /tmp/findMe
     else
-	find . -type d -name $inputVar 2> /dev/null > /tmp/findMe
+	find . -type d -iname $inputVar 2> /dev/null > /tmp/findMe
     fi   
 fi
 
