@@ -1,5 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+
+
 /*
  Global variable for directions, to be used with multiple points of code,
  better to make it easily accessible.
@@ -15,6 +17,7 @@ int main(){
 
   window.setKeyRepeatEnabled(false);
   sf::Clock clock;//To be used for the frameRate reproduction.
+  //  Time time1 = clock.getElapsedTime();
   float frameCounter = 0, frameSpeed = 500, switchFrame = 100;
   bool updateFrame = true;
 
@@ -93,7 +96,7 @@ int main(){
     frameCounter = (updateFrame) ?
       frameCounter + frameSpeed* clock.restart().asSeconds() :
       0;
-  
+    //    std::cout << clock.getElapsedTime() << std::endl;
     if(frameCounter>= switchFrame){
       source.x++;
       if(source.x *32 >= (signed int) pTexture.getSize().x)
