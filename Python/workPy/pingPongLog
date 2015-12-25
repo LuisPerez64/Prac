@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+
+import re
+def main():
+    fileName=input('Name of the file, including extension: ')
+    data=list()#Main list constructed, detailed below.
+    dataDict=dict()#(Keys: Sizes, Values:mainList Constructed below)
+    mainList(fileName, data)
+    mainDict(data, dataDict)
+    processData(dataDict)
+
+def processData(inputDict):
+    dataMap=dict()
+    absMap=dict() #Holds the Absolute max, and min of the given size
+    toggle=True
+
+    for key in sorted(inputDict.keys()):
+        dataMap[key]=[0 for x in range(len(inputDict[key][0]))]
+        absMap[key]=[1000,0]
+        if toggle:
+            totalEntriesCounter=len(inputDict[key])
+            toggle = False
+        for i in sorted(inputDict[key]): # Get the internal list
+            counter=0
+            for k in i: #Get the elements of the list form (str, val)
+                dataMap[key][counter]= dataMap[key][counter]+k[1]
+                if counter < 3: #Only atain Abs Max, and Abs Min
+                    if counter == 1: #Min Index
+                        if k[1] < absMap[key][counter-1]:  
+                            absMap[key][counter-1]=k[1]
+                    if counter == 2: #Max Index
+                        if k[1] > absMap[key][counter-1]:
+                            absMap[key][counter-1]=k[1]
+                counter+=1
+
+    for key in dataMap.keys():
+        for i in range(len(dataMap[key])):
+            dataMap[key][i]/=totalEntriesCounter
+        dataMap[key].extend(absMap[key])
+    print("Over %d total runs" % totalEntriesCounter)
+    printMap(dataMap)
+    #printMap(absMap)
+
+def printList(inputList):
+    values=['Latency      :',
+            'Min          :',
+            'Max          :',
+            'Median       :',
+            '99%          :',
+            'Std Dev.     :',
+            'Absolute Min :',
+            'Absolute Max :']
+    count=0
+    print("Average Values:")
+    for i in inputList:
+        if count == 6:
+            print('\n\n')
+        print('%s %s' % (values[count], str(i)[:6]))
+        count+=1
+
+def printMap(inputMap):
+    for i in sorted(inputMap):
+        print('\n\nSize: ',i)
+        printList(inputMap[i])
+
+def mainDict(data, dataDict):
+    #Could do this all at one time, but procedurally easier to debug...
+    for i in data:
+        if i is None:
+            continue
+        if i[0] in dataDict:
+            dataDict[i[0]].append(i[1]) #Append it to the already created list.
+        else:
+            dataDict[i[0]]=[i[1]] #Create a new list to hold the data, add it
+ 
+def mainList(inputFile, listOfData=None ):
+    if listOfData is None:
+        listOfData=list()
+    with open(inputFile) as inpFile:
+        for readData in inpFile:
+            listOfData.append(tupleConstruct(readData))
+    return listOfData#list(tupleConstructs:Declared_below.)
+
+def tupleConstruct(inputLine):
+    if 'Half' in inputLine: #Checks for complete data set.
+        return None
+    q=re.search('[0-9]+(?=:)',inputLine)
+    if q is not None:
+        tup=(int(q.group(0)), tupleListConstruct(inputLine))
+    if tup[1] == None: #Didn't get anything from the list, or list incomplete
+        return None
+    return tup#(Size:int, list(tuples(attribute:string, value:float)))
+
+'''
+BaseConstruct: Takes in a list of items, and extracts the needed data points.
+@Params:
+  inputLine: The line gathered from the file being read in
+@Returns:
+  Returns a list of all the tuples that are found within the given line of data
+@Regexes:
+ avgLatency: '[0-9.]+(?= us)'
+ min       : '(?<=min=)[0-9.]+'
+ median    : '(?<=ian=)[0-9.]+'
+ max       : '(?<=max=)[0-9.]+'
+ 99%       : '(?<=99%=)[0-9.]+'
+'''
+def tupleListConstruct(inputLine):    
+    listOfTuples=list() #Will hold all of the pair values.
+#There's a more efficient way of doing this parsing that would result in
+#at least a tenth faster speeds.    
+    q=re.search('[0-9.]+(?= us)',inputLine)
+    if q is not None:
+        avgLat=('avgLatency',float(q.group(0)))
+        listOfTuples.append(avgLat)
+    q=re.search('(?<=min=)[0-9.]+', inputLine)
+    if q is not None:
+        minTuple=('min', float(q.group(0)))
+        listOfTuples.append(minTuple)
+    q=re.search('(?<=max=)[0-9.]+', inputLine)
+    if q is not None:
+        maxTuple=('max', float(q.group(0)))
+        listOfTuples.append(maxTuple)
+    q=re.search('(?<=ian=)[0-9.]+', inputLine)
+    if q is not None:
+        median=('median', float(q.group(0)))
+        listOfTuples.append(median)
+    q=re.search('(?<=99%=)[0-9.]+', inputLine)
+    if q is not None:
+        NNTuple=('99%', float(q.group(0)))
+        listOfTuples.append(NNTuple)
+    q=re.search('(?<=dev=)[0-9.]+', inputLine)
+    if q is not None:
+        stdDev=('std_dev', float(q.group(0)))
+        listOfTuples.append(stdDev)
+    if len(listOfTuples) != 6: #Again this should never actually be possible...
+        listOfTuples=None #Incomplete data collection, don't use it. Unlikely
+    return listOfTuples
+
+if __name__ == '__main__':
+    main()

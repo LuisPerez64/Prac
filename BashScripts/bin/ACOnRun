@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#Interal battery percentage, shutting down different systems based on this.
+batteries=`acpi | grep -P '[0-9]{2,3}(?=%)' -o`
+k=0 #Amount of batteries in the system
+INTBattery=0
+for i in $batteries; do
+    INTBattery=$((INTBattery+i))
+    k=$((k+1))
+done
+INTBattery=$((INTBattery/k)) #Holds the total battery percentage.
+  
+if test `acpi -a | grep -P '[ofn]{2,3}-line' -o` == 'on-line' ; then 
+    wallch --start --next &> /dev/null &
+    fluxgui &> /dev/null &
+    spotify &> /dev/null &
+
+elif test $INTBattery -gt 70; then
+    wallch --start --next &> /dev/null &
+
+elif test $INTBattery -lt 25; then  
+    kill `ps -e | grep -E -e 'flux' -e 'wallch' | grep -P '[0-9]{3,6}' -o`
+    xbacklight -set 30	
+
+elif test $INTBattery -lt 12; then
+    kill `ps -e | grep -i -E -e 'spotify' | grep -P '[0-9]{3,6}' -o`
+    xbacklight -set 15
+fi
+
