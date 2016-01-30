@@ -1,5 +1,8 @@
-Agatha Christie: # of Books 1
+Agatha Christie: # of Books 4
 Towards Zero
+And Then There Were None
+A Pocket Full Of Rye
+Sleeping Murder
 
 Aldous Huxley: # of Books 1
 Brave New World
@@ -120,6 +123,9 @@ Old Yeller
 
 Fyodor Dostoyevsky: # of Books 1
 The Brothers Karamazov
+
+Geoffrey Chaucer: # of Books 1
+The Canterbury Tales
 
 H.G. Wells: # of Books 1
 The Time Machine
@@ -305,9 +311,10 @@ The Scarlet Letter
 Neal Stephenson: # of Books 1
 Snow Crash
 
-Nicholas Sparks: # of Books 2
+Nicholas Sparks: # of Books 3
 The Lucky One
 The Guardian
+Dear John
 
 Noel Botham: # of Books 1
 The Book of Useless Information
@@ -382,6 +389,9 @@ Abraham Lincoln: Vampire Hunter
 Shirley Tallman: # of Books 1
 The Cliff House Strangler
 
+Sir Walter Scott: # of Books 1
+Ivanhoe
+
 Sophocles: # of Books 3
 Antigone
 Oedipus the King
@@ -426,16 +436,20 @@ The Mayor of Casterbridge
 Tim Burton: # of Books 1
 The Melancholy Death of Oyster Boy & Otories
 
+Tim O'Brien: # of Books 1
+The Things They Carried
+
 Tom Brokaw: # of Books 1
 The Greatest Generation Speaks: Letters and Reflections
 
-Tom Clancy: # of Books 6
+Tom Clancy: # of Books 7
 Power Plans
 Clear and Present Danger
 Patriot Games
 The Cardinal of the Kremlin
 Balance of Power
 The Hunt for Red October
+Red Storm Rising
 
 WM. Paul Young: # of Books 1
 The Shack
@@ -453,4 +467,4 @@ Yan Martel: # of Books 1
 Life of Pi
 
 
-Total Number of Books: 208
+Total Number of Books: 216
