@@ -1,0 +1,8 @@
+Functions:
+  Instantiate the SQLConnection
+  Create Table
+    Person:Students
+    Person:Instructor
+    
+  Update Table
+  

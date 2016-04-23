@@ -17,7 +17,7 @@ def mergeSort(inputList, start, end):
         if len(inputList) >1:
             print(inputList[start:end])    
 
-inpList = [ int(random.random() *100) for x in range(13) ]
+inpList = [60,12,27,5,46]#[ int(random.random() *100) for x in range(13) ]
 print(inpList, "\nMerge it")
 
 mergeSort(inpList, 0, len(inpList))
