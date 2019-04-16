@@ -1,0 +1,18 @@
+OBJ?=holder.cpp #Renameable, mutable for all files
+OUTPUT?=holder #" ^^ "
+CC= g++ #Not using the newest standard as of yet, but will soon
+CFLAGS = -Wall -Werror #No warnings, treat them as errors
+LFLAGS = -lm
+EDITOR = emacs -nw
+all: review make test clean
+
+review:$(OBJ)
+	$(EDITOR) $^
+
+make:$(OBJ)
+	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $(OUTPUT)
+
+test:$(OUTPUT)
+	time ./$(OUTPUT)
+clean:
+	rm -f *\# *\~ *.out *.o

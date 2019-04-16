@@ -1,0 +1,17 @@
+#Ignore all files that have the format ending with .o, or .a
+*.[oa]
+
+#Ignore emacs little temp backup files, if all fails 
+*\~
+
+#Ignore the cahced changes file from updating, no autosave data
+*\#
+
+#Ignore pythons compiled flag files, compile anew everytime damnint
+*.pyc
+
+#Specific files in the points to ignore
+1
+
+#Ignore the cached python directories, no __pycache__, Not sure this will work.
+__pycache__
