@@ -1,0 +1,27 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Modules that will be used with regards to understanding a lot of the base facilitations of the language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisPerez64/JavaScript_Practice.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Luis Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisPerez64/JavaScript_Practice/issues"
+  },
+  "homepage": "https://github.com/LuisPerez64/JavaScript_Practice#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
+  }
+}

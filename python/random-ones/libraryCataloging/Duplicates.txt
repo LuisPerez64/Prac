@@ -1,0 +1,37 @@
+Dan Brown: # of Books 3
+The Lost Symbol
+The Davinci Code
+Angels & Demons
+
+David Baldacci: # of Books 2
+First Family
+First Family
+
+Harper Lee: # of Books 2
+To Kill A Mockingbird
+To Kill A Mockingbird
+
+James Patterson: # of Books 1
+Cross
+
+John Grisham: # of Books 3
+The Chamber
+The Chamber
+The Street Lawyer
+
+Mark Twain: # of Books 1
+The Adventures of Tom Sawyer
+
+Patricia Cornwell: # of Books 1
+The Scarpetta Factor
+
+Stieg Larson: # of Books 2
+The Girl Who Kicked The Hornet's Nest
+The Girl With The Dragon Tattoo
+
+Tom Clancy: # of Books 2
+Clear and Present Danger
+Clear and Present Danger
+
+
+Total Number of Books: 17

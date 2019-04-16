@@ -1,0 +1,470 @@
+Agatha Christie: # of Books 4
+Towards Zero
+And Then There Were None
+A Pocket Full Of Rye
+Sleeping Murder
+
+Aldous Huxley: # of Books 1
+Brave New World
+
+Alfred Hitchcock: # of Books 1
+The Best of Mystery
+
+Alice Sebold: # of Books 1
+The Lovely Bones
+
+Allan Folsom: # of Books 1
+The Day After Tomorrow
+
+Anna Sewell: # of Books 1
+Black Beauty
+
+Arthur Golden: # of Books 1
+Memoirs of A Geisha
+
+Barack Obama: # of Books 1
+Dreams of My Father
+
+Betty Smith: # of Books 1
+A Tree Grows in Brooklyn
+
+Bill Bryson: # of Books 1
+A Short History of Nearly Everything
+
+Bill James: # of Books 1
+Wolves of Memory
+
+Boris Pasternak: # of Books 1
+Doctor Zhivago
+
+Brad Meltzer: # of Books 1
+Dead Even
+
+Brad Thor: # of Books 2
+Act of War
+Black
+
+C.J. Cherryh: # of Books 2
+Brothers of Earth
+Hunter of Worlds
+
+C.S. Lewis: # of Books 1
+The Lion, the Witch, and the Wardrobe
+
+Carl Sagan: # of Books 1
+Cosmos
+
+Catherine Coulter: # of Books 2
+Beyond Eden
+Split Second
+
+Charles Darwin: # of Books 1
+Descent of Man and Selection in Relation to Sex
+
+Chinua Achebe: # of Books 1
+Things Fall Apart
+
+Chris Ryan: # of Books 1
+Greed
+
+Christopher Priest: # of Books 1
+The Prestige
+
+Claudia Rankine: # of Books 1
+Citizen: An American Lyric
+
+Cormac McCarthy: # of Books 1
+The Road
+
+Dan Brown: # of Books 5
+The Davinci Code
+The Lost Symbol
+Deception Point
+Angels & Demons
+Inferno
+
+Dave Peltzer: # of Books 1
+A Child Called "It"
+
+David Baldacci: # of Books 3
+First Family
+The Winner
+Simple Genius
+
+Dennis Lehane: # of Books 1
+Mystic River
+
+E.B. White: # of Books 1
+Charlotte's Web
+
+Edgar Allan Poe: # of Books 1
+Edgar Allan Poe Reader
+
+Eric Butterworth: # of Books 1
+Discover The Power Within You
+
+Evelyn McFarlane & James Saywell: # of Books 1
+If...
+
+F. Scott Fitzgeral: # of Books 1
+The Great Gatsby
+
+Fernand Hayward: # of Books 1
+The Inquisition
+
+Frank McCourt: # of Books 1
+Angela's Ashes
+
+Franklin W. Dixon: # of Books 1
+While The Clock Ticked
+
+Fred Gipson: # of Books 1
+Old Yeller
+
+Fyodor Dostoyevsky: # of Books 1
+The Brothers Karamazov
+
+Geoffrey Chaucer: # of Books 1
+The Canterbury Tales
+
+H.G. Wells: # of Books 1
+The Time Machine
+
+Harper Lee: # of Books 1
+To Kill A Mockingbird
+
+Herman Melville: # of Books 1
+Moby Dick
+
+Homer: # of Books 1
+The Iliad
+
+Ian Flemming: # of Books 1
+From Russia With Love
+
+Iris Johansen: # of Books 2
+Body of Lies
+Dark Summer
+
+J.R.R. Tolkien: # of Books 1
+The Children of Hurin
+
+Jack Higgins: # of Books 4
+Flight of Eagles
+The Wolf At The Door
+J. Robert King
+Lancelot DuLethe
+
+Jack Kerouac: # of Books 1
+The Town and The City
+
+James Dashner: # of Books 1
+The Maze Runner
+
+James Patterson: # of Books 13
+Second Honeymoon
+Cross
+The 6th Target
+Cross Fire
+12th of Never
+Big Bad Wolf
+Step on a Crack
+1st To Die
+Honeymoon
+Double Cross
+The Quickie
+Four Blind Mice
+Merry Christmas, Alex Cross
+
+Jamie Ford: # of Books 1
+Hotel on the Corner of Bitter and Sweet
+
+Jeff Knorr & Tim Schell: # of Books 1
+Mooring Against the Tide
+
+Jerry West: # of Books 1
+West By West: My Charmed, Tormented Life
+
+Johann Wyss: # of Books 1
+The Swiss Family Robinson
+
+John Boyne: # of Books 1
+The Boy in the Striped Pajamas
+
+John Grisham: # of Books 13
+The Last Juror
+A Painted House
+The Client
+The Appeal
+The Rainmaker
+A Time to Kill
+The Associate
+The Chamber
+The Innocent Man
+Theodore Boone: The Accused
+The Street Lawyer
+Bleachers
+The Summons
+
+John Steinbeck: # of Books 3
+Tortilla Flat
+Of Mice and Men
+The Grapes of Wrath
+
+John Twelve Hawks: # of Books 1
+The Traveller
+
+Jonathan Kellerman: # of Books 1
+Bones
+
+Jules Verne: # of Books 3
+From The Earth To The Moon
+A Journey To The Centre Of The Earth
+Twenty Thousand Leagues Under The Sea
+
+Katherine Howe: # of Books 1
+The Physick Book of Deliverance Dane
+
+Khaled Hosseini: # of Books 1
+The Kite Runner
+
+L.J. Smith: # of Books 1
+The Vampire Diaries: The Awakening and The Struggle
+
+LaVyrle Spencer: # of Books 1
+Then Came Heaven
+
+Laura Hillenbrand: # of Books 1
+Seabiscuit
+
+Lauren Belfer: # of Books 1
+City of Light
+
+Lee Child: # of Books 4
+Persuader
+The Enemy
+The Affair
+Echo Burning
+
+Lemony Snicket: # of Books 5
+The Austere Academy: A Series of Unfortunate Events
+The Bad Beginning: A Series of Unfortunate Events
+The End: A Series of Unfortunate Events
+The Ersatz Elevator: A Series of Unfortunate Events
+The Reptile Room: A Series of Unfortunate Events
+
+Leo Tolstoy: # of Books 6
+Two Hussars
+A Happy Married Life
+Yardstick
+The Death of Ivan Ilyich
+The Kreutzer Sonata
+After The Ball
+
+Lewis Carrol: # of Books 3
+Alice's Adventures in Wonderland
+Through the Looking-Glass
+Alice's Adventures under Ground
+
+Lisa Jackson: # of Books 1
+Malice
+
+Liv Spector: # of Books 1
+The Rich and The Dead
+
+Lois Lowry: # of Books 1
+Number The Stars
+
+Lorraine Hansberry: # of Books 2
+To Be Young, Gifted and Black
+A Raisin In The Sun
+
+Malcolm Gladwell: # of Books 1
+The Tipping Point
+
+Marcus Luttrell: # of Books 1
+Lone Survivor
+
+Mark Twain: # of Books 1
+The Adventures of Tom Sawyer
+
+Mary Stewart: # of Books 1
+The Wicked Day
+
+Michael Connelly: # of Books 3
+9 Dragons
+The Black Ice
+The Drop
+
+Michael Crichton: # of Books 1
+Congo
+
+Michael Palmer: # of Books 1
+The Last Surgeon
+
+Muriel Barbery: # of Books 1
+The Elegance of the Hedgehog
+
+Nathaniel Hawthorne: # of Books 1
+The Scarlet Letter
+
+Neal Stephenson: # of Books 1
+Snow Crash
+
+Nicholas Sparks: # of Books 3
+The Lucky One
+The Guardian
+Dear John
+
+Noel Botham: # of Books 1
+The Book of Useless Information
+
+Nora Roberts: # of Books 3
+Homeport
+Blue Smoke
+Innocent in Death
+
+Norman Mailer: # of Books 1
+The Executioner's Song
+
+Oscar Wilde: # of Books 1
+The Picture of Dorian Grey
+
+Patricia Cornwell: # of Books 6
+The Scarpetta Factor
+The Last Precinct
+At Risk
+Port Mortuary
+Isle of Dogs
+Predator
+
+Patricia Cronwell: # of Books 1
+Cause of Death
+
+Philip Pullman: # of Books 1
+The Golden Compass
+
+Phillip Pullman: # of Books 1
+Amber Spyglass
+
+Phillp Roth: # of Books 1
+The Human Stain
+
+R.L. Stine: # of Books 2
+30 Tales to Give You Goosebumps
+Goosebumps: Bad Hare Day
+
+Reginald McKnight: # of Books 1
+I Get On The Bus
+
+Rhymond Khoury: # of Books 1
+The Last Templar
+
+Robert James Weller: # of Books 1
+The Bridges of Madison County
+
+Robert K. Tanenbaum: # of Books 1
+Counterplay
+
+Robert Louis Stevenson: # of Books 1
+Treasure Island
+
+Robert Ludlum: # of Books 6
+The Arctic Event
+The Matarese Countdown
+The Cassandra Compact
+The Ambler Warning
+The Bourne Deception
+The Bourne Objective
+
+S.E. Hinton: # of Books 1
+The Outsiders
+
+Sara Gruen: # of Books 1
+Water for Elephants
+
+Seth Grahame-Smith: # of Books 1
+Abraham Lincoln: Vampire Hunter
+
+Shirley Tallman: # of Books 1
+The Cliff House Strangler
+
+Sir Walter Scott: # of Books 1
+Ivanhoe
+
+Sophocles: # of Books 3
+Antigone
+Oedipus the King
+Oedipus at Colonus
+
+Stephen Crane: # of Books 1
+The Red Badge of Courage
+
+Stephen Horn: # of Books 1
+In Her Defense
+
+Stephen King: # of Books 4
+The Drawing of Three: The Dark Tower II
+Danse Macabre
+Different Seasons
+The Green Mile
+
+Stieg Larson: # of Books 3
+The Girl Who Kicked The Hornet's Nest
+The Girl Who Played With Fire
+The Girl With The Dragon Tattoo
+
+Sue Monk Kidd: # of Books 1
+The Secret Life of Bees
+
+Suzanne Collins: # of Books 2
+Mockingjay
+Catching Fire
+
+Suzzane Collins: # of Books 1
+The Hunger Games
+
+Tea Obreht: # of Books 1
+The Tiger's Wife
+
+Theodore Taylor: # of Books 1
+The Cay
+
+Thomas Hardy: # of Books 1
+The Mayor of Casterbridge
+
+Tim Burton: # of Books 1
+The Melancholy Death of Oyster Boy & Otories
+
+Tim O'Brien: # of Books 1
+The Things They Carried
+
+Tom Brokaw: # of Books 1
+The Greatest Generation Speaks: Letters and Reflections
+
+Tom Clancy: # of Books 7
+Power Plans
+Clear and Present Danger
+Patriot Games
+The Cardinal of the Kremlin
+Balance of Power
+The Hunt for Red October
+Red Storm Rising
+
+WM. Paul Young: # of Books 1
+The Shack
+
+Wilbur Smith: # of Books 1
+Desert God
+
+William Shakespeare: # of Books 1
+The Merchant of Venice
+
+Wilson Rawls: # of Books 1
+Where The Red Fern Grows
+
+Yan Martel: # of Books 1
+Life of Pi
+
+
+Total Number of Books: 216
