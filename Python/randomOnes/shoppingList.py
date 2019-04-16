@@ -1,4 +1,0 @@
-'''
-Shopping List management program
-
-'''
