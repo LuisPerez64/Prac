@@ -1,4 +1,4 @@
-#Python Practice & Algorithmic Catch Up
+# Python Practice & Algorithmic Catch Up
 ###### Minor Todo: Creation of a file to hold my modules. Will need classes for the algorithms that are implemented. Sorts, Searches, Data Structures.
 ###### Added data Point for Algorithmic Analysis: [MIT Course](https://www.youtube.com/watch?v=JPyuH4qXLZ0)
 ## [Python School](https://pythonschool.net/)
@@ -229,9 +229,9 @@
         [ ]
     [ ]Pseudocode (Application)
         [ ]
-##Probability and Statistics
+## Probability and Statistics
     [ ]
-##[Project Euler Problems](https://projecteuler.net/)
+## [Project Euler Problems](https://projecteuler.net/)
 ####Implementation of Project Euler Solutions(All With timeit Module)
 #####Placing Some of The Solutions here. Denote mathematical approach.
 
