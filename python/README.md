@@ -232,6 +232,6 @@
 ## Probability and Statistics
     [ ]
 ## [Project Euler Problems](https://projecteuler.net/)
-####Implementation of Project Euler Solutions(All With timeit Module)
-#####Placing Some of The Solutions here. Denote mathematical approach.
+#### Implementation of Project Euler Solutions(All With timeit Module)
+##### Placing Some of The Solutions here. Denote mathematical approach.
 
