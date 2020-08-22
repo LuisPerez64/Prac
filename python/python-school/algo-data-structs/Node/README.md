@@ -62,12 +62,12 @@ class Node(object):
         nextNode.setNode(prevDir, prevNode)
         
         # Index is incremented if adding to the right of the list, else decrement
-        nextInd=prevNode.getIndex()+(-1 if nextDir == 'left' else 1)
+        nextInd=prevNode.get_index()+(-1 if nextDir == 'left' else 1)
         nextNode.setIndex(nextInd )
 
         # Make the node that called add acknowledge that the node 
         # that is created is to be pointed to next.
-        prevNode.setNode(nextDir, nextNode)
+        prevNode.set_node(nextDir, nextNode)
 
     '''
     Getter Functions for the Node Class

@@ -2,33 +2,16 @@
 ## Language Primitives:
 ### Introductory Conditional statements.
     Came accross Pythons Ternary operator, not as it is in most languages ie. C/C++
-```C++
-//...
+```c
 int x = 0;
 int y = (x == 0 ? 12 : 15)
-//...
-//Format condition ? if True : if False
+// Format: condition_check ? condition_is_true : condition_is_false
 ```
     Python's implementation is:
 ```python
-#...
 x = 0
 y = 12 if x == 0 else 15
-#...
-#Format (condition)True if conditionCheck else (condition)False 
-```
-
-## Implementable Tricks
-### Make cross sourcing simpler
-#### Interesting snippet(For when __future__ is not an option)
-```python
-# Set the functionality to be more like Python Two, if the elements are available
-# Attempts to make the functions point to their Py2 counterparts that were optimized, else in Py3, no need to. 
-try:
-    input = raw_input
-    range = xrange
-except NameError:
-    pass
+# Format: condition_is_true if condition_check else condition_is_false
 ```
 
 ## Iterators:
@@ -48,12 +31,14 @@ except NameError:
 >>> next( ind for ind,elt in x if elt == 5) 
 2
 # Attempts to search for the element again are me with StopIteration.
-# Next alters the element pointed to, with no regard to previous ones.
+# Next alters the element pointed to within the generated iterator functions. 
+# It does not hold onto the whole object being referenced when possible and loads only what is needed.
 >>> next( ind for ind,elt in x if elt == 5) 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 StopIteration
 ```
+
 ### Introduction to [enumerate](https://docs.python.org/3.6/library/functions.html#enumerate) 
     An iterator, cannot be used alone, must be used within an iterator construct. Returns pairs of type (index, element), indexing the input on a base system, where the tuple returned holds the index of the element for a given iteratable type.
 ```python
@@ -72,7 +57,11 @@ for i,j in enumerate(inp):
 ## Classes:
 ### Self
 ##### Summary. Explanation, at least attempt at, bringing forth knowledge about referencing self | this, within a python class. 
-    self is an instantiation of a temporary handle to the object that is created, or being referenced. self is a local 'reference' to the instance, and as such changing self, will not change the instance, but changes to variables for the instance can be altered or created, if the class is passed an object as it's type (look into this note), at any point by referencing self._someVar. If self = _someThing_ is called, then all that occurs is that the handle to the instance is gone, and unless it was placed in another variable beforehand, it cannot be referenced, to my knowledge at the time, until that function is escaped. 
+    'self' is an instantiation of a temporary handle to the object that is created, or being referenced.
+    self is a local 'reference' to the instance, and as such changing self, will not change the instance.
+    Changes to variables for the instance can be altered or created, if the class is passed an object as it's type (look into this note) at any point by referencing self._someVar.
+    If self = _someThing_ is called, then all that occurs is that the handle to the instance is gone, and unless it was placed in another variable beforehand, it cannot be referenced, to my knowledge at the time, until that function is escaped. 
+
 ```python
 class MyClass(object):
     def __init__(self):
@@ -86,8 +75,7 @@ class MyClass(object):
     >>> print(l)
     <__main__.MyClass object at 0x7fcc3ab75390>
     '''
-```
-```python
+
 # Code Snippet in which self.__*Node is being modified. Any of those two references to the __*Node  instance variable are mutated past this point. 
 #   ...
     # Simulation of freeing up the node.
@@ -112,14 +100,14 @@ class MyClass(object):
 ### Class Wide Variables:
 ##### Summary. Addressing self.classVar alters instance. Addressing MyClass.classVar alters static variable created at initialization of MyClass.
     These are variables designed within the construct
- ```python
-    class MyClass(object):
-        classVar=0
-``` 
-    These variables are more or less static variables. On any instance that is created they remain constant, in that unless explicitly done so, are not dependent on the construction of objects within the given class.
-    If the classVar is altered by an object that is instantiated, it changes only within itself", and it's children?", but does not change the variables value within the context of the class. It becomes at that point a local "static" variable. Any new instances will not hold the new value, but the initial value placed in the classVar at initialization. 
-    Example:
 ```python
+>>> class MyClass(object):
+>>>    classVar=0
+"""    
+These variables are more or less static variables. On any instance that is created they remain constant, in that unless explicitly done so, are not dependent on the construction of objects within the given class.
+If the classVar is altered by an object that is instantiated, it changes only within itself", and it's children?", but does not change the variables value within the context of the class. It becomes at that point a local "static" variable. Any new instances will not hold the new value, but the initial value placed in the classVar at initialization. 
+Example:
+"""
 >>> foo=MyClass()
 # Checking the value stored, at init
 >>> foo.myVar
@@ -161,8 +149,11 @@ class MyClass(object):
 >>> MyClass.myVar
 >>> 4
 
-# Here is where it gets a bit weird, but with the inheritance model of python makes some sense. If the class variable is changed, from within the class construct, and has not been "unthethered" from the initial class by altering it's value, then changes to the class, are now changes to the new var. 
-# (If I understand this correctly) Because changes to the class are referencing the same address until, they are made their own, and hard copied over to a new address within the constraints of the New Objects.
+# Here is where it gets a bit weird, but with the inheritance model of python makes some sense.
+# If the class variable is changed, from within the class construct, and has not been "unthethered" from the initial 
+# class by altering it's value, then changes to the class, are now changes to the new var. 
+# (If I understand this correctly) Because changes to the class are referencing the same address until,
+# they are made their own, and hard copied over to a new address within the constraints of the New Objects.
 >>> baz.myVar
 >>> 4
 >>> MyClass.myVar

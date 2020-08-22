@@ -88,14 +88,14 @@ class DoublyLinkedList(object):
                 # If get to the end of the list(next is None), insert at end
                 while self.getNode(direction):
                     # Found a location that is greater than content, and content >= currentNode
-                    if contents < self.getNode(direction).getContent():
+                    if contents < self.getNode(direction).get_content():
                         break
                     self._Node = self.getNode(direction)
             else:
                 direction = self.left
                 while self.getNode(direction):
                     # Found a location that is less than content, and content <= currentNode
-                    if contents > self.getNode(direction).getContent():
+                    if contents > self.getNode(direction).get_content():
                         break
                     self._Node = self.getNode(direction)
         else:
@@ -119,7 +119,7 @@ class DoublyLinkedList(object):
         else:
             self.__maxNegIndex -= 1
         ##!! Within this context the node is directly being mutated, so no need to return it
-        self._Node.addNode(self.getNode(self.this), direction, node)
+        self._Node.add_node(self.getNode(self.this), direction, node)
 
     def isEmpty(self):
         tog = False
@@ -319,14 +319,14 @@ class DoublyLinkedList(object):
         return self.__dataType
 
     def getIndex(self):
-        return self._Node.getIndex()
+        return self._Node.get_index()
 
     def getContent(self):
-        return self._Node.getContent()
+        return self._Node.get_content()
 
     # Returns a handle to the node referenced by direction
     def getNode(self, direction):
-        return self._Node.getNode(direction)
+        return self._Node.get_node(direction)
 
     # Returns the amount of node instances that had to be created.
     def getTotalNodes(self):
@@ -339,13 +339,13 @@ class DoublyLinkedList(object):
             # directly.
             self._Node = node
             return
-        self._Node.setNode(direction, node)
+        self._Node.set_node(direction, node)
 
     def setContent(self, contents):
-        self._Node.setContent(contents)
+        self._Node.set_content(contents)
 
     def setIndex(self, index):
-        self._Node.setIndex(index)
+        self._Node.set_index(index)
 
     # Internal Functions. Helpers to achieve goals needed, should not be called directly by user.
     def _delNode(self, previous):
@@ -368,7 +368,7 @@ class DoublyLinkedList(object):
             # Attach the next Node to the Preceding node
             # Temp Nodes, previous Node is the current Node
             self.setNode(next, tempNode)
-            tempNode.setNode(previous, self.getNode('this'))
+            tempNode.set_node(previous, self.getNode('this'))
         # self.getNode(previous).setNode(next, self.getNode(previous))
 
         # Case under which the node being removed is the last node in the list.
@@ -401,10 +401,10 @@ class DoublyLinkedList(object):
                 if not self.__canSort:
                     break
 
-            if (self.getContent() < self.getNode(direction).getContent()) == localCheck:
+            if (self.getContent() < self.getNode(direction).get_content()) == localCheck:
                 temp = self.getContent()
-                self.setContent(self.getNode(direction).getContent())
-                self.getNode(direction).setContent(temp)
+                self.setContent(self.getNode(direction).get_content())
+                self.getNode(direction).set_content(temp)
                 noSwaps = False
             self._Node = self.getNode(direction)
         return noSwaps
@@ -420,7 +420,7 @@ class DoublyLinkedList(object):
         # run re-indexing every item to the left or right of the list respectively
         nextInd = self.getIndex()
         if self.getNode(prev):
-            nextInd = self.getNode(prev).getIndex()
+            nextInd = self.getNode(prev).get_index()
         while True:
             nextInd += nextInc
             self.setIndex(nextInd)
@@ -443,7 +443,7 @@ class DoublyLinkedList(object):
         # Done only when strict type checking is enabled.
         if contents is not None:
             try:
-                self.getNode(self.this).getContent() < contents
+                self.getNode(self.this).get_content() < contents
                 return True
             except:
                 return False
@@ -453,7 +453,7 @@ class DoublyLinkedList(object):
         self.__canSort = True
         # If the two contents cannot be sorted then list is corrupted. Sort Wise
         try:
-            self.getNode(self.this).getContent() < self.getNode(next).getContent()
+            self.getNode(self.this).get_content() < self.getNode(next).get_content()
         except:
             self.__canSort = False
 

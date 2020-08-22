@@ -57,7 +57,7 @@ class Node(object):
 		
 		# Make the node that called add acknowledge that the node 
 		# that is created is to be pointed to next.
-		prevNode.setNode(nextDir, addNode)
+		prevNode.set_node(nextDir, addNode)
 		# If there exist a node after the newly created Node, point it back to new node as well.
 		if nextNode is not None:
 			nextNode.setNode(prevDir, addNode)

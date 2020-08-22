@@ -1,24 +1,23 @@
-'''
-Non recursive implementation of the binary search algorithm.
-inpList is implied Sorted
-'''
-# Uses binary search, 
-def binarySearch(inpList, item):
-    found=False
-    firstInd=0
-    lastInd=len(inpList)-1
+def binary_search(inp_list, item):
+    """
+    Non recursive implementation of the binary search algorithm.
+    inpList is implied Sorted
+    """
+    found = False
+    first_ind = 0
+    last_ind = len(inp_list) - 1
     # Runs until either the item is found, or the first index crosses over the last
-    while not found and firstInd < len(inpList):
-        midInd=int((firstInd+lastInd)/2)
+    while not found and first_ind < len(inp_list):
+        mid_ind = int((first_ind + last_ind) / 2)
         # Items found
-        if inpList[midInd] == item:
-            found=True
-            break 
-        if item < inpList[midInd]:
-            lastInd =midInd - 1
+        if inp_list[mid_ind] == item:
+            found = True
+            break
+        if item < inp_list[mid_ind]:
+            last_ind = mid_ind - 1
         # Current index 
         else:
-            firstInd=midInd + 1
+            first_ind = mid_ind + 1
     if not found:
-        midInd=-1
-    return midInd
+        mid_ind = -1
+    return mid_ind

@@ -47,10 +47,10 @@ class Node()
         
         # Make the node that called add acknowledge that the node 
         # that is created is to be pointed to next.
-        prevNode.setNode(nextDir, addNode)
+        prevNode.set_node(nextDir, addNode)
         # If there exist a node after the newly created Node, point it back to new node as well.
         if nextNode is not None:
-            nextNode.setNode(prevDir, addNode)
+            nextNode.set_node(prevDir, addNode)
 ```
 ## Notable Functions for The Linked List Data Structure.
 ```python
@@ -113,14 +113,14 @@ class DoublyLinkedList(object):
                 # If get to the end of the list(next is None), insert at end
                 while self.getNode(direction):
                     # Found a location that is greater than content, and content >= currentNode
-                    if contents < self.getNode(direction).getContent():
+                    if contents < self.getNode(direction).get_content():
                         break
                     self._Node = self.getNode(direction)
             else:   
                 direction = self.left
                 while self.getNode(direction):
                     # Found a location that is less than content, and content <= currentNode
-                    if contents > self.getNode(direction).getContent():
+                    if contents > self.getNode(direction).get_content():
                         break
                     self._Node = self.getNode(direction)                
         else: 
@@ -193,7 +193,7 @@ class DoublyLinkedList(object):
             # Attach the next Node to the Preceding node
             # Temp Nodes, previous Node is the current Node
             self.setNode(next, tempNode)
-            tempNode.setNode(previous, self.getNode('this'))
+            tempNode.set_node(previous, self.getNode('this'))
             # self.getNode(previous).setNode(next, self.getNode(previous))
 
         # Case under which the node being removed is the last node in the list.
@@ -264,7 +264,7 @@ class DoublyLinkedList(object):
         # If < is True and localCheck is True, then swap(Reverse for >) 
         localCheck= True if direction == self.left else False       
         noSwaps = True
-        while self.getNode(direction):
+        while self.get_node(direction):
             # Runs one time per sort attempt.
             if checkSort:
                 self._canSort(direction)
@@ -276,19 +276,19 @@ class DoublyLinkedList(object):
         if self.isEmpty():
             return
         # Cant remove the nodes to the left, until handle to first node's met
-        while self.getNode(self.left):
-            self._Node = self.getNode(self.left)
+        while self.get_node(self.left):
+            self._Node = self.get_node(self.left)
         
         # Begin deletion of the node to the left at each node.
         while True:
-            if self.getNode(self.right) is None:
+            if self.get_node(self.right) is None:
                 ''' 
                 There seems to be little to no way of termination of self.
                 From within the node class the syntax self.setNode(self.this, None)
                 does not address the node, and as such, it's dangling.
                 '''
-                self.__delLastNode() self.setNode(self.left, None)
+                self.__delLastNode() self.set_node(self.left, None)
                 break
-            self._Node=self.getNode(self.right)
-            self.setNode(self.left, None)
+            self._Node=self.get_node(self.right)
+            self.set_node(self.left, None)
 ```
