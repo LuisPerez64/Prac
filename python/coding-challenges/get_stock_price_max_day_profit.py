@@ -14,7 +14,7 @@ and one sale of one share of Apple stock yesterday.
 import unittest
 
 
-def get_max_profit(stock_prices, can_lose=True):
+def get_max_profit_single_purchase(stock_prices, can_lose=True):
     # Calculate the max profit
     if len(stock_prices) < 2:
         # Initial clause removes the possibility of an empty set of array prices.
@@ -43,42 +43,42 @@ class Test(unittest.TestCase):
 
     def test_error_with_empty_prices(self):
         with self.assertRaises(Exception):
-            get_max_profit([])
+            get_max_profit_single_purchase([])
 
     def test_error_with_one_price(self):
         with self.assertRaises(Exception):
-            get_max_profit([1])
+            get_max_profit_single_purchase([1])
 
     def test_price_goes_down_all_day(self):
-        actual = get_max_profit([9, 7, 4, 1], can_lose=True)
+        actual = get_max_profit_single_purchase([9, 7, 4, 1], can_lose=True)
         expected = -2
         self.assertEqual(actual, expected)
 
     def test_price_goes_down_all_day_no_losing_days(self):
         # Don't buy if there was no uptick for that day.
-        actual = get_max_profit([9, 7, 4, 1], can_lose=False)
+        actual = get_max_profit_single_purchase([9, 7, 4, 1], can_lose=False)
         expected = 0
         self.assertEqual(actual, expected)
 
     def test_price_goes_up_then_down(self):
-        actual = get_max_profit([1, 5, 3, 2])
+        actual = get_max_profit_single_purchase([1, 5, 3, 2])
         expected = 4
         self.assertEqual(actual, expected)
 
     def test_price_goes_down_then_up(self):
-        actual = get_max_profit([7, 2, 8, 9])
+        actual = get_max_profit_single_purchase([7, 2, 8, 9])
         expected = 7
         self.assertEqual(actual, expected)
 
     def test_price_goes_up_all_day(self):
-        actual = get_max_profit([1, 6, 7, 9])
+        actual = get_max_profit_single_purchase([1, 6, 7, 9])
         expected = 8
         self.assertEqual(actual, expected)
 
     def test_price_stays_the_same_all_day(self):
-        actual = get_max_profit([1, 1, 1, 1])
+        actual = get_max_profit_single_purchase([1, 1, 1, 1])
         expected = 0
         self.assertEqual(actual, expected)
 
-
-unittest.main(verbosity=2)
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
