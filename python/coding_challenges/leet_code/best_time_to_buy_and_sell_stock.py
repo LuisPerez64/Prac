@@ -1,15 +1,22 @@
 """
-Question: https://www.interviewcake.com/question/python3/stock-price
-First, I wanna know how much money I could have made yesterday if I'd been trading Apple stocks all day.
+Question: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+Say you have an array for which the ith element is the price of a given stock on day i.
 
-So I grabbed Apple's stock prices from yesterday and put them in a list called stock_prices, where:
+If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
 
-The indices are the time (in minutes) past trade opening time, which was 9:30am local time.
-The values are the price (in US dollars) of one share of Apple stock at that time.
-So if the stock cost $500 at 10:30am, that means stock_prices[60] = 500.
+Note that you cannot sell a stock before you buy one.
 
-Write an efficient function that takes stock_prices and returns the best profit I could have made from one purchase
-and one sale of one share of Apple stock yesterday.
+Example 1:
+
+Input: [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+             Not 7-1 = 6, as selling price needs to be larger than buying price.
+Example 2:
+
+Input: [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e. max profit = 0.
 """
 import unittest
 
@@ -79,6 +86,7 @@ class Test(unittest.TestCase):
         actual = get_max_profit_single_purchase([1, 1, 1, 1])
         expected = 0
         self.assertEqual(actual, expected)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
