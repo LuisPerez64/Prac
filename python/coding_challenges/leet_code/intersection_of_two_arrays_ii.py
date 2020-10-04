@@ -1,4 +1,4 @@
-"""  **REVISIT**
+"""  REVISIT: The use of the heap structure as a refresh
 Question: https://leetcode.com/problems/intersection-of-two-arrays-ii/
 Given two arrays, write a function to compute their intersection.
 
