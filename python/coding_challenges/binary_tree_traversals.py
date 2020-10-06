@@ -1,4 +1,4 @@
-from typing import *
+from typing import List
 from implementations.data_structures.node_structures import TreeNode
 
 
@@ -40,4 +40,3 @@ root_node = TreeNode(val='F',
                                     right=TreeNode(val='I',
                                                    left=TreeNode(val='H'))))
 
-print(iterative_solution(cur_root=root_node))
