@@ -37,7 +37,7 @@ The given linked list will contain between 1 and 10^4 nodes.
 The value of each node in the linked list will be in the range [1, 10^6].
 1 <= m,n <= 1000
 """
-from implementations.data_structures.node_structures import ListNode
+from implementations.data_structures import ListNode
 
 
 class Solution:

@@ -18,7 +18,7 @@ Given binary tree [3,9,20,null,null,15,7],
    15   7
 return its depth = 3.
 """
-from implementations.data_structures.node_structures import TreeNode
+from implementations.data_structures import TreeNode
 
 
 class Solution:

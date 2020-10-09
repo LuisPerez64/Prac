@@ -29,7 +29,8 @@ Output: []
 
 """
 from typing import List
-from implementations.data_structures.node_structures import ListNode
+
+from implementations.data_structures import ListNode
 
 
 def first_implementation(lists: List[ListNode]) -> ListNode:
@@ -65,7 +66,7 @@ def first_implementation(lists: List[ListNode]) -> ListNode:
 def second_implementation(lists: List[ListNode]) -> ListNode or None:
     """
     Ingest the lists into a heap through the heap sort algorithm
-    Time Complexity: O(nk) + O(n * log(n)) + O(n) + O(n) -> O(3n) + O(n * log(n)) -> O(n) + O(n * log(n)) -> O(n * log(n))
+    Time Complexity: O(nk) + O(n log n) + O(n) + O(n) -> O(3n) + O(n log n) -> O(n) + O(n log n) -> O(n log n )
         O(n * k) - Iterate over the list (n) of listNodes (k)
         O(n * log(n)) - Heapify
         O(n) - Iteration over the k elements in the list into a flattened structure of length n
@@ -102,7 +103,7 @@ def second_implementation(lists: List[ListNode]) -> ListNode or None:
 def third_implementation(lists: List[ListNode]) -> ListNode or None:
     """
     Ingest the lists into a heap through the heap sort algorithm
-    Time Complexity: O(nk) + O(n * log(n)) + O(n) + O(n) -> O(3n) + O(n * log(n)) -> O(n) + O(n * log(n)) -> O(n * log(n))
+    Time Complexity: O(nk) + O(n log n) + O(n) + O(n) -> O(3n) + O(n log n) -> O(n) + O(n log n) -> O(n log n)
         O(n * k) - Iterate over the list (n) of listNodes (k)
         O(n) - Iteration over the k elements in the list into a flattened structure of length n
         O(n) - Creation of the final LinkedList with the heappop

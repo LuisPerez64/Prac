@@ -23,9 +23,8 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         """
         Store the counted values of each letter from one string and place them into a hash map.
-        Iterate over the next string removing an occurence of the letter from the hash maps count.
-        If at any point the letter isn't found to exist in the map,
-        or removing one of its elements yields < 0 occurs left its invalid.
+        Iterate over the next string removing an occurrence of the letter from the hash maps count.
+        If at any point the letter isn't in the map, or removing an instance yields < 0 instances left its invalid.
 
         Time Complexity: O(2n) => O(n)
         Space Complexity: O(n)

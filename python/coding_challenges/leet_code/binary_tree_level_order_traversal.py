@@ -21,7 +21,7 @@ return its level order traversal as:
 """
 from typing import List
 
-from implementations.data_structures.node_structures import TreeNode
+from implementations.data_structures import TreeNode
 
 
 class Solution:

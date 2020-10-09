@@ -48,7 +48,7 @@ class Solution:
                 for idx_c in range(idx_b + 1, len(nums)):
                     if nums[idx_a] + nums[idx_b] + nums[idx_c] == 0:
                         ret_set.add(tuple(sorted([nums[idx_a], nums[idx_b], nums[idx_c]])))
-        return ret_set
+        return [list(x) for x in ret_set]
 
     def second_implementation(self, nums: List[int]) -> List[List[int]]:
         """
@@ -70,7 +70,7 @@ class Solution:
                 for idx_c in range(idx_b + 1, len(nums)):
                     if nums[idx_a] + nums[idx_b] + nums[idx_c] == 0:
                         ret_set.add(tuple(sorted([nums[idx_a], nums[idx_b], nums[idx_c]])))
-        return ret_set
+        return [list(x) for x in ret_set]
 
     def third_implementation(self, nums: List[int]) -> List[List[int]]:
         """
@@ -80,12 +80,13 @@ class Solution:
         Time Complexity: O(n) + O(n^2) * O(n log(n)) + O(n) ~> O(n ^ 2)
         Space Complexity: O(n)
         """
-        exists = {}
+        from collections import defaultdict
+        exists = defaultdict(int)
         nums.sort()
         ret = set()
         for num in nums:
-            # Slight implementation of a Counter to get the duplicated values handled and their occurences logged
-            exists[num] = exists.get(num, 0) + 1
+            # Slight implementation of a Counter to get the duplicated values handled and their occurrences logged
+            exists[num] += 1
 
         # O(n^2)  Iterate over only paired elements no need to go through n a third time.
         for idx_a in range(len(nums)):
@@ -105,6 +106,7 @@ class Solution:
                         ret.add(tuple(sorted([nums[idx_a], nums[idx_b], diff])))
 
         return [list(x) for x in ret]
+
 
 if __name__ == '__main__':
     print(Solution().third_implementation([-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4]))
