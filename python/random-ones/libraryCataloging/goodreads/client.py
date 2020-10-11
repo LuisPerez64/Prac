@@ -102,7 +102,7 @@ class GoodreadsClient():
         'genre' (default is 'all')
         """
         resp = self.request("search/index.xml",
-                            {'q': q, 'page': page, 'search[field]': search_field})
+                            {'node_q': q, 'page': page, 'search[field]': search_field})
         works = resp['search']['results']['work']
         # If there's only one work returned, put it in a list.
         if type(works) == collections.OrderedDict:
@@ -121,7 +121,7 @@ class GoodreadsClient():
 
     def find_groups(self, query, page=1):
         """Find a group based on the query"""
-        resp = self.request("group/search.xml", {'q': query, 'page': page})
+        resp = self.request("group/search.xml", {'node_q': query, 'page': page})
         return resp['groups']['list']['group']
 
     def book_review_stats(self, isbns):

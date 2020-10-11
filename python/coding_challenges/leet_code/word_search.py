@@ -59,7 +59,7 @@ class Solution:
 
             # the current letter being sought is matched.
             # Continue the operations marking that this cell should not be revisited.
-            board[row][col] = 'Flagged'
+            board[row][col] = '#'
             for rowOffset, colOffset in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
                 if backtrack(row + rowOffset, col + colOffset, suffix[1:]):
                     return True

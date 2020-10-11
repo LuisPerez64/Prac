@@ -50,13 +50,3 @@ def two_sum(nums: List[int], target: int) -> List[int]:
             return [compliments[need_val], idx]
         compliments[cur_val] = idx
     return []
-#         right_idx = len(nums) - 1
-#         while left_idx < right_idx:
-#             left = nums[left_idx]
-#             right = nums[right_idx]
-#             if
-
-#         for idx_a in range(len(nums)):
-#             for idx_b in range(idx_a+1, len(nums)):
-#                 if (nums[idx_a] + nums[idx_b]) == target:
-#                     return [idx_a, idx_b]

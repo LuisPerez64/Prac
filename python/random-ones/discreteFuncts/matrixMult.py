@@ -29,7 +29,7 @@ class matrix(object):
 #Helper functions for the matrix algebra points.     
 #Validation of input functions.
 def validMult(inputMatrix, inputMatrixTwo):
-#Given two matrices size m*n and q*p if n != q then they cannot be multiplied.
+#Given two matrices size m*n and node_q*node_p if n != node_q then they cannot be multiplied.
     return inputMatrix.cols == inputMatrixTwo.rows
 def validAdd(inputMatrix, inputMatrixTwo):
 #Addition and subtraction fail if this is not met. The rows and columns must be
@@ -90,7 +90,7 @@ def matrixMultiplication(inputMatrix, inputMatrixTwo):
     if (inputMatrix.cols == inputMatrixTwo.cols and 
         inputMatrix.rows == inputMatrixTwo.rows): #mxn * nxm ~~ m==n
         equalMatrices(inputMatrix, inputMatrixTwo,retMatrix)
-    elif inputMatrix.rows == inputMatrixTwo.cols: #mxn * nxp ~~ m==p ^ n!=m||p 
+    elif inputMatrix.rows == inputMatrixTwo.cols: #mxn * nxp ~~ m==node_p ^ n!=m||node_p
         mirroredMatrices(inputMatrix, inputMatrixTwo, retMatrix)
     
     return retMatrix

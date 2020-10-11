@@ -54,7 +54,7 @@ console.log(g.next().value)
 
 //Generators are iterators, meaning they can be treated as parameters to loops
 for (q of g) {
-	// Will resolve q to the value field in the returned object
+	// Will resolve node_q to the value field in the returned object
   console.log("For Loop: ", q)
 }
 

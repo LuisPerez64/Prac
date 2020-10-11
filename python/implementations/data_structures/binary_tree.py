@@ -6,6 +6,10 @@ Implementation of multiple operations on the data structure.
 
 __all__ = ['TreeNode']
 
+from typing import Any, List
+
+from implementations.utils.list_utils import flatten_list
+
 
 class TreeNode(object):
     def __init__(self, val=None, left=None, right=None):
@@ -15,15 +19,7 @@ class TreeNode(object):
         self.filled = False
 
     def __str__(self):
-        elements = self.level_order_traversal(root=self, with_null=True)
-        levels = [[]]
-        level = 0
-        for elt in elements:
-            level_length = 2 ** level
-            if len(levels[level]) == level_length:
-                level += 1
-                levels.append([])
-            levels[level].append(elt)
+        levels = self.level_order_traversal(self, True)
         return str(levels)
 
     @property
@@ -42,43 +38,33 @@ class TreeNode(object):
                 stack.append((cur_d + 1, cur_root.right))
         return depth
 
-    # @classmethod
-    # def create_from_list(cls, inp_list: list):
-    #     if not inp_list:
-    #         return None
-    #     # List formatted in level_order [1,2,None,3,None,None,None] and the elements are inserted into the first empty
-    #     root_node = cls(val=inp_list[0])
-    #     stack = [root_node]
-    #     while stack:
-    #         for idx in range(len(stack)):
-    #             pass
-    #     for idx, elt in enumerate(inp_list[1:]):
-    #         if idx % 2 == 0:
-    #             # insert into left and move to the next node
-    #         else:
-    #             # insert into right
-
     @classmethod
-    def level_order_traversal(cls, root: 'TreeNode', with_null=False):
+    def level_order_traversal(cls, root: 'TreeNode', with_null=False, partitioned: bool = True):
         if not root:
             return []
-        result = []
+        levels = []
+        level = 0
         queue = [root]
         while queue:
-            for idx in range(len(queue)):
+            levels.append([])
+            level_length = len(queue)
+
+            for idx in range(level_length):
                 cur_node = queue.pop(0)
-                result.append(cur_node.val)
+                cur_val = 'null'
+                if cur_node:
+                    cur_val = cur_node.val
 
-                if cur_node.left:
+                levels[level].append(cur_val)
+                if not cur_node:
+                    continue
+                if cur_node.left or with_null:
                     queue.append(cur_node.left)
-                elif with_null:
-                    result.append('null')
-                if cur_node.right:
+                if cur_node.right or with_null:
                     queue.append(cur_node.right)
-                elif with_null:
-                    result.append('null')
+            level += 1
 
-        return result
+        return levels if partitioned else flatten_list(levels)
 
     @classmethod
     def pre_order_traversal(cls, root: 'TreeNode'):
@@ -159,3 +145,111 @@ class TreeNode(object):
                     stack.append(root.left)
                     continue
                 break
+
+    @classmethod
+    def same_tree(cls, root_a: 'TreeNode', root_b: 'TreeNode'):
+        tree_a = cls.level_order_traversal(root=root_a, with_null=True, partitioned=True)
+        tree_b = cls.level_order_traversal(root=root_b, with_null=True, partitioned=True)
+        return tree_a == tree_b
+
+    @classmethod
+    def invert_tree(cls, root):
+        """
+        Maybe this method shouldn't have side effects?
+        Invert the Binary tree.
+        1 <- 2 -> 3  => 3 <- 2 -> 1
+        """
+        if not root:
+            return
+
+        def swap_children(parent: TreeNode):
+            """
+            This will do the swapping based on a given nodes children.
+            """
+            if not parent:
+                return
+            tmp_node = parent.left
+            parent.left = parent.right
+            parent.right = tmp_node
+
+        queue = [root]
+        while queue:
+            cur_root = queue.pop()
+            swap_children(cur_root)
+            if cur_root.left:
+                queue.append(cur_root.left)
+            if cur_root.right:
+                queue.append(cur_root.right)
+
+    @classmethod
+    def lowest_common_ancestor(cls, root: 'TreeNode', node_p: 'TreeNode', node_q: 'TreeNode'):
+        """
+        Start from the root node and traverse the tree.
+        Until we find node_p and node_q both, keep storing the parent pointers in a dictionary.
+        Once we have found both node_p and node_q, we get all the ancestors for node_p using the parent dictionary and
+        add to a set called ancestors.
+        Similarly, we traverse through ancestors for node node_q.
+        If the ancestor is present in the ancestors set for node_p, this means this is the first ancestor
+        common between node_p and node_q (while traversing upwards) and hence this is the LCA node.
+        """
+
+        stack = [root]
+        parents = {root: None}
+
+        while node_p not in parents or node_q not in parents:
+            # Keep searching until both are in the dict.
+            # Doing a level order traversal until both sides are exhausted.
+            node = stack.pop()
+            if node.left:
+                parents[node.left] = node
+                stack.append(node.left)
+            if node.right:
+                parents[node.right] = node
+                stack.append(node.right)
+
+        # Create an ancestors set to grab all of the ancestors for the individual nodes.
+        ancestors = set()
+
+        # Grab all of the parents that lead up to P
+        while node_p:
+            ancestors.add(node_p)
+            # Find the current ancestors parent until we get all the way to the root node.
+            node_p = parents[node_p]
+
+        while node_q not in ancestors:
+            # Keep going up the to the parent node for node_q as long as its not in Ps ancestors list.
+            # We'll either get to a common node or reach the point where node_q == root.
+            node_q = parents[node_q]
+
+        return node_q
+
+    @classmethod
+    def create_from_pre_order_in_order_traversal(cls, preorder: List[Any], inorder: List[Any]):
+        """
+        Logic is maintained from the first implementation. Find the root based on the PreOrder
+        list and then find it in the InOrder list. Which will give the left/right nodes for the
+        value.
+        """
+
+        # Create the map to not rely on index searching through the list each time through.
+        in_order_map = {num: idx for idx, num in enumerate(inorder)}
+
+        def helper(left_idx, right_idx):
+            nonlocal pre_idx
+            if right_idx == left_idx or pre_idx >= len(preorder):
+                return
+
+            # pre_order table denotes the root node to append
+            root_val = preorder[pre_idx]
+            root = TreeNode(root_val)
+            pre_idx += 1
+            # Get the two child nodes from inorder array.
+            in_order_idx = in_order_map[root_val]
+
+            root.left = helper(left_idx, in_order_idx)
+
+            root.right = helper(in_order_idx + 1, right_idx)
+            return root
+
+        pre_idx = 0
+        return helper(left_idx=0, right_idx=len(inorder))

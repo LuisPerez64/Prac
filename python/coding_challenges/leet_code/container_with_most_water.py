@@ -49,7 +49,7 @@ class Solution:
         Space Complexity: O(n)
         """
 
-        def get_area(self, inp_arr: List[int]) -> int:
+        def get_area(inp_arr: List[int]) -> int:
             """
             Helper function to calculate the total area of water between two points.
             """

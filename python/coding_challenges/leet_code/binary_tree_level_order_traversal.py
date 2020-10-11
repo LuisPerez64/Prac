@@ -28,7 +28,7 @@ class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         return self.first_implementation(root)
 
-    def first_implementation(self, root: TreeNode) -> List[List[int]]:
+    def first_implementation(self, root: TreeNode, with_null=False) -> List[List[int]]:
         """
         Iterative solution building on the level_order_traversal algo.
         Time Complexity: O(n)
@@ -46,11 +46,16 @@ class Solution:
 
             for idx in range(level_length):
                 cur_node = queue.pop(0)
-                levels[level].append(cur_node.val)
+                cur_val = 'null'
+                if cur_node:
+                    cur_val = cur_node.val
 
-                if cur_node.left:
+                levels[level].append(cur_val)
+                if not cur_node:
+                    continue
+                if cur_node.left or with_null:
                     queue.append(cur_node.left)
-                if cur_node.right:
+                if cur_node.right or with_null:
                     queue.append(cur_node.right)
             level += 1
 
