@@ -2,6 +2,7 @@
 Implementation of the Trie and TrieNode classes.
 Used in decision making algorithms and basically produces an ordered graph object.
 """
+__all__ = ["TrieNode", "Trie"]
 
 
 class TrieNode(object):

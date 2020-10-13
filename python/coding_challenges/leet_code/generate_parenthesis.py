@@ -17,11 +17,10 @@ from typing import List
 
 def generate_parenthesis(n: int) -> List[str]:
     # Can either go through every possible permutation explicitly or break the problem down dynamically
-    results = []
+    results = list()
 
     # At each stage you can either choose to create a new parens or close the existing string
     # For each pair below the size of n so create dynamic values  based on whether you closed or opened a new parens
-
     def recursive_pairing(cur_string, num_left, num_right):
         if len(cur_string) == n * 2:
             results.append(cur_string)
@@ -35,4 +34,5 @@ def generate_parenthesis(n: int) -> List[str]:
             recursive_pairing(cur_string + ')', num_left, num_right + 1)
 
     recursive_pairing('', 0, 0)
-    return list(set(results))
+    return results
+# print(len(generate_parenthesis(10)))

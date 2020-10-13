@@ -26,7 +26,7 @@ Given a particular n ≥ 1, find out how much money you need to have to guarante
 def guess_number_higher_lower_two(n: int) -> int:
     from functools import lru_cache
     # The equation comes down to exhausting the possible wrong guesses until a correct one is given.
-    # Since the problem can be broken down into sub-problems then best would be a DP solution with memoization.
+    # Since the problem can be broken down into sub-problems then best would be a backtrack solution with memoization.
 
     memo = {}  # Key == (low, high) val == max amount of money needed to guarantee a win
 

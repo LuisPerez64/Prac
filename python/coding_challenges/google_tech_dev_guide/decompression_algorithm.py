@@ -8,10 +8,9 @@ class Decompression(object):
     @staticmethod
     def first_attempt(compressed: str) -> str:
         """
-        Operations on the compressed string will grab each sub operation(comporessed marker) and allocate space for them
-        on a stack. The stack will then generate the expected string for each fully grouped operation based on the markers.
+        Operations on the compressed string will grab each sub operation(compressed marker) and allocate space for them
+        on a stack. The stack will then generate the expected string for each fully grouped operation based on markers.
         Num(start_marker)...(end_marker) where Num dictates the repetition of the input.
-
         """
         out_str = ""
         operations_stack = []
