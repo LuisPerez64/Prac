@@ -33,6 +33,12 @@ Output: "abccdcdcdxyz"
 
 class Solution:
     def decodeString(self, s: str) -> str:
+        return self.first_implementation(s)
+
+    def first_implementation(self, s: str) -> str:
+        """
+        Implementation without recursion using stacks to capture the operation.
+        """
         out_str = ''
         sub_op = []
         repetitions = []
@@ -61,3 +67,35 @@ class Solution:
                     sub_op[-1] += cur
 
         return out_str
+
+    def second_implementation(self, s: str) -> str:
+        """
+        Recursive method for decoding a string of type
+        "ab3[c]" -> "abccc"
+        """
+
+        def decode(cur_idx: int):
+            if cur_idx > len(s):
+                return "", cur_idx
+            cur_string = ""
+            repeats = ""
+            while cur_idx < len(s):
+                if s[cur_idx].isdigit():
+                    # if not valid i.e. "a34"
+                    repeats += s[cur_idx]
+                    cur_idx += 1
+                else:
+                    if repeats:
+                        cur_idx += 1
+                        sub_op, cur_idx = decode(cur_idx)
+                        cur_string += (sub_op * int(repeats))
+                        repeats = ""
+                    elif s[cur_idx] == ']':
+                        cur_idx += 1
+                        break
+                    else:
+                        cur_string += s[cur_idx]
+                        cur_idx += 1
+            return cur_string, cur_idx
+
+        return decode(0)[0]

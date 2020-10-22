@@ -1,3 +1,6 @@
+"""
+
+"""
 from typing import List
 
 
@@ -15,7 +18,8 @@ class Solution:
         The matrix is sorted at each row, and along each column
         Checking to see if an element is within the bounds of either edge at each step
         if indices are [0][0] check if any elements on the edges encompass this number.
-        If neither satisfy the condition that the number is within the start/end bound increment both indices else increment the index that does not contain the value.
+        If neither satisfy the condition that the number is within the start/end bound increment both indices
+        else increment the index that does not contain the value.
         """
         if not matrix or not matrix[0]:
             return False
@@ -45,7 +49,7 @@ class Solution:
         In all this is a Binary search applicable problem.
         Pattern:
             From a given point check if the last idx element for the row and column are in the bound.
-            Increasing the row/col if the valu is above the two bounds.
+            Increasing the row/col if the value is above the two bounds.
         """
         num_rows = len(matrix)
         if not num_rows or not len(matrix[0]):
@@ -88,4 +92,4 @@ class Solution:
         return find_next_index(0, 0)
 
 # Solution().searchMatrix([[1,3,5,7],[10,11,16,20],[23,30,34,50]], 3)
-Solution().searchMatrix([[1,3]], 3)
+# Solution().searchMatrix([[1,3]], 3)

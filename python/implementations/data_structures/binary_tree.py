@@ -6,8 +6,10 @@ Implementation of multiple operations on the data structure.
 
 __all__ = ['TreeNode']
 
-from typing import Any, List
+from collections import deque
+from typing import Any, List, Dict, Union
 
+from implementations.data_structures import DSU
 from implementations.utils.list_utils import flatten_list
 
 
@@ -19,7 +21,7 @@ class TreeNode(object):
         self.filled = False
 
     def __str__(self):
-        levels = self.level_order_traversal(self, True)
+        levels = self.level_order_traversal(self, with_null=True, partitioned=False)
         return str(levels)
 
     @property
@@ -39,6 +41,30 @@ class TreeNode(object):
         return depth
 
     @classmethod
+    def create_from_list(cls, data):
+        """
+        Create a Binary Tree from a list.
+        Format for the list [root, left, right, left.left, left.right,right.left, right.right,...]
+        Example: [1,2,3,'null','null',4,5]
+        """
+        if not data:
+            return None
+
+        nodes = deque([None if val == 'null' or val is None else TreeNode(int(val))
+                       for val in data])
+
+        # Create a second deque to hold the structure of the nodes relationship to their parents.
+        child_nodes = deque(nodes)
+        root = child_nodes.popleft()
+        for node in nodes:
+            if node:
+                if child_nodes:
+                    node.left = child_nodes.popleft()
+                if child_nodes:
+                    node.right = child_nodes.popleft()
+        return root
+
+    @classmethod
     def level_order_traversal(cls, root: 'TreeNode', with_null=False, partitioned: bool = True):
         if not root:
             return []
@@ -48,7 +74,6 @@ class TreeNode(object):
         while queue:
             levels.append([])
             level_length = len(queue)
-
             for idx in range(level_length):
                 cur_node = queue.pop(0)
                 cur_val = 'null'
@@ -63,13 +88,13 @@ class TreeNode(object):
                 if cur_node.right or with_null:
                     queue.append(cur_node.right)
             level += 1
-
+        levels = [lvl for lvl in levels if not all(val == 'null' for val in lvl)]
         return levels if partitioned else flatten_list(levels)
 
     @classmethod
     def pre_order_traversal(cls, root: 'TreeNode'):
         """
-        Postorder traversal sequence: Left, Right, Root
+        Pre Order traversal sequence: Left, Right, Root
         """
         if not root:
             return []
@@ -116,16 +141,18 @@ class TreeNode(object):
         """
         if not root:
             return []
-        root_nodes = [root]
+        stack = [root]
+        stack_2 = []
         result = []
-        while root_nodes:
-            cur_root = root_nodes.pop()
-            result.insert(0, cur_root.val)
-
-            if cur_root.left:
-                root_nodes.append(cur_root.left)
-            if cur_root.right:
-                root_nodes.append(cur_root.right)
+        while stack:
+            node = stack.pop()
+            stack_2.append(node)
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        while stack_2:
+            result.append(stack_2.pop())
         return result
 
     @classmethod
@@ -253,3 +280,104 @@ class TreeNode(object):
 
         pre_idx = 0
         return helper(left_idx=0, right_idx=len(inorder))
+
+    @classmethod
+    def get_adjacency(cls, root, delete_nodes: List[int] = None):
+        adjacency = []
+
+        def helper(node, parent):
+            if not node:
+                return
+            tmp = [parent.val, node.val]
+            if delete_nodes:
+                for idx in range(len(tmp) - 1, -1, -1):
+                    if tmp[idx] in delete_nodes:
+                        tmp.pop(idx)
+                if len(tmp) == 1:
+                    tmp += tmp
+            if tmp:
+                adjacency.append(tmp)
+
+            helper(node.left, parent=node)
+            helper(node.right, parent=node)
+
+        helper(root, root)
+        return adjacency
+
+    @classmethod
+    def delete_nodes(cls, root: 'TreeNode', to_delete: List[int]) -> List['TreeNode']:
+        """
+        Recursively delete the nodes wanted. Then returns a list of the tree nodes that are marked as new roots.
+        """
+        adjacency = cls.get_adjacency(root=root, delete_nodes=to_delete)
+
+        roots: Dict[int, Union['TreeNode', None]] = {}
+        dsu = DSU()
+        for u, v in adjacency:
+            dsu.union(u, v)
+
+            # Mark each of the roots and store their value to grab them on the deletion traversal
+            roots[dsu.find(u)] = None
+            roots[dsu.find(v)] = None
+
+        def helper(node):
+            # Delete the nodes in the tree while preserving the children.
+            if not node:
+                return False
+            if node.val in roots:
+                # Capture the node as a new root value.
+                roots[node.val] = node
+
+            if node.val in to_delete:
+                # The node is marked for deletion.
+                # If it is to be deleted then the parent will handle it.
+                # the child nodes are left untouched, but traversed for any further operations.
+                helper(node.left)
+                helper(node.right)
+                return True
+
+            # We cut the link from the parent to its children if either of them are pointing to a node that was deleted.
+            if helper(node.left):
+                node.left = None
+            if helper(node.right):
+                node.right = None
+            return node.val in to_delete
+
+        if helper(root):
+            # The root node itself may have been marked for deletion. Handle this case here.
+            root.left = None
+            root.right = None
+        return list(roots.values())
+#
+# def drawtree(root):
+#     def height(root):
+#         return 1 + max(height(root.left), height(root.right)) if root else -1
+#
+#     def jumpto(x, y):
+#         t.penup()
+#         t.goto(x, y)
+#         t.pendown()
+#
+#     def draw(node, x, y, dx):
+#         if node:
+#             t.goto(x, y)
+#             jumpto(x, y - 20)
+#             t.write(node.val, align='center', font=('Arial', 12, 'normal'))
+#             draw(node.left, x - dx, y - 60, dx / 2)
+#             jumpto(x, y - 20)
+#             draw(node.right, x + dx, y - 60, dx / 2)
+#
+#     import turtle
+#     t = turtle.Turtle()
+#     t.speed(0)
+#     turtle.delay(0)
+#     h = height(root)
+#     jumpto(0, 30 * h)
+#     draw(root, 0, 30 * h, 40 * h)
+#     t.hideturtle()
+#     turtle.mainloop()
+#
+#
+# if __name__ == '__main__':
+#     drawtree(deserialize('[1,2,3,null,null,4,null,null,5]'))
+#     drawtree(deserialize('[2,1,3,0,7,9,1,2,null,1,0,null,null,8,8,null,null,null,null,7]'))
