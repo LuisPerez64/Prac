@@ -11,14 +11,14 @@ getMin() -- Retrieve the minimum element in the stack.
 Example 1:
 
 Input
-["MinStack","push","push","push","getMin","pop","top","getMin"]
+["MinMaxStack","push","push","push","getMin","pop","top","getMin"]
 [[],[-2],[0],[-3],[],[],[],[]]
 
 Output
 [null,null,null,null,-3,null,0,-2]
 
 Explanation
-MinStack minStack = new MinStack();
+MinMaxStack minStack = new MinMaxStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
@@ -79,8 +79,8 @@ class MinStack:
         """
         return self.stack[-1][2]
 
-# Your MinStack object will be instantiated and called as such:
-# obj = MinStack()
+# Your MinMaxStack object will be instantiated and called as such:
+# obj = MinMaxStack()
 # obj.push(x)
 # obj.pop()
 # param_3 = obj.top()

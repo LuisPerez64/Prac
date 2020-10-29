@@ -2,6 +2,8 @@
 REVISIT: Review all of these methods until they are damn near second nature.
 Binary Tree Node to be used as the base for Binary Trees.
 Implementation of multiple operations on the data structure.
+TODO: Implement Balance operation
+TODO: Implement Binary Search Tree, current Tree is just a Binary Tree with no guaranteed insertion order.
 """
 
 __all__ = ['TreeNode']
@@ -10,7 +12,7 @@ from collections import deque
 from typing import Any, List, Dict, Union
 
 from implementations.data_structures import DSU
-from implementations.utils.list_utils import flatten_list
+from implementations.utils import flatten_list
 
 
 class TreeNode(object):
@@ -66,6 +68,11 @@ class TreeNode(object):
 
     @classmethod
     def level_order_traversal(cls, root: 'TreeNode', with_null=False, partitioned: bool = True):
+        """
+        Level Order Traversal: Root, Children, Childrens Children,...
+        Traverse the tree collecting the node at each level before moving to its next.
+        Straightforward implementation of Breadth First Traversal of a Tree.
+        """
         if not root:
             return []
         levels = []

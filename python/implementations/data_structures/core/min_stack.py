@@ -1,13 +1,13 @@
 """
-MinStack data structure.
+MinMaxStack data structure.
 Stack modified to allow polling for the minimum value inside of it in O(1) time.
 """
-__all__ = ['MinStack']
+__all__ = ['MinMaxStack']
 
 from collections import deque
 
 
-class MinStack:
+class MinMaxStack:
 
     def __init__(self):
         """

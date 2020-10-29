@@ -1,8 +1,66 @@
 """
 Implementation of the Trie and TrieNode classes.
 Used in decision making algorithms and basically produces an ordered graph object.
+
+Resources:
+* https://en.wikipedia.org/wiki/Trie
+
 """
-__all__ = ["TrieNode", "Trie"]
+__all__ = ["TrieNode", "Trie", "TrieSimple"]
+
+from typing import List
+
+
+class TrieSimple(object):
+    """
+    Lightweight Trie implementation just using a dict.
+    You can convert a prefix trie into a suffix trie by just reversing the word as it's being ingested,
+    and reversing it when searching.
+    """
+
+    def __init__(self, words: List[str] = None, prefix=False, **kwargs):
+        self.end_marker = '#'
+        self.root = dict()
+        self.prefix = prefix
+        if words:
+            for word in words:
+                self.insert(word)
+
+    def __str__(self):
+        return str(self.root)
+
+    def convert_word(self, word: str):
+        if self.prefix:
+            word = word[::-1]
+        return word
+
+    def insert(self, word: str):
+        word = self.convert_word(word)
+        cur_root = self.root
+        for char in word:
+            if char not in cur_root:
+                cur_root[char] = dict()
+            cur_root = cur_root[char]
+        # mark that it's an end so that you know a word has been inserted.
+        cur_root[self.end_marker] = word
+
+    def search(self, word: str, check_starts_with=False):
+        """
+        If check_starts_with toggled then you're just looking for the word to exist in part, so substring match.
+        Else full word match is needed, which is denoted by the existence of the self.end_marker
+        """
+        word = self.convert_word(word)
+        cur_root = self.root
+        for char in word:
+            if char not in cur_root:
+                return False
+            cur_root = cur_root[char]
+        return check_starts_with or self.end_marker in cur_root
+
+# Sample use
+# tmp = TrieSimple(words=["cat", "hat", "hated"], prefix=False)
+# print(tmp)
+# print(tmp.search('hat'), tmp.search('hate'), tmp.search('hate', True))
 
 
 class TrieNode(object):
