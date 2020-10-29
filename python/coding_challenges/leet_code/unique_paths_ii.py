@@ -2,7 +2,8 @@
 Question: https://leetcode.com/problems/unique-paths-ii/
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner
+of the grid (marked 'Finish' in the diagram below).
 
 Now consider if some obstacles are added to the grids. How many unique paths would there be?
 
@@ -34,8 +35,8 @@ class Solution:
 
     def first_implementation(self, obstacleGrid: List[List[int]]) -> int:
         """
-        As there are fail cases the quickest resolve would be to expand on the 
-        backtracking algo as the straight DP's handling of the obstacles 
+        As there are fail cases the quickest resolve would be to expand on the
+        backtracking algo as the straight DP's handling of the obstacles
         may be a bit out of scope.
         """
         num_rows = len(obstacleGrid)
@@ -62,7 +63,7 @@ class Solution:
                 memo[(row, col)] = 1
                 return 1
 
-            # mark the current location in the grid as invalid to not revisit it, though this is not possible with 
+            # mark the current location in the grid as invalid to not review it, though this is not possible with
             # only two planes of travel available. If we add the other dimensions it would be useful
             # orig = obstacleGrid[row][col]
             # obstacleGrid[row][col] = 1

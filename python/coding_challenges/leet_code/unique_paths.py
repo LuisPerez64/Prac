@@ -3,7 +3,8 @@ REVISIT: Base DP problem
 Question: https://leetcode.com/problems/unique-paths/
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner
+of the grid (marked 'Finish' in the diagram below).
 
 How many possible unique paths are there?
 
@@ -75,4 +76,3 @@ class Solution:
                 dp[(col, row)] = dp[(col - 1, row)] + dp[(col, row - 1)]
         return dp[(height-1, width-1)]
 
-Solution().uniquePaths(2000, 150)

@@ -69,4 +69,3 @@ class Solution:
             # print(f"Num: {n}, Pre: {n & (n - 1)}, Pre Bits: {num_bits[n & (n - 1)]}")
             num_bits.append(num_bits[n & (n - 1)] + 1)
         return num_bits
-       
