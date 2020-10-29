@@ -12,8 +12,9 @@ Example 2:
 
 Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
 """
-from implementations.data_structures import ListNode
 from collections import deque
+
+from implementations.data_structures import ListNode
 
 
 class Solution:

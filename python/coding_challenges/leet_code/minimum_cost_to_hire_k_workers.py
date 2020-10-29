@@ -48,12 +48,12 @@ class Solution:
         """
         # Sort the workers based on the best bang for buck for the wage / quality
 
-        rqw = sorted([(w/float(q), q, w) for q,w in zip(quality, wage)])
+        rqw = sorted([(w / float(q), q, w) for q, w in zip(quality, wage)])
 
         answer = float('inf')
         pool = []
         sumq = 0
-        for r, q,w in rqw:
+        for r, q, w in rqw:
             # insert the quality into the minheap to pull them out in maxheap order.
             heappush(pool, -q)
             sumq += q

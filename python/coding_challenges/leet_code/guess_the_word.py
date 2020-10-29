@@ -98,6 +98,7 @@ class Solution:
             # valid_guesses = guess_pool
         print(idx)
 
+
 if __name__ == '__main__':
     wordlist = ["gaxckt", "trlccr", "jxwhkz", "ycbfps", "peayuf", "yiejjw", "ldzccp", "nqsjoa", "qrjasy", "pcldos",
                 "acrtag", "buyeia", "ubmtpj", "drtclz", "zqderp", "snywek", "caoztp", "ibpghw", "evtkhl", "bhpfla",
@@ -109,4 +110,4 @@ if __name__ == '__main__':
                 "jqmbib", "mypnvf", "lnrgnj", "clijwa", "kiioqr", "syzebr", "rqsmhg", "sczjmz", "hsdjfp", "mjcgvm",
                 "ajotcx", "olgnfv", "mjyjxj", "wzgbmg", "lpcnbj", "yjjlwn", "blrogv", "bdplzs", "oxblph", "twejel",
                 "rupapy", "euwrrz", "apiqzu", "ydcroj", "ldvzgq", "zailgu", "xgqpsr", "wxdyho", "alrplq", "brklfk"]
-    Solution().first_implementation(wordlist=wordlist, master=Master(),num_guesses=10)
+    Solution().first_implementation(wordlist=wordlist, master=Master(), num_guesses=10)

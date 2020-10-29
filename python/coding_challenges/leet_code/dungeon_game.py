@@ -56,6 +56,7 @@ class Solution:
         """
         rows = len(dungeon)
         cols = len(dungeon[0])
+
         def health_needed_to_survive(cur_cell):
             return 1 if cur_cell > 0 else cur_cell * -1 + 1
 
@@ -66,15 +67,15 @@ class Solution:
         dp[-1][-1] = health_needed_to_survive(dp[-1][-1]) or 1
 
         for row in range(rows - 1, 0, -1):
-            dp[-1][row-1] = health_needed_to_survive(dp[-1][row] - dungeon[-1][row-1])
+            dp[-1][row - 1] = health_needed_to_survive(dp[-1][row] - dungeon[-1][row - 1])
 
-        for col in range(cols-1, 0, -1):
-            dp[col-1][-1] = health_needed_to_survive(dp[col][-1] - dungeon[col-1][-1])
+        for col in range(cols - 1, 0, -1):
+            dp[col - 1][-1] = health_needed_to_survive(dp[col][-1] - dungeon[col - 1][-1])
 
         for row in range(rows - 2, -1, -1):
             for col in range(cols - 2, -1, -1):
-                dp[row][col] = min(1, health_needed_to_survive(dp[row+1][col] - dungeon[row][col]),
-                                   health_needed_to_survive(dp[row][col+1] - dungeon[row][col]))
+                dp[row][col] = min(1, health_needed_to_survive(dp[row + 1][col] - dungeon[row][col]),
+                                   health_needed_to_survive(dp[row][col + 1] - dungeon[row][col]))
 
         return dp[0][0]
 

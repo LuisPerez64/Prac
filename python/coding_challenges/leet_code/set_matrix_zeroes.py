@@ -93,7 +93,7 @@ class Solution:
                 is_col = True
             for j in range(1, C):
                 # If an element is zero, we set the first element of the corresponding row and column to 0
-                if matrix[i][j]  == 0:
+                if matrix[i][j] == 0:
                     matrix[0][j] = 0
                     matrix[i][0] = 0
 

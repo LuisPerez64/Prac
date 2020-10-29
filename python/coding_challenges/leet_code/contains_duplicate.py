@@ -48,7 +48,6 @@ class Solution:
             last_num = cur_num
         return False
 
-
     def second_implementation(self, nums: List[int]) -> bool:
         """
         Time Complexity: O(n)

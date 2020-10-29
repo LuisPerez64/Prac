@@ -1,4 +1,5 @@
 __all__ = ['GraphNode', 'Graph']
+
 from typing import List, Any
 
 

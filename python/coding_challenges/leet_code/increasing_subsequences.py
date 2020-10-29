@@ -39,5 +39,4 @@ class Solution:
                     copy |= {cur + (num,)}
             results |= copy
 
-
         return [list(x) for x in results if len(x) >= 2]

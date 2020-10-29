@@ -144,6 +144,5 @@ print(Solution().findDiagonalOrder(
      [5, 6]]
 ))
 print(Solution().findDiagonalOrder(
-    [[2, 5],[8, 4],[0, 1],[7, 9]]
+    [[2, 5], [8, 4], [0, 1], [7, 9]]
 ))
-

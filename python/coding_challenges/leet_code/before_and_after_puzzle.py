@@ -82,7 +82,7 @@ class Solution:
                 #     break
                 if match_end == start:
                     tmp = phrases[idx_p].split(' ')
-                    phrase_ret.append(" ".join(cur_phrase+tmp))
+                    phrase_ret.append(" ".join(cur_phrase + tmp))
             idx += 1
 
         # for idx, phrase in enumeraate(phrases_intervals):

@@ -4,6 +4,7 @@ Attempting to simulate a Python List with Linked List DS
 """
 import nodeLinkedList
 
+
 class DoublyLinkedList(object):
     # Facilitators for the Node Management
     left, right, this = 'left', 'right', 'this'
@@ -458,11 +459,10 @@ class DoublyLinkedList(object):
             self.__canSort = False
 
     def _printIndices(self):
-        print(self.__maxNegIndex, self.__maxPosIndex, self.getIndex(),)
+        print(self.__maxNegIndex, self.__maxPosIndex, self.getIndex(), )
 
 
 import random
-import time
 
 O = DoublyLinkedList(None, int)
 for i in range(500):

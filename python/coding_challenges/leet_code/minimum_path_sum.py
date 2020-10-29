@@ -48,10 +48,10 @@ class Solution:
                     dp[col][row] = dp[col][row] + min(dp[col - 1][row], dp[col][row - 1])
                 elif col > 0:
                     # Must have come from above as the row is 0
-                    dp[col][row] += dp[col-1][row]
+                    dp[col][row] += dp[col - 1][row]
                 elif row > 0:
                     # Could only come from the left so add that in.
-                    dp[col][row] += dp[col][row-1]
+                    dp[col][row] += dp[col][row - 1]
         return dp[col][row]
 
 

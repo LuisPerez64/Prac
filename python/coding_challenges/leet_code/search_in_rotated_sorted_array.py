@@ -79,7 +79,7 @@ class Solution:
                     right = mid_point - 1
             return -1
 
-        pivot = find_pivot(0, len(nums)-1)
+        pivot = find_pivot(0, len(nums) - 1)
         if nums[pivot] == target:
             return pivot
 
@@ -92,4 +92,4 @@ class Solution:
             return search(0, pivot)
         else:
             # [3,4,5,0,1,2] pivot = 3 target = 2 target < nums[0] search [pivot:len(nums)-1]
-            return search(pivot, len(nums)-1)
+            return search(pivot, len(nums) - 1)

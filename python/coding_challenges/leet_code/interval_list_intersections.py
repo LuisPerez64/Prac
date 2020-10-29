@@ -43,7 +43,7 @@ class Solution:
         def intervals_intersect(interval_a, interval_b):
             # test: [0,2], [1,5] => [1, 2]
             min_inter, max_inter = (interval_a, interval_b) if interval_a[0] < interval_b[0] else (
-            interval_b, interval_a)
+                interval_b, interval_a)
             if min_inter[1] >= max_inter[0]:
                 # intervals.append()
                 return [max_inter[0], min(max_inter[1], min_inter[1])]
@@ -79,7 +79,7 @@ class Solution:
         def intervals_intersect(interval_a, interval_b):
             # test: [0,2], [1,5] => [1, 2]
             min_inter, max_inter = (interval_a, interval_b) if interval_a[0] < interval_b[0] else (
-            interval_b, interval_a)
+                interval_b, interval_a)
             if min_inter[1] >= max_inter[0]:
                 return [max_inter[0], min(max_inter[1], min_inter[1])]
             return None

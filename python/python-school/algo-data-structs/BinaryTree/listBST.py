@@ -1,4 +1,3 @@
-
 class ListBST(object):
     """docstring for ListBST
     Binary Search Tree implementation with the List Data Structure

@@ -26,14 +26,16 @@ Constraints:
 1 <= n <= 45
 """
 
+
 def climb_stairs(n: int) -> int:
     if n <= 2:
         return n
     memo = [0, 1, 2]
     # Calculate the possible branch based off of the steps
-    for idx in range(3, n+1):
+    for idx in range(3, n + 1):
         memo.append(memo[idx - 1] + memo[idx - 2])
     return memo[n]
+
 
 # First attempt at the problem which did not yield a valid solution.
 #     def climbStairs(self, n: int) -> int:

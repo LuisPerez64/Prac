@@ -50,22 +50,20 @@ class Solution:
     #         for word in words:
     #             # Check to see if the word could be created by modifying the input
 
-
     def pulled_implementation(self, S: str, words: List[str]) -> int:
         count = 0
         for word in words:
             i = 0
-            j= 0
-            match=False
-            while i  < len(S) and j <len(word):
+            j = 0
+            match = False
+            while i < len(S) and j < len(word):
                 sCharCount = 0
                 sChar = S[i]
-                while i<len(S) and S[i] == sChar:
-
+                while i < len(S) and S[i] == sChar:
                     sCharCount += 1
                     i += 1
                 wCharCount = 0
-                match=False
+                match = False
                 while j < len(word) and sChar == word[j]:
                     j += 1
                     wCharCount += 1

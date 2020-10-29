@@ -43,7 +43,6 @@ class MinStack:
         # The min only has to check against the last element on the array to determine if it's the smallest.
         self.stack = deque()
 
-
     def push(self, x: int) -> None:
         """
         Push a tuple onto the array maintaining the minimum value at the curent point.
@@ -62,13 +61,11 @@ class MinStack:
         """
         return self.stack.pop()[0]
 
-
     def top(self) -> int:
         """
         Peek operation
         """
         return self.stack[-1][0]
-
 
     def getMin(self) -> int:
         """

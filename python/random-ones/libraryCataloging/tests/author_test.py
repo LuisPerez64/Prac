@@ -1,8 +1,9 @@
 """Test functions for GoodreadsAuthor"""
 
+from goodreads.author import GoodreadsAuthor
 from nose.tools import ok_, eq_, nottest
 from tests import client_test
-from goodreads.author import GoodreadsAuthor
+
 
 @nottest
 def author_test_unit(client, author_id):
@@ -24,6 +25,7 @@ def author_test_unit(client, author_id):
     author.influences
     author.user
     author.works_count
+
 
 def author_test():
     client = client_test.make_client()

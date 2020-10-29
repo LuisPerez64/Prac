@@ -78,8 +78,9 @@ class Solution:
                 # THe cases where a start value is < the current is handled outside of the scope of cur in the running loop.
                 # Add the current number into the current combination
                 cur.append(cur_num + 1)
-                backtrack(remain - cur_num -1, cur, cur_num + 1)
+                backtrack(remain - cur_num - 1, cur, cur_num + 1)
                 # Backtrack and remove the curent value from the current combination before trying for the next.
                 cur.pop()
+
         backtrack(n, [], 0)
         return results

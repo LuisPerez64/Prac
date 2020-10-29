@@ -2,14 +2,14 @@
 String manipulation.
 Output with different formats as needed.
 '''
-#Short work around for compatibility. This is by no means a great fix, but good to know
+# Short work around for compatibility. This is by no means a great fix, but good to know
 # Will add this to main readme.
 try:
     input = raw_input
 except NameError:
     pass
 
-inpQuote=input('Please input the quote that you\'d like to manipulate:\n')
+inpQuote = input('Please input the quote that you\'d like to manipulate:\n')
 print("""
 Original Quote:
 "{4}"

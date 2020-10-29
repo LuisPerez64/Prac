@@ -1,7 +1,9 @@
 """Class for GoodreadsGroup"""
 
+
 class GoodreadsGroup:
     """Goodreads Group class implementation"""
+
     def __init__(self, group_dict):
         self._group_dict = group_dict
 
@@ -59,4 +61,3 @@ class GoodreadsGroup:
     def members(self):
         """Members of the group"""
         return self._group_dict['members']['group_users']
-

@@ -14,7 +14,7 @@ class ExamRoom:
         if sum(self.seats) == 0:
             seated = self.sit(0)
         elif sum(self.seats) == 1 and self.seats[0] == 1:
-            seated = self.sit(len(self.seats)-1)
+            seated = self.sit(len(self.seats) - 1)
         else:
             # Find the Intervals of unseated students.
             gaps: List[list] = []
@@ -22,7 +22,7 @@ class ExamRoom:
 
             for idx in range(len(self.seats)):
                 if not self.seats[idx] and gaps:
-                    gaps[-1][1] = idx+1
+                    gaps[-1][1] = idx + 1
                 else:
                     # Implant a new gap starting at this seat.
                     gaps.append([idx, idx])
@@ -44,6 +44,7 @@ class ExamRoom:
 
     def leave(self, p: int):
         self.seats[p] = 0
+
 
 # Your ExamRoom object will be instantiated and called as such:
 # obj = ExamRoom(N)

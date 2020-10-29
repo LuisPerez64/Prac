@@ -15,6 +15,7 @@ def prod_list(inp_list: List[int]) -> int or float:
     """
     return reduce(lambda acc, cur: acc * cur, inp_list, 1)
 
+
 def print_matrix(inp_matrix: List[List[Any]]):
     for row in inp_matrix:
         print(inp_matrix[row])

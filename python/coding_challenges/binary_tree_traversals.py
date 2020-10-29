@@ -1,4 +1,5 @@
 from typing import List
+
 from implementations.data_structures import TreeNode
 
 
@@ -39,4 +40,3 @@ root_node = TreeNode(val='F',
                      right=TreeNode(val='G',
                                     right=TreeNode(val='I',
                                                    left=TreeNode(val='H'))))
-

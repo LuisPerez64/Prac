@@ -1,15 +1,17 @@
+import collections
 import webbrowser
-from session import GoodreadsSession
-from user import GoodreadsUser
-from book import GoodreadsBook
+
 from author import GoodreadsAuthor
-from request import GoodreadsRequest
+from book import GoodreadsBook
 from comment import GoodreadsComment
 from event import GoodreadsEvent
 from group import GoodreadsGroup
 from owned_book import GoodreadsOwnedBook
+from request import GoodreadsRequest
 from review import GoodreadsReview
-import collections
+from session import GoodreadsSession
+from user import GoodreadsUser
+
 
 class GoodreadsClientException(Exception):
     def __init__(self, error_msg):
@@ -17,6 +19,7 @@ class GoodreadsClientException(Exception):
 
     def __str__(self):
         return self.error_msg
+
 
 class GoodreadsClient():
     base_url = "http://www.goodreads.com/"

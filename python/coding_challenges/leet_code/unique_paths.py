@@ -74,5 +74,4 @@ class Solution:
         for col in range(1, height):
             for row in range(1, width):
                 dp[(col, row)] = dp[(col - 1, row)] + dp[(col, row - 1)]
-        return dp[(height-1, width-1)]
-
+        return dp[(height - 1, width - 1)]

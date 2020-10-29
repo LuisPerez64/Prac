@@ -1,6 +1,7 @@
-months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 while True:
-    userInp=[int(x) for x in input('Please input date in format yyyy mm dd ie 1982 10 08: ').split(' ') if x is not '']
+    userInp = [int(x) for x in input('Please input date in format yyyy mm dd ie 1982 10 08: ').split(' ') if
+               x is not '']
     if userInp[1] > 12 or userInp[1] < 1:
         print('Sorry that\'s not a valid month.')
         continue
@@ -8,8 +9,4 @@ while True:
         print('Sorry that is not a valid day for the given month.')
         continue
     break
-print('It is {0} {1}, {2}'.format(months[userInp[1]-1]+'.', userInp[2], userInp[0]))
-
-
-
-        
+print('It is {0} {1}, {2}'.format(months[userInp[1] - 1] + '.', userInp[2], userInp[0]))

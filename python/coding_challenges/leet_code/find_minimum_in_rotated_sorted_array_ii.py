@@ -96,7 +96,7 @@ class Solution:
             start_idx = 0
             end_idx = len(nums) - 1
             while start_idx <= end_idx:
-                mid_point = start_idx + (end_idx - start_idx ) // 2
+                mid_point = start_idx + (end_idx - start_idx) // 2
                 # mid_point = (end_idx + start_idx) // 2
                 if nums[mid_point] < nums[end_idx]:
                     end_idx = mid_point
@@ -109,8 +109,10 @@ class Solution:
             # Handles cases where the array is all duplicates i.e. [1,1,1,1,1]
             # print(nums, start_idx, end_idx)
             return nums[start_idx]
+
         # The array is pivoted. Find the first instance satisfying nums[idx-1] > nums[idx]
         return find_pivot()
+
 
 """
 Explanation:

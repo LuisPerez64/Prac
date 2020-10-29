@@ -54,7 +54,7 @@ class Solution:
         num_cols = len(matrix[0])
         max_len = 0
         moves = {'up': (-1, 0), 'down': (1, 0), 'left': (0, -1), 'right': (0, 1)}
-        memo = {} # Key (row, col), Val: Max path from this value
+        memo = {}  # Key (row, col), Val: Max path from this value
 
         def valid(row, col, prev_num):
             return row >= 0 and row < num_rows and col >= 0 and col < num_cols \
@@ -73,7 +73,7 @@ class Solution:
             tmp_len = seq_len
 
             for rowOffset, colOffset in moves.values():
-                tmp_len = max(dfs(row + rowOffset, col+colOffset, cur_val, seq_len + 1), tmp_len)
+                tmp_len = max(dfs(row + rowOffset, col + colOffset, cur_val, seq_len + 1), tmp_len)
             matrix[row][col] = cur_val
             if tmp_len > max_len:
                 max_len = tmp_len

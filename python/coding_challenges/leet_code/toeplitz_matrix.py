@@ -56,14 +56,14 @@ class Solution:
             base_dict[(0, c)] = matrix[0][c]
 
         for r in range(1, len(matrix)):
-            base_dict[(r, 0)]= matrix[r][0]
+            base_dict[(r, 0)] = matrix[r][0]
 
         for r in range(1, len(matrix)):
             for c in range(1, len(matrix[0])):
                 # Get the base from the smallest value in the r/c pair subtracted from the current location.
                 sub = min(r, c)
                 cur = matrix[r][c]
-                if cur != base_dict[(r-sub, c-sub)]:
+                if cur != base_dict[(r - sub, c - sub)]:
                     return False
 
         return True

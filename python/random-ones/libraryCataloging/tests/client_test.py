@@ -1,11 +1,12 @@
 """Client test functions"""
 
-from nose.tools import eq_, ok_, nottest
+from goodreads import apikey
+from goodreads.book import GoodreadsBook
 from goodreads.client import GoodreadsClient
 from goodreads.event import GoodreadsEvent
 from goodreads.review import GoodreadsReview
-from goodreads.book import GoodreadsBook
-from goodreads import apikey
+from nose.tools import eq_, ok_, nottest
+
 
 @nottest
 def make_client():
@@ -15,6 +16,7 @@ def make_client():
     client.authenticate(apikey.oauth_access_token,
                         apikey.oauth_access_token_secret)
     return client
+
 
 def client_test():
     """Test client object"""
@@ -26,10 +28,10 @@ def client_test():
     client.query_dict
 
     client.auth_user()
-    
-    myself = client.user()               # authorized user itself
-    
-    user = client.user(1)              # another user
+
+    myself = client.user()  # authorized user itself
+
+    user = client.user(1)  # another user
     user.user_name
 
     author = client.author('8566992')
@@ -52,18 +54,21 @@ def client_test():
     client.book_review_stats(["0441172717", "2C0141439602"])
 
     # list comments
-    #comments = client.list_comments("user", "36918660")
+    # comments = client.list_comments("user", "36918660")
 
     # list events nearby
     events = client.list_events("21250")
     ok_(all(isinstance(event, GoodreadsEvent) for event in events))
-    print events[0].title
+    print
+    events[0].title
 
     # list recent reviews
     reviews = client.recent_reviews()
     ok_(all(isinstance(review, GoodreadsReview) for review in reviews))
-    print reviews[0]
+    print
+    reviews[0]
 
     # get a review
     review = client.review("1212820989")
-    print review.body
+    print
+    review.body

@@ -38,12 +38,13 @@ class Solution:
             2) Get Node from InOrd => i_idx = idx_of_3 = 1, i_o[i_idx-1] => 9 => [3, [9]]
             3) p_idx = idx_of_9 = 1 => p_o[p_idx + 1] =>
         """
+
         def get_tree_structure():
             tree_struct = []
             seen = set()
             p_idx = 0
             i_idx = 0
-            in_order_idx = {val: idx for idx,val in enumerate(inorder)}
+            in_order_idx = {val: idx for idx, val in enumerate(inorder)}
             while p_idx < len(preorder) and i_idx < len(inorder):
                 tmp_p = preorder[p_idx]
 
@@ -57,9 +58,7 @@ class Solution:
                     tree_struct.append(tmp_i)
                 p_idx = preorder.index(tmp_i) + 1
 
-
         return get_tree_structure()
-
 
     def second_implementation(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         """
@@ -70,6 +69,7 @@ class Solution:
 
         # Create the map to not rely on index searching through the list each time through.
         in_order_map = {num: idx for idx, num in enumerate(inorder)}
+
         def helper(left_idx, right_idx):
             nonlocal pre_idx
             if right_idx == left_idx or pre_idx >= len(preorder):
@@ -86,5 +86,6 @@ class Solution:
 
             root.right = helper(in_order_idx + 1, right_idx)
             return root
+
         pre_idx = 0
         return helper(left_idx=0, right_idx=len(inorder))

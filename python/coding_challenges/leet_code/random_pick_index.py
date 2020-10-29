@@ -60,4 +60,3 @@ class Solution:
             return reservoir[0]
         else:
             return reservoir
-

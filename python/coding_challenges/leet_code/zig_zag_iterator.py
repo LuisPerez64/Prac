@@ -84,7 +84,6 @@ class ZigzagIterator:
                 return False
         return True
 
-
 # Your ZigzagIterator object will be instantiated and called as such:
 # i, v = ZigzagIterator([1, 2, 3, 4, 5], [-1, -2, -3, -4, -5], [-2, -4, -6]), []
 # while i.hasNext(): v.append(i.next())

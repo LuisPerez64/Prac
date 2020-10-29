@@ -59,6 +59,7 @@ def print_matrix(inp_matrix: List[List[Any]]):
         print(row)
     print()
 
+
 class Solution:
     def numSubmat(self, mat: List[List[int]]) -> int:
         return self.pulled_implementation(mat)
@@ -91,33 +92,34 @@ class Solution:
                 if mat[row][col] >= 1:
                     inc = 0
                     if col >= 1:
-                        inc = 1 if mat[row][col-1] else 0
+                        inc = 1 if mat[row][col - 1] else 0
                     # Take into account the values that are 1 before the
-                    mat[row][col] += min(mat[row][col] +1 , mat[row-1][col])
+                    mat[row][col] += min(mat[row][col] + 1, mat[row - 1][col])
         # print_matrix(mat)
         return sum(sum(mat[x]) for x in range(num_rows))
 
     def pulled_implementation(self, mat: List[List[int]]) -> int:
-        if not mat:return 0
-        m,n = len(mat),len(mat[0])
+        if not mat: return 0
+        m, n = len(mat), len(mat[0])
         res = 0
-        #RLE - Run length encoding
+        # RLE - Run length encoding
         for i in range(m):
             for j in range(n):
-                if  j:
+                if j:
                     if mat[i][j]:
-                        mat[i][j] = mat[i][j-1] + 1
+                        mat[i][j] = mat[i][j - 1] + 1
 
-        #Now,calculate all the rectangular submatrices from the RLE
+        # Now,calculate all the rectangular submatrices from the RLE
         for i in range(m):
             for j in range(n):
                 # (i,j) :top right of matrix
                 ans = mat[i][j]
-                for k in range(i,m):#bottom-right
-                    ans = min(ans,mat[k][j])
-                    res+= ans
+                for k in range(i, m):  # bottom-right
+                    ans = min(ans, mat[k][j])
+                    res += ans
 
         return res
+
 
 """
 Test Cases:

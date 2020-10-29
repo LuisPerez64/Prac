@@ -23,8 +23,8 @@ Constraints:
 nums is a non decreasing array.
 -10^9 <= target <= 10^9
 """
-from typing import List
 import unittest
+from typing import List
 
 
 def search_range(nums: List[int], target: int) -> List[int]:

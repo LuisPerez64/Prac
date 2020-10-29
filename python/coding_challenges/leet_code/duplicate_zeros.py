@@ -52,5 +52,3 @@ class Solution:
 
         for idx in range(len(arr)):
             arr[idx] = tmp.popleft()
-
-

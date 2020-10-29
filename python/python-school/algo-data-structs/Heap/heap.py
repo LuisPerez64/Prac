@@ -12,7 +12,7 @@ class Node(object):
     Node Data Structure for the Binary Tree
     """
 
-    def __init__(self, contents = None, leftChild = None, rightChild = None):
+    def __init__(self, contents=None, leftChild=None, rightChild=None):
         super(Node, self).__init__()
         self._contents = contents
         self._leftChild = leftChild
@@ -40,7 +40,7 @@ class Node(object):
     def set_contents(self, contents):
         self._contents = contents
 
-    def print_structure(self, print_me = ""):
+    def print_structure(self, print_me=""):
         l_child = self.get_child(left)
         r_child = self.get_child(right)
         if l_child is None and r_child is None:
@@ -61,7 +61,7 @@ class Node(object):
 class Heap(object):
     heap: 'Node' = None
 
-    def __init__(self, initializer = None):
+    def __init__(self, initializer=None):
         if type(initializer) is list:
             for element in initializer:
                 self.add_node(element)
@@ -106,7 +106,7 @@ class Heap(object):
     def get_contents(self):
         return self.get_node().get_contents()
 
-    def get_node(self, node = thisNode):
+    def get_node(self, node=thisNode):
         if node == left:
             return self.heap.get_child(left)
         elif node == right:
@@ -122,7 +122,7 @@ class Heap(object):
 
 
 O = Heap()
-inp = [4, 12, 7, 10, 5,8]
+inp = [4, 12, 7, 10, 5, 8]
 for x in range(len(inp)):
     # print(inp[x])
     O.add_node(inp[x])

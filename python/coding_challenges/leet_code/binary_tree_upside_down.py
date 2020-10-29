@@ -18,8 +18,10 @@ Input: root = [1,2,3,4,5]
 Output: [4,5,2,null,null,3,1]
 """
 
-from implementations.data_structures import TreeNode
 from collections import deque
+
+from implementations.data_structures import TreeNode
+
 
 class Solution:
     def upsideDownBinaryTree(self, root: TreeNode) -> TreeNode:
@@ -79,6 +81,7 @@ class Solution:
         stack[-1].left = left
         stack[-1].right = right
         return root
+
 
 tree = TreeNode(val=1)
 TreeNode.insert(tree, [2, 3, 4, 5])

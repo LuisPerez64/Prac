@@ -32,8 +32,9 @@ All Node.val are unique.
 node_p != node_q
 node_p and node_q will exist in the tree.
 """
-from implementations.data_structures import TreeNode
 from collections import deque
+
+from implementations.data_structures import TreeNode
 
 
 class Solution:

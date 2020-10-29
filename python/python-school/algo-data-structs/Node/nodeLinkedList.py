@@ -39,6 +39,7 @@ class Node(object):
     then the new nodes rightNode has to be the left Node
     of the node that called it, and vice versa.
     '''
+
     def add_node(self, prev_node, next_dir, contents=None):
         prev_dir = 'right' if next_dir == 'left' else 'left'
 

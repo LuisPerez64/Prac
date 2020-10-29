@@ -18,7 +18,7 @@ Input: [4,5,6,7,0,1,2]
 Output: 0
 """
 from typing import List
-import bisect
+
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
@@ -78,7 +78,7 @@ class Solution:
             while start_idx <= end_idx:
                 mid_point = (start_idx + end_idx) // 2
                 # Find the location at which nums[idx-1] > target and nums[idx-1] > nums[idx]
-                if nums[mid_point-1] >= target and nums[mid_point-1] > nums[mid_point]:
+                if nums[mid_point - 1] >= target and nums[mid_point - 1] > nums[mid_point]:
                     return nums[mid_point]
                 elif nums[mid_point] >= target:
                     # Still increasing so start from here next round

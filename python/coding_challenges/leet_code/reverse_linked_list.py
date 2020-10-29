@@ -45,7 +45,6 @@ class Solution:
             head = head.next
         return c
 
-
     def second_implementation(self, head: ListNode) -> ListNode:
         """
         Go through the list with three pointers prev, cur, next

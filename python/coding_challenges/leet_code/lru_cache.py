@@ -49,7 +49,7 @@ class LRUCache(OrderedDict):
         super().__init__()
         self.capacity = capacity
 
-    def get(self, key:int):
+    def get(self, key: int):
         """
         Get the item at the key iff it exists.
         Mark that an operation took place on the key by moving it to the
@@ -67,7 +67,7 @@ class LRUCache(OrderedDict):
         Basically mixing a Dict and a PriorityQueue into one struct.
         """
         if key not in self:
-            if len(self) +1 > self.capacity:
+            if len(self) + 1 > self.capacity:
                 self.popitem(last=False)
             self[key] = value
         else:

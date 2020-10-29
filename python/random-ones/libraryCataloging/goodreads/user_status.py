@@ -1,6 +1,7 @@
-import user
 import book
 import comment
+import user
+
 
 class GoodreadsUserStatus:
     def __init__(self, user_status_dict):
@@ -76,4 +77,3 @@ class GoodreadsUserStatus:
     def liked(self):
         """Did you like this status"""
         return self._user_status_dict['liked']
-

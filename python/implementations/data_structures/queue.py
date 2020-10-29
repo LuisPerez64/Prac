@@ -36,7 +36,6 @@ class MyQueue:
         """
         return self.size == 0
 
-
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
 # obj.push(x)

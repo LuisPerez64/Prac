@@ -93,4 +93,5 @@ class Solution:
         #     if val == max_val:
         #         return idx
 
+
 Solution().dominantIndex([0, 0, 0, 1])

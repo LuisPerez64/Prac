@@ -35,6 +35,7 @@ Constraints:
 moves only contains the characters 'U', 'D', 'L' and 'R'.
 """
 
+
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
         return self.first_implementation(moves)

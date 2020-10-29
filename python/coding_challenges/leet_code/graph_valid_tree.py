@@ -25,7 +25,6 @@ class Solution:
         # return self.second_implementation(n, edges)
         return self.third_implementation(n, edges)
 
-
     def first_implementation(self, n: int, edges: List[List[int]]) -> bool:
         """
         Produce an adjaceny dict for the nodes.
@@ -40,7 +39,7 @@ class Solution:
         print(n, edges, connections)
         seen = set()
 
-        def dfs(cur_node: int, parent = None) -> bool:
+        def dfs(cur_node: int, parent=None) -> bool:
             if cur_node in seen:
                 return False
             valid = True
@@ -65,6 +64,7 @@ class Solution:
         for nde_a, nde_b in edges:
             connections[nde_a].add(nde_b)
             connections[nde_b].add(nde_a)
+
         def dfs():
             dq = deque([0])
             parent = {0: -1}

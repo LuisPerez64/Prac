@@ -95,5 +95,4 @@ class Solution:
             idx += 1
         return can_reach
 
-
 # print(Solution().canJump([3, 5, 2, 1, 7, 2, 1, 2, 1, 2, 1]))

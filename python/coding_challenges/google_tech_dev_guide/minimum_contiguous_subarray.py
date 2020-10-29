@@ -26,4 +26,5 @@ def contiguous_subarray_min_sum(inp_arr):
             memo[(idx, j_idx)] = dict(low=cur_min, arr=inp_arr[idx:j_idx + 1])
     return tally  # sum(x.get('low') for x in memo.values())
 
-print(contiguous_subarray_min_sum([1,2,2,3,4,5,6,7]))
+
+print(contiguous_subarray_min_sum([1, 2, 2, 3, 4, 5, 6, 7]))

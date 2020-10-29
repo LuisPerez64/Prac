@@ -73,7 +73,6 @@ class Solution:
                 left += 1
         return min_sub if min_sub != float('inf') else 0
 
-
 # every value
 # print(Solution().minSubArrayLen(s=7, nums=[2, 3, 1, 2, 4, 3]))
 # print(Solution().minSubArrayLen(s=15, nums=[1, 2, 3, 4, 5]))

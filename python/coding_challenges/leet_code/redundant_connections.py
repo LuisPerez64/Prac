@@ -53,4 +53,5 @@ class Solution:
                 # return edge
         return res[0]
 
+
 Solution().findRedundantConnection([[1, 2], [2, 3], [3, 1], [3, 2]])

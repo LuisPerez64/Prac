@@ -39,7 +39,7 @@ Note:
 All worker and bike locations are distinct.
 1 <= workers.length <= bikes.length <= 1000
 """
-from heapq import heapify, heappush, heappop
+from heapq import heappush, heappop
 from typing import List
 
 

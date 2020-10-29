@@ -39,6 +39,7 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 """
 from collections import defaultdict
 
+
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         return self.pulled_algorithm(s, k)

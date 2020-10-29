@@ -1,9 +1,9 @@
 """Test functions for GoodreadsBook"""
 
+from goodreads.book import GoodreadsBook
 from nose.tools import ok_, eq_, nottest
 from tests import client_test
-from goodreads.book import GoodreadsBook
-from goodreads.author import GoodreadsAuthor
+
 
 @nottest
 def book_test_unit(client, book_id):
@@ -36,9 +36,10 @@ def book_test_unit(client, book_id):
     book.reviews_widget
     book.similar_books
 
+
 def book_test():
     client = client_test.make_client()
     # book with a single author
     book_test_unit(client, '11870085')
     # book with multiple authors
-    #book_test_unit(client, '24780653')
+    # book_test_unit(client, '24780653')

@@ -60,12 +60,11 @@ class Solution:
         for idx in range(len(nums)):
             # Find the offset in the nums array that this number should flip the signs for.
             # Since the number may have been flipped. Flip its sign back
-            offset = abs(nums[idx]) -1
+            offset = abs(nums[idx]) - 1
             if nums[offset] < 0:
                 # the values been visited already, so add its result to the output
-                output.append(offset+1)
+                output.append(offset + 1)
             else:
                 # flip the sign on the value at the offset.
                 nums[offset] *= -1
         return output
-

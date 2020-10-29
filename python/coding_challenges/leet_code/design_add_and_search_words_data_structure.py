@@ -37,10 +37,12 @@ word in search consist of  '.' or lower-case English letters.
 At most 50000 calls will be made to addWord and search.
 """
 
+
 class DictNode(object):
     def __init__(self):
         self.child_nodes = {}
         self.is_end = False
+
 
 class WordDictionary:
 
@@ -62,7 +64,6 @@ class WordDictionary:
             cur_node = node
         cur_node.is_end = True
 
-
     def search(self, word: str) -> bool:
         """
         Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
@@ -76,7 +77,7 @@ class WordDictionary:
                 # If we encounter a '.' then check across all of the child nodes for the next char in the word.
                 # done recursively, and bubbles up.
                 for child in cur_node.child_nodes.values():
-                    if self._search(child, word[idx+1:]):
+                    if self._search(child, word[idx + 1:]):
                         return True
                 return False
             else:
@@ -85,8 +86,6 @@ class WordDictionary:
                 return False
             cur_node = node
         return cur_node.is_end
-
-
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()

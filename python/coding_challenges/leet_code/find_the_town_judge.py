@@ -80,4 +80,5 @@ class Solution:
                 return person
         return -1
 
-Solution().findJudge(3, [[1,2],[2,3]])
+
+Solution().findJudge(3, [[1, 2], [2, 3]])

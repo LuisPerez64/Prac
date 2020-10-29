@@ -69,4 +69,4 @@ class Solution:
         return ret_node
 
 
-print(Solution().removeNthFromEnd(head=ListNode.convert_from_list([1,2,3]), n=3))
+print(Solution().removeNthFromEnd(head=ListNode.convert_from_list([1, 2, 3]), n=3))

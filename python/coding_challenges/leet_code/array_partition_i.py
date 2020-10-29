@@ -30,4 +30,3 @@ class Solution:
         Space Complexity: O(1)
         """
         return sum(sorted(nums)[::2])
-

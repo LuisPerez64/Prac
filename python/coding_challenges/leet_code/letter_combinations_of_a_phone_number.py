@@ -31,6 +31,7 @@ def letter_combinations(digits: str) -> List[str]:
         '8': ['t', 'u', 'v'],
         '9': ['w', 'x', 'y', 'z']
     }
+
     # Combine function will iterate over every permutation for the given input.
     # Only ever really need to get combos for pairs of two
 
@@ -59,17 +60,16 @@ def letter_combinations(digits: str) -> List[str]:
         return local_res
 
     for idx in range(1, len(digits)):
-        prev_str = digits[0:idx-1]
+        prev_str = digits[0:idx - 1]
         # Only really need to do the combination based on the previous and current digit which may would things up.
-        cur_combo = get_combinations(digits[idx-1], digits[idx])
+        cur_combo = get_combinations(digits[idx - 1], digits[idx])
         arr = []
         for prev in memo[prev_str]:
             for cur in cur_combo:
-                arr.append(prev+cur)
+                arr.append(prev + cur)
         # Because [n:m] slices from n -> m-1 have to add in the added index to get the full string.
-        memo[digits[0:idx+1]] = arr
+        memo[digits[0:idx + 1]] = arr
 
     # Need to take into account the invalid numbers producing empty strings. i.e. 123 == 23.
     # Given 1,0, or'' must return an empty array.
     return [x for x in memo[digits] if x]
-

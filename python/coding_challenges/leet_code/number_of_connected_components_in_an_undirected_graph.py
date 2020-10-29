@@ -26,6 +26,7 @@ class Solution:
             for neighbor in graph[node]:
                 if neighbor not in visited:
                     dfs(neighbor, visited)
+
         count = 0
         visited = set()
         for node in range(n):
@@ -98,7 +99,6 @@ class Solution:
                 basis.append(edge)
 
         return len(basis)
-
 
 
 """

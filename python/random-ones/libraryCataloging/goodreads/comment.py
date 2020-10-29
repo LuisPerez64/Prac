@@ -1,9 +1,9 @@
 """Class for Goodreads comments"""
 
-import user
 
 class GoodreadsComment:
     """Goodreads comment class"""
+
     def __init__(self, comment_dict):
         self._comment_dict = comment_dict
 

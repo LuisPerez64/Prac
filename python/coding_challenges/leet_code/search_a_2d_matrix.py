@@ -85,7 +85,7 @@ class Solution:
                 return find_next_index(row, col + 1)
             elif target <= matrix[num_rows - 1][col]:
                 # Value not in this column
-                return find_next_index(row + 1, col )
+                return find_next_index(row + 1, col)
             else:
                 return False
 

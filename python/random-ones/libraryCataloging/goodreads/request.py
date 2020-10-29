@@ -1,6 +1,8 @@
+import json
+
 import requests
 import xmltodict
-import json
+
 
 class GoodreadsRequestException(Exception):
     def __init__(self, error_msg, url):
@@ -9,6 +11,7 @@ class GoodreadsRequestException(Exception):
 
     def __str__(self):
         return self.url, ':', self.error_msg
+
 
 class GoodreadsRequest():
     def __init__(self, client, path, query_dict, req_format='xml'):
@@ -19,7 +22,7 @@ class GoodreadsRequest():
         self.req_format = req_format
 
     def request(self):
-        resp = requests.get(self.host+self.path, params=self.params)
+        resp = requests.get(self.host + self.path, params=self.params)
         if resp.status_code != 200:
             raise GoodreadsRequestException(resp.reason, self.path)
         if self.req_format == 'xml':

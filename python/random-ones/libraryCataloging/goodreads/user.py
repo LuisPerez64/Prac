@@ -1,13 +1,11 @@
-import book
-import request
-import group
 import owned_book
 import review
+
 
 class GoodreadsUser():
     def __init__(self, user_dict, client):
         self._user_dict = user_dict
-        self._client = client   # for later queries
+        self._client = client  # for later queries
 
     def __repr__(self):
         if self.user_name:
@@ -48,7 +46,7 @@ class GoodreadsUser():
     def list_groups(self, page=1):
         """List groups for the user. If there are more than 30 groups, get them
         page by page."""
-        resp = self._client.request("group/list/%s.xml" % self.gid, {'page':page})
+        resp = self._client.request("group/list/%s.xml" % self.gid, {'page': page})
         return resp['groups']['list']['group']
 
     def owned_books(self, page=1):
@@ -75,4 +73,3 @@ class GoodreadsUser():
         resp = self._client.request("shelf/list.xml",
                                     {'user_id': self.gid, 'page': page})
         return resp['shelves']['user_shelf']
-

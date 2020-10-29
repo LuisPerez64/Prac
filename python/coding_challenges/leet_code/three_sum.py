@@ -53,7 +53,8 @@ class Solution:
     def second_implementation(self, nums: List[int]) -> List[List[int]]:
         """
         Brute force approach with minor optimization.
-        Go through every possible combination of the array elements and capture every non-unique element caught by the idx_a field
+        Go through every possible combination of the array elements and
+        capture every non-unique element caught by the idx_a field
         They don't need to be recalculated
         Time Complexity: O(n^3)
         Space Complexity: O(n)

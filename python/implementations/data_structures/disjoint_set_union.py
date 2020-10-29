@@ -27,6 +27,9 @@ class DSU(object):
         self.forest: Dict[int, dict] = {}
         self.number_of_joins = 0
 
+    def __len__(self):
+        return len(set([x.get('parent') for x in self.forest.values()]))
+
     def make_set(self, node: Any) -> Any:
         if node not in self.forest:
             self.forest[node] = {'parent': node, 'rank': 0}

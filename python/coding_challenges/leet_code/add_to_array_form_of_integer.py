@@ -46,7 +46,7 @@ class Solution:
             neg_idx -= 1
 
         carry = 0
-        for idx in range(len(A)-1, -1, -1):
+        for idx in range(len(A) - 1, -1, -1):
             if carry:
                 A[idx] += carry
                 carry = 0

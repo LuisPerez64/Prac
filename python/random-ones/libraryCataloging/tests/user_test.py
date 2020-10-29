@@ -1,9 +1,9 @@
 """Test functions for User"""
 
+from goodreads.user import GoodreadsUser
 from nose.tools import ok_, nottest, eq_
 from tests import client_test
-from goodreads.user import GoodreadsUser
-from goodreads.group import GoodreadsGroup
+
 
 @nottest
 def user_test_unit(user_id):
@@ -23,7 +23,6 @@ def user_test_unit(user_id):
     user.read_status()
     user.reviews()
     user.shelves()
-    
 
 
 def user_test():

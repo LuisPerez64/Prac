@@ -67,9 +67,8 @@ class Solution:
         for word, word2 in zip(sentence1, sentence2):
             if word not in sim_dict:
                 sim_dict[word].add(word)
-                idx -=1
+                idx -= 1
             if word2 not in sim_dict[word] or word2 not in sim_dict[word]:
                 # break out from here as they're not similar
                 return False
         return True
-

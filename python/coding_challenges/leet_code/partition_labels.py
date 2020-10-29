@@ -58,4 +58,5 @@ class Solution:
                     partitions.append([start, end])
         return [x[1] - x[0] + 1 for x in partitions]
 
+
 Solution().partitionLabels("ababcbacadefegdehijhklij")

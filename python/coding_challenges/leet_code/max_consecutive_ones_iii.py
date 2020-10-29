@@ -46,6 +46,8 @@ Window from 3 - 9 out of bound [0, 0, 0, 1, 1, 1]
 Window from 4 - 10 is in bound [0, 0, 1, 1, 1, 1]
 Window from 4 - 11 out of bound [0, 0, 1, 1, 1, 1, 0]
 """
+
+
 class Solution:
     def longestOnes(self, A: List[int], K: int) -> int:
         return self.first_implementation(A, K)

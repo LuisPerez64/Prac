@@ -1,6 +1,7 @@
 import book
 import user
 
+
 class GoodreadsAuthor:
     def __init__(self, author_dict, client):
         self._author_dict = author_dict
@@ -34,7 +35,7 @@ class GoodreadsAuthor:
                     for book_dict in self._author_dict['books']['book']]
         else:
             return [book.GoodreadsBook(self._author_dict['books']['book'],
-                                      self._client)]
+                                       self._client)]
 
     @property
     def born_at(self):
