@@ -6,7 +6,7 @@ shortcuts = dict()
 
 def makeShortcut(inputSentence):
     # No spaces in the shortcuts...
-    q = re.findall("\[[A-z0-9]+:[A-z 0-9]+\]", inputSentence)
+    q = re.findall("\[[A-z0-9]+:[A-z 0-9]+]", inputSentence)
     if q is not None:  # Found a new shortcut brought in
         for i in q:
             l = i[1:-1]

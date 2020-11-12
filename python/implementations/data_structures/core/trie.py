@@ -8,7 +8,7 @@ Resources:
 """
 __all__ = ["TrieNode", "Trie", "TrieSimple"]
 
-from typing import List
+from typing import List, Dict, Any, Union
 
 
 class TrieSimple(object):
@@ -18,7 +18,7 @@ class TrieSimple(object):
     and reversing it when searching.
     """
 
-    def __init__(self, words: List[str] = None, prefix=False, **kwargs):
+    def __init__(self, words: List[str] = None, prefix=False):
         self.end_marker = '#'
         self.root = dict()
         self.prefix = prefix
@@ -57,37 +57,46 @@ class TrieSimple(object):
             cur_root = cur_root[char]
         return check_starts_with or self.end_marker in cur_root
 
-# Sample use
-# tmp = TrieSimple(words=["cat", "hat", "hated"], prefix=False)
-# print(tmp)
-# print(tmp.search('hat'), tmp.search('hate'), tmp.search('hate', True))
-
 
 class TrieNode(object):
     """
     TrieNode object which is the basis of the Trie.
     A Trie will have n Trie Nodes to branch off from.
     """
+    end_marker = '#'
+    wildcard = '?'
 
     def __init__(self):
-        self.child_nodes = {}
-        self._is_end = False
+        self.child_nodes: Dict[Any, Union['TrieNode', str]] = {}
 
-    def set_is_end(self, is_end=True):
-        self._is_end = is_end
+    def __contains__(self, item):
+        return item in self.child_nodes
+
+    def __getitem__(self, item):
+        if item in self:
+            return self.child_nodes[item]
+
+    def set_word(self, word: str):
+        self.child_nodes[self.end_marker] = word
 
     def get_is_end(self) -> bool:
-        return self._is_end
+        return self.end_marker in self.child_nodes
+
+    def get_end(self):
+        if self.get_is_end():
+            return self.child_nodes[self.end_marker]
 
 
 class Trie(object):
 
-    def __init__(self):
+    def __init__(self, words: List[str] = None):
         """
         Initialize your data structure here.
         """
         # Create a node structure that will hold the data wanted from the pool.
         self.root = TrieNode()
+        for word in (words or []):
+            self.insert(word)
 
     def insert(self, word: str) -> None:
         """
@@ -99,7 +108,7 @@ class Trie(object):
             # Just in case a new node was created make sure it's linked to the current nodes root.
             cur_node.child_nodes[char] = node
             cur_node = node
-        cur_node.set_is_end()
+        cur_node.set_word(word)
 
     def search(self, word: str) -> bool:
         """
@@ -127,16 +136,16 @@ class Trie(object):
 
     def match(self, word: str) -> bool:
         """
-        Same as the search but allows for wildcard matching based on '.'
-        i.e. 'cat' in Trie  'c.t' will be found.
+        Same as the search but allows for wildcard matching based on the wildcard outlined for the TrieNode object
+        i.e. 'cat' in Trie 'c?t' will be found.
         """
 
         def helper(cur_node: TrieNode, inp_str: str) -> bool:
             for idx, char in enumerate(inp_str):
                 char = inp_str[idx]
-                if char == '.':
-                    # If we encounter a '.' then check across all of the child nodes for the next char in the inp_str.
-                    # done recursively, and bubbles up.
+                if char == TrieNode.wildcard:
+                    # If we encounter a wildcard then check across all of the child
+                    # nodes for the next char in the inp_str. Using Breadth First Search
                     for child in cur_node.child_nodes.values():
                         if helper(child, inp_str[idx + 1:]):
                             return True
@@ -146,6 +155,38 @@ class Trie(object):
                 if not node:
                     return False
                 cur_node = node
-            return cur_node.is_end
+
+            return cur_node.get_is_end()
 
         return helper(cur_node=self.root, inp_str=word)
+
+    def find_matches(self, word: str) -> List[str]:
+        """
+        Find all matching paths for the word given, and return a list of them.
+        Handles wildcard matching e.g.
+            input_words = ['CUT', 'CAT', 'CATE'] searching = 'C?T'
+            output -- ['CUT', 'CAT']
+        """
+        ret_list = []
+
+        def rec_search(wrd: str, cur_root: TrieNode) -> None:
+            if len(wrd) == 0:
+                end = cur_root.get_end()
+                if end:
+                    ret_list.append(end)
+            else:
+                ch = wrd[0]
+                if ch in cur_root:
+                    rec_search(wrd[1:], cur_root[ch])
+                elif ch == TrieNode.wildcard:
+                    for child in cur_root.child_nodes.values():
+                        rec_search(wrd[1:], child)
+
+        rec_search(word, self.root)
+        return ret_list
+
+
+if __name__ == '__main__':
+    trie = Trie(["CAT", "CUT", "DOG", "CATS", "CATERWAUL", "CATER", "COT"])
+    print(trie.search('CAT'), trie.search('CAR'), trie.search('CA'))
+    print(trie.match('C?T'), trie.find_matches('C?T'), trie.find_matches('C??'), trie.find_matches('FAT'))

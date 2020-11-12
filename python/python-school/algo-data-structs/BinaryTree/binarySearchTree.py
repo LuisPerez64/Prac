@@ -48,10 +48,10 @@ class NodeBST(object):
         if self._instances == 0:
             # Default to
             if self._leftChild is not None:
-                self._leftChild._rightChild = self._rightChild
+                self._leftChild.rightChild = self._rightChild
                 self._leftChild._rootNode = self._rootNode
             elif self._rightChild is not None:
-                self._rightChild._leftChild = self._leftChild
+                self._rightChild.leftChild = self._leftChild
                 self._rightChild._rootNode = self._rootNode
             else:
                 # Has no children, no rotation on its end to do.
@@ -132,9 +132,9 @@ class BinarySearchTree(object):
         # Gets the leaf being pointed to, or the parent node that called it. Returns a handle to it.
         # Only real accessor that should be called past Tree Creation.
         if direction == self.leftChild:
-            return self._Leaf._leftChild
+            return self._Leaf.leftChild
         elif direction == self.rightChild:
-            return self._Leaf._rightChild
+            return self._Leaf.rightChild
         elif direction == self.thisNode:
             return self._Leaf
         # Node which connects the children, or None if top of tree.
@@ -156,15 +156,15 @@ class BinarySearchTree(object):
             if self.getLeaf(self.thisNode) is None:
                 return
             temp = self._Leaf
-            if self._Leaf._leftChild is not None:
-                self._Leaf = self._Leaf._leftChild
+            if self._Leaf.leftChild is not None:
+                self._Leaf = self._Leaf.leftChild
                 self.traverse()
                 self._Leaf = temp
-            if self._Leaf._rightChild is not None:
-                self._Leaf = self._Leaf._rightChild
+            if self._Leaf.rightChild is not None:
+                self._Leaf = self._Leaf.rightChild
                 self.traverse()
                 self._Leaf = temp
-            print(self._Leaf._contents)
+            print(self._Leaf.contents)
         if order == 'postOrder':
             pass
         if order == 'pre-order':
@@ -180,13 +180,13 @@ class BinarySearchTree(object):
                 for node in curLevel:
                     # Add the nodes to the next iteration that will be run through, allowing the next level that will be iterated
                     # to house itself based on the nodes in the level being iterated over.
-                    if node._leftChild:
+                    if node.leftChild:
                         # Add the node to the list, and add it's contents to the elements to be printed out.
-                        nextLevel.append(node._leftChild)
-                        thisStr += str(node._leftChild.getContents()) + ' '
-                    if node._rightChild:
-                        nextLevel.append(node._rightChild)
-                        thisStr += str(node._rightChild.getContents()) + ' '
+                        nextLevel.append(node.leftChild)
+                        thisStr += str(node.leftChild.getContents()) + ' '
+                    if node.rightChild:
+                        nextLevel.append(node.rightChild)
+                        thisStr += str(node.rightChild.getContents()) + ' '
                 print('{0}'.format(thisStr))
                 # Swap the next Level with the current one.
                 curLevel = nextLevel

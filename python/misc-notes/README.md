@@ -54,6 +54,8 @@ for i,j in enumerate(inp):
 '''
 ```
 
+## [Generators](https://docs.python.org/3/reference/expressions.html#yield-expressions):
+### [Simplified Generator Usage](https://stackabuse.com/python-generators/)
 ## Classes:
 ### Self
 ##### Summary. Explanation, at least attempt at, bringing forth knowledge about referencing self | this, within a python class. 
@@ -87,14 +89,11 @@ class MyClass(object):
             self.__leftNode = node
         elif direction == 'right':
             self.__rightNode= node
+        elif direction == 'this':
+            self = node
         else:
             print('Not given a handle to operate on.')
             return 1
-#   ...
-# However, attempts to mutate the node that is being pointed to will not reveal themselves to be effective, because as soon as self, leaves the context of the function that it's working within, it's lost. Within the context of the previous function, if attempting to alter the node itself, through self ie
-#   ...
-    elif direction == 'this':
-        self = node
     # Printing self Before and after this assignment would yield a reference similar to <__main__.MyClass object at 0x7fcc3ab75390> but with reference to the object class to which self belongs, and then a reference to the new node that is handed, if it were none then self would be None, but upon exiting, no change would be made to the instances node. Changes could be made to the node that was passed in though, due to pointing to it now, but handle to previous instance is gone..
 ```
 ### Class Wide Variables:

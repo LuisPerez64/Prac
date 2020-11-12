@@ -104,7 +104,10 @@ class Solution:
         dp = [0 for _ in range(len(nums))]
         max_len = 0
         for num in nums:
-            # Find the best place to place the current number based on the bisect operation
+            # Find the best place to place the current number based on the bisect operation.
+            # The max len value dictates the last possible insert location.
+            # As the values continue increasing we continue appending them
+            # as the location they belong in is the end of the list.
             insert_idx = bisect_left(dp, num, 0, max_len)
 
             # Insert num into the position it would be occur in the subsequence list
