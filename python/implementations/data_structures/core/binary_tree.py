@@ -11,7 +11,7 @@ __all__ = ['TreeNode']
 from collections import deque
 from typing import Any, List, Dict, Union
 
-from implementations.data_structures import DSU
+from implementations.data_structures.core.disjoint_set_union import DSU
 from implementations.utils import flatten_list
 
 
